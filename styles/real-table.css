@@ -83,3 +83,8 @@
 @media (prefers-reduced-motion: reduce) {
   #real-table .corl-lens { transition: none; }
 }
+
+/* Mobile browsers can require an explicit gesture after suspending playback. */
+#real-table .corl-resume { position: absolute; z-index: 3; top: 12px; left: 50%; transform: translateX(-50%); padding: 12px 18px; border: 1px solid #e8e2d3; border-radius: 6px; background: #242127; color: #fff; font: 14px/1.4 'Geist Wght', sans-serif; cursor: pointer; white-space: nowrap; }
+#real-table .corl-resume[hidden] { display: none; }
+#real-table .corl-resume:focus-visible { outline: 2px solid #e99a7c; outline-offset: 3px; }

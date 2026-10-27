@@ -4,12 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!grid || !source) return;
   const controls = [...document.querySelectorAll('[data-corl-view]')];
   const status = document.querySelector('[data-corl-status]');
+  const resume = document.createElement('button');
+  resume.type = 'button';
+  resume.className = 'corl-resume';
+  resume.textContent = 'Play demonstrations';
+  resume.hidden = true;
   const output = document.createElement('canvas');
   output.className = 'corl-composite';
   output.setAttribute('aria-hidden', 'true');
   const renderer = window.createVideoRevealRenderer?.(source, output);
   if (!renderer) return;
   grid.prepend(output);
+  grid.append(resume);
   grid.classList.add('has-compositor');
   const playback = fetch('/media/real-table/playback.json').then((response) => response.ok ? response.json() : null).catch(() => null);
   const tiles = [...grid.querySelectorAll('[data-corl-tile]')].map((element) => ({
@@ -113,26 +119,48 @@ document.addEventListener('DOMContentLoaded', () => {
       if (paintRequest !== null) { cancelAnimationFrame(paintRequest); paintRequest = null; }
     } else {
       load();
-      if (ready) source.play().catch(() => {
-        status.textContent = 'Demonstration posters are shown. Video playback is unavailable.';
-      });
+      if (ready) play();
     }
   };
-  source.addEventListener('loadeddata', () => {
+  const play = () => {
+    // Keep play() in the tap handler's call stack for mobile autoplay policies.
+    source.play().catch(() => {
+      if (!visible || document.hidden) return;
+      resume.hidden = false;
+      status.textContent = 'Tap Play demonstrations to resume the letter videos.';
+    });
+  };
+  resume.addEventListener('click', () => {
+    if (source.error) source.load();
+    play();
+  });
+  const mediaReady = () => {
     ready = true;
-    status.textContent = 'Four synchronized CORL demonstrations ready.';
     newFrame();
     syncPlayback();
-  });
+  };
+  source.addEventListener('loadeddata', mediaReady);
+  source.addEventListener('canplay', mediaReady);
   source.addEventListener('play', scheduleFrame);
-  source.addEventListener('pause', cancelFrame);
+  source.addEventListener('playing', () => {
+    resume.hidden = true;
+    status.textContent = 'Four synchronized CORL demonstrations playing.';
+    scheduleFrame();
+  });
+  source.addEventListener('pause', () => {
+    cancelFrame();
+    if (visible && !document.hidden) resume.hidden = false;
+  });
   source.addEventListener('seeked', newFrame);
   source.addEventListener('error', () => {
-    status.textContent = 'Demonstration posters are shown. The footage could not load.';
+    status.textContent = 'The footage could not load. Tap Play demonstrations to retry.';
+    resume.hidden = false;
   });
   document.addEventListener('visibilitychange', syncPlayback);
+  window.addEventListener('pageshow', syncPlayback);
 
   controls.forEach((button) => button.addEventListener('click', () => {
+    if (source.paused && loaded) play();
     mode = button.dataset.corlView;
     controls.forEach((control) => {
       const active = control === button;
