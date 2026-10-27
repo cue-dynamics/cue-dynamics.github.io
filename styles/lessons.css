@@ -31,7 +31,7 @@
 .lesson-time-metrics { grid-area: metrics; display: flex; flex-direction: column; justify-content: center; gap: 32px; margin: 0; }
 .lesson-time-metrics p { display: flex; flex-direction: column; gap: 8px; margin: 0; }
 .lesson-time-metrics strong { display: block; font-size: clamp(32px, calc(22px + 2vw), 52px); font-weight: 400; line-height: 1.1; letter-spacing: -.045em; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.lesson-time-metrics strong span { padding-inline: 1px 3px; color: var(--lab-muted); font-size: .35em; letter-spacing: -.025em; }
+.lesson-time-metrics strong span { padding-inline: .1em .35em; color: var(--lab-muted); font-size: .7em; letter-spacing: 0; vertical-align: baseline; }
 .lesson-time-metrics strong span:last-child { padding-right: 0; }
 .lesson-time-metrics p > span { color: var(--lab-muted); font-size: 15px; }
 .lesson-collection-scope { margin: 0; color: var(--lab-muted); font-size: 14px; line-height: 1.65; text-wrap: pretty; }
