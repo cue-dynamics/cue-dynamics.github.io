@@ -71,7 +71,7 @@
 /* The opening demonstration shares the original hero's width and rhythm. */
 .paper-hero #real-table { --corl-width: 100%; border: 0; }
 .paper-hero #real-table > .lab-shell { width: 100%; max-width: none; padding: 0; }
-.paper-hero #real-table .corl-heading { width: 100%; margin-bottom: 20px; align-items: center; }
+.paper-hero #real-table .corl-heading { width: 100%; max-width: none; margin: 0 0 20px; align-items: center; }
 .paper-hero #real-table .lab-title { margin: 0; font-size: clamp(24px, 2.3vw, 32px); }
 .paper-hero #real-table .corl-tools { display: flex; align-items: center; gap: 24px; }
 .paper-hero #real-table .lab-hover-hint { padding: 0; }
