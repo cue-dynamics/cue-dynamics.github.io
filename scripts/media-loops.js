@@ -15,12 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
       video.classList.add('is-ready');
       video.parentElement.classList.add('has-loop-video');
     };
+    const hasComparisonPoster = () => video.poster && video.closest('[data-video-sync]');
     video.addEventListener('loadeddata', reveal);
     video.addEventListener('error', () => {
+      if (hasComparisonPoster()) { reveal(); return; }
       video.classList.remove('is-ready');
       video.parentElement.classList.remove('has-loop-video');
     });
-    if (video.readyState >= 2) reveal();
+    // Native posters must remain visible before a frame loads and after an error.
+    if (hasComparisonPoster() || video.readyState >= 2) reveal();
   });
 
   document.querySelectorAll('[data-video-sync]').forEach((group) => {
@@ -33,12 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const pending = new Map();
     const buffering = new Set();
     const failed = new Set();
+    const retries = new Map();
+    let retryTimer = 0;
     const active = () => tracks.filter((video) => !failed.has(video) && !video.error);
     const shouldPlay = () => inView && !document.hidden;
+    const clearRetry = () => { clearTimeout(retryTimer); retryTimer = 0; };
     const stopFrame = () => { cancelAnimationFrame(frame); frame = 0; };
     const pause = () => {
       generation++;
       pending.clear();
+      clearRetry();
       stopFrame();
       tracks.forEach((video) => video.pause());
     };
@@ -60,6 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
       active().forEach((video) => { if (video.readyState >= 1) video.currentTime = 0; });
       buffering.clear();
       start();
+    };
+    const retryable = () => tracks.filter((video) =>
+      (failed.has(video) || video.error) && (retries.get(video) || 0) < 2);
+    const recover = () => {
+      if (!shouldPlay()) return false;
+      const recovering = retryable();
+      if (!recovering.length) return false;
+      recovering.forEach((video) => {
+        retries.set(video, (retries.get(video) || 0) + 1);
+        failed.delete(video);
+        // A failed initial request can report NotSupportedError even for a
+        // supported MP4. play() alone cannot clear the media element's error.
+        video.load();
+      });
+      restart();
+      return true;
+    };
+    const scheduleRetry = () => {
+      if (!retryTimer && shouldPlay() && !blocked && retryable().length) {
+        retryTimer = setTimeout(() => { retryTimer = 0; recover(); }, 500);
+      }
     };
     const tick = () => {
       frame = 0;
@@ -94,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
           pause();
         } else if (error?.name === 'NotSupportedError') {
           failed.add(video);
+          scheduleRetry();
           settle();
         } else if (error?.name === 'AbortError') {
           settle();
@@ -120,8 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const start = (force = false) => {
       if (!shouldPlay() || (blocked && !force)) return;
-      if (force) blocked = false;
+      if (force) {
+        blocked = false;
+        retries.clear();
+        if (recover()) return;
+      }
       active().forEach((video) => requestPlay(video, force));
+      scheduleRetry();
       settle();
     };
     group.addEventListener('media:reset', () => {
@@ -129,7 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
       blocked = false;
       buffering.clear();
       failed.clear();
+      retries.clear();
       tracks.forEach((video) => {
+        if (video.poster) return;
         video.classList.remove('is-ready');
         video.parentElement.classList.remove('has-loop-video');
       });
@@ -144,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }));
       video.addEventListener('waiting', () => { buffering.add(video); settle(); });
       video.addEventListener('ended', restart);
-      video.addEventListener('error', () => { failed.add(video); settle(); });
+      video.addEventListener('error', () => { failed.add(video); scheduleRetry(); settle(); });
     });
     const updateVisibility = () => {
       if (shouldPlay()) {

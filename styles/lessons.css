@@ -1,7 +1,6 @@
 /* Three lessons, each with a visual suited to its evidence. */
-.lesson-tabs { display: flex; gap: clamp(24px, 4vw, 56px); overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--lab-line); }
-.lesson-tabs::-webkit-scrollbar { display: none; }
-.lesson-tab { flex: 0 0 auto; min-height: 54px; padding: 12px 0 17px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--lab-muted); font: inherit; font-size: 17px; white-space: nowrap; transition: color .15s, border-color .15s; }
+.lesson-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 3vw, 40px); border-bottom: 1px solid var(--lab-line); }
+.lesson-tab { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 3px; min-width: 0; min-height: 64px; padding: 12px 0 17px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--lab-muted); font: inherit; font-size: 17px; line-height: 1.35; text-align: left; white-space: normal; overflow-wrap: break-word; text-wrap: wrap; transition: color .15s, border-color .15s; }
 .lesson-tab:hover { color: var(--lab-ink); }
 .lesson-tab[aria-selected="true"] { border-bottom-color: var(--paper-accent); color: var(--lab-ink); }
 /* All panels size one grid row, keeping the page steady when tabs change. */
@@ -73,9 +72,12 @@
 .lesson-panel-status { margin-top: 16px; color: var(--lab-muted); font-size: 15px; }
 .lesson-panel-status:empty { display: none; }
 
+@media (max-width: 1100px) {
+  .lesson-tabs { grid-template-columns: minmax(0, 1fr); grid-auto-rows: 1fr; gap: 0; border-top: 1px solid var(--lab-line); border-bottom: 0; }
+  .lesson-tab { padding: 14px; border-bottom: 1px solid var(--lab-line); border-inline-start: 3px solid transparent; font-size: 16px; text-wrap: pretty; }
+  .lesson-tab[aria-selected="true"] { border-bottom-color: var(--lab-line); border-inline-start-color: var(--paper-accent); }
+}
 @media (max-width: 767px) {
-  .lesson-tabs { gap: 25px; }
-  .lesson-tab { font-size: 16px; }
   .lesson-panel { padding-top: 24px; }
   .lesson-intro { margin-bottom: 20px; }
   .lesson-track-legend { top: 10px; left: 10px; max-width: calc(100% - 20px); padding: 6px 9px; font-size: 13px; gap: 5px 16px; }

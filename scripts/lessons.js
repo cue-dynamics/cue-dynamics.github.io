@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const section = document.getElementById('limitations');
   if (!section?.querySelector('[data-lesson-tab]')) return;
   const tabs = [...section.querySelectorAll('[data-lesson-tab]')];
+  const tabList = section.querySelector('[role="tablist"]');
+  const stackedTabs = window.matchMedia('(max-width: 1100px)');
+  const syncTabOrientation = () => {
+    tabList.setAttribute('aria-orientation', stackedTabs.matches ? 'vertical' : 'horizontal');
+  };
+  syncTabOrientation();
+  stackedTabs.addEventListener('change', syncTabOrientation);
   const panels = [...section.querySelectorAll('[data-lesson-panel]')];
   const videos = [...section.querySelectorAll('[data-lesson-video]')];
   const tracking = section.querySelector('[data-tracking-video]');
@@ -97,8 +104,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     tab.addEventListener('click', () => selectLesson(tab.dataset.lessonTab));
     tab.addEventListener('keydown', (event) => {
       let next;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+      if (event.key === (stackedTabs.matches ? 'ArrowDown' : 'ArrowRight')) next = (index + 1) % tabs.length;
+      if (event.key === (stackedTabs.matches ? 'ArrowUp' : 'ArrowLeft')) next = (index + tabs.length - 1) % tabs.length;
       if (event.key === 'Home') next = 0;
       if (event.key === 'End') next = tabs.length - 1;
       if (next !== undefined) {
