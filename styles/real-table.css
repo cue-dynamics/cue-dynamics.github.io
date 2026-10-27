@@ -67,6 +67,20 @@
 #real-table .is-key-revealing .corl-lens { opacity: 0; }
 #real-table .corl-source { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 #real-table .corl-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+/* The opening demonstration shares the original hero's width and rhythm. */
+.paper-hero #real-table { --corl-width: 100%; border: 0; }
+.paper-hero #real-table > .lab-shell { width: 100%; max-width: none; padding: 0; }
+.paper-hero #real-table .corl-heading { width: 100%; margin-bottom: 20px; align-items: center; }
+.paper-hero #real-table .lab-title { margin: 0; font-size: clamp(24px, 2.3vw, 32px); }
+.paper-hero #real-table .corl-tools { display: flex; align-items: center; gap: 24px; }
+.paper-hero #real-table .lab-hover-hint { padding: 0; }
+.paper-hero #real-table .corl-grid { width: 100%; max-width: none; padding-bottom: 0; }
+.paper-hero #real-table .corl-caption { max-width: 78ch; margin: 20px 0 0; color: var(--lab-muted); font-size: 16px; line-height: 1.65; text-wrap: pretty; }
+
+@media (max-width: 991px) {
+  .paper-hero #real-table .corl-tools { display: grid; gap: 3px; }
+}
 @media (max-width: 767px) {
   #real-table .corl-grid { gap: 12px; padding-bottom: 46px; }
 }
@@ -75,7 +89,11 @@
   #real-table .corl-heading { flex-direction: column; align-items: flex-start; gap: 17px; }
   #real-table .corl-tools { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
   #real-table .lab-hover-hint { max-width: 170px; font-size: 14px; }
+  .paper-hero #real-table .corl-heading { align-items: flex-start; gap: 10px; }
+  .paper-hero #real-table .corl-tools { width: 100%; display: flex; gap: 14px; justify-content: space-between; }
+  .paper-hero #real-table .corl-caption { font-size: 15px; }
 }
+@media (hover: none) { .paper-hero #real-table .lab-hover-hint { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   #real-table .corl-lens { transition: none; }
 }
