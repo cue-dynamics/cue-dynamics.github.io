@@ -4,7 +4,7 @@
   "stages": [
     {
       "stage": "strike",
-      "panel": 1,
+      "panel": 2,
       "model": "pred_iter01",
       "video": "/media/calibration-loop/calibration-strike-prior-v1-pair-b22e2c9dbf.mp4",
       "real_poster": "/media/calibration-loop/calibration-strike-prior-v1-real-e8f1ec76b2.webp",
@@ -66,11 +66,11 @@
     },
     {
       "stage": "compare",
-      "panel": 2,
+      "panel": 3,
       "model": "pred_iter01",
-      "video": "/media/calibration-loop/calibration-compare-prior-v1-pair-d74e68b077.mp4",
-      "real_poster": "/media/calibration-loop/calibration-compare-prior-v1-real-32ad92e234.webp",
-      "model_poster": "/media/calibration-loop/calibration-compare-prior-v1-model-7f7a9c37e4.png",
+      "video": "/media/calibration-loop/calibration-compare-prior-clean-v2-pair-6111c0a1cc.mp4",
+      "real_poster": "/media/calibration-loop/calibration-compare-prior-clean-v2-real-ebd12dea18.webp",
+      "model_poster": "/media/calibration-loop/calibration-compare-prior-clean-v2-model-129200c488.png",
       "width": 2880,
       "height": 672,
       "fps": 60,
@@ -96,12 +96,52 @@
       "endpoint_error_mm": 99.3,
       "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261024_191404/sim/pred_iter01/sim_states.npz",
       "states_sha256": "8fce2dc42e74cff2a5964f21892430488525ea683b392db1b80128fc4e98f87e",
-      "scene_sha256": "d6eeb23885a46b29afd0e9f7893983ce9b515d86a0390315b29038cd093d6a9e",
+      "scene_sha256": "1ba3f785b7fda4eb4fdf317c34e3651f22f57e8e9165b71921e5b9f5faf70dec",
       "camera": "overhead",
-      "trails_sha256": "a956022358d20a9f1168654058d6bbe84890fd56a3a14c48b9cd138baf950fb0",
-      "annotations": "observed white and earlier-model red on both views",
+      "trails_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "annotations": "Ball-sized markers follow their shared smoothed paths; own path solid, counterpart dashed",
+      "annotation_style": {
+        "version": 3,
+        "colors": {
+          "observed": [
+            238,
+            237,
+            231
+          ],
+          "model": [
+            255,
+            108,
+            100
+          ]
+        },
+        "real": {
+          "observed": "solid",
+          "model": "dashed"
+        },
+        "simulation": {
+          "observed": "dashed",
+          "model": "solid"
+        },
+        "dash_px": [
+          9,
+          6
+        ],
+        "line_width_px": 2,
+        "markers": "Ball-sized continuous markers; filled own ball and outlined counterpart",
+        "sizing": "Projected silhouette of the approved 12.5 mm radius ball, including camera distortion and crop",
+        "smoothing": {
+          "observed_window_frames": 11,
+          "polynomial": 3,
+          "curve": "shape-preserving cubic",
+          "model": "Exact saved positions; no tracking noise filter",
+          "shared_path_and_marker": true,
+          "fixed_endpoints_and_contact_knots": true,
+          "stationary_tolerance_ball_radius": 0.18
+        }
+      },
+      "annotation_renderer_sha256": "887e60ab36114df1c57a29000a8fbd810cbed084add0ada7177ee75bb331be32",
       "render": {
-        "job": "calibration-compare-prior-v1",
+        "job": "calibration-compare-prior-clean-v2",
         "renderer": "Blender Cycles OptiX",
         "samples": 24,
         "denoiser": "OpenImageDenoise GPU",
@@ -112,7 +152,7 @@
           3840,
           1344
         ],
-        "scene_sha256": "d6eeb23885a46b29afd0e9f7893983ce9b515d86a0390315b29038cd093d6a9e",
+        "scene_sha256": "1ba3f785b7fda4eb4fdf317c34e3651f22f57e8e9165b71921e5b9f5faf70dec",
         "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
         "physics_stepped": false,
         "trajectories_modified": false,
@@ -128,11 +168,11 @@
     },
     {
       "stage": "update",
-      "panel": 3,
+      "panel": 4,
       "model": "fit_iter02",
-      "video": "/media/calibration-loop/calibration-update-fitted-v1-pair-2bf19f48fc.mp4",
-      "real_poster": "/media/calibration-loop/calibration-update-fitted-v1-real-35119bf468.webp",
-      "model_poster": "/media/calibration-loop/calibration-update-fitted-v1-model-4a48c79e12.png",
+      "video": "/media/calibration-loop/calibration-update-fitted-clean-v2-pair-cd18f18860.mp4",
+      "real_poster": "/media/calibration-loop/calibration-update-fitted-clean-v2-real-4a0715a130.webp",
+      "model_poster": "/media/calibration-loop/calibration-update-fitted-clean-v2-model-3da01d2a96.png",
       "width": 2880,
       "height": 672,
       "fps": 60,
@@ -158,12 +198,52 @@
       "endpoint_error_mm": 2.3,
       "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261024_191404/sim/fit_iter02/sim_states.npz",
       "states_sha256": "b07057ac3d9c6e8403225b23f8e34b3ce7e3ab5a3bfe084110af18ba817b6f10",
-      "scene_sha256": "fb067a000abdb38e2535d2adad0b64a9e09cb3f6091a47bc0d3ce638b451e8d3",
+      "scene_sha256": "7f69f2304888e27a247012103f2ad855e3e05ddebfaa108d36c83c17bef97f5a",
       "camera": "overhead",
-      "trails_sha256": "c440fc0a616089b1adebe16964ca5dd37062b68c0006e32c9801da134b6625ef",
-      "annotations": "observed white / fitted model red",
+      "trails_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "annotations": "Ball-sized markers follow their shared smoothed paths; own path solid, counterpart dashed",
+      "annotation_style": {
+        "version": 3,
+        "colors": {
+          "observed": [
+            238,
+            237,
+            231
+          ],
+          "model": [
+            255,
+            108,
+            100
+          ]
+        },
+        "real": {
+          "observed": "solid",
+          "model": "dashed"
+        },
+        "simulation": {
+          "observed": "dashed",
+          "model": "solid"
+        },
+        "dash_px": [
+          9,
+          6
+        ],
+        "line_width_px": 2,
+        "markers": "Ball-sized continuous markers; filled own ball and outlined counterpart",
+        "sizing": "Projected silhouette of the approved 12.5 mm radius ball, including camera distortion and crop",
+        "smoothing": {
+          "observed_window_frames": 11,
+          "polynomial": 3,
+          "curve": "shape-preserving cubic",
+          "model": "Exact saved positions; no tracking noise filter",
+          "shared_path_and_marker": true,
+          "fixed_endpoints_and_contact_knots": true,
+          "stationary_tolerance_ball_radius": 0.18
+        }
+      },
+      "annotation_renderer_sha256": "887e60ab36114df1c57a29000a8fbd810cbed084add0ada7177ee75bb331be32",
       "render": {
-        "job": "calibration-update-fitted-v1",
+        "job": "calibration-update-fitted-clean-v2",
         "renderer": "Blender Cycles OptiX",
         "samples": 24,
         "denoiser": "OpenImageDenoise GPU",
@@ -174,7 +254,7 @@
           3840,
           1344
         ],
-        "scene_sha256": "fb067a000abdb38e2535d2adad0b64a9e09cb3f6091a47bc0d3ce638b451e8d3",
+        "scene_sha256": "7f69f2304888e27a247012103f2ad855e3e05ddebfaa108d36c83c17bef97f5a",
         "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
         "physics_stepped": false,
         "trajectories_modified": false,

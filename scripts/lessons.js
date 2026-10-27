@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const timeline = section.querySelector('[data-shot-timeline]');
   const status = section.querySelector('[data-lessons-status]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let selected = 'effort';
+  let selected = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true')?.dataset.lessonTab || tabs[0].dataset.lessonTab;
   let visible = !('IntersectionObserver' in window);
   let frame = 0;
   let manifest;

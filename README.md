@@ -4,4 +4,4 @@ Closing the Dynamics Gap through Self-Directed Robotic Interaction
 
 Project website: https://cue-dynamics.github.io/
 
-Static website snapshot published from the project website source.
+Automatically published from the `dist/` folder of `L-pabon/corl_late_breaking` on pushes to `main`.

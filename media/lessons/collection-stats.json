@@ -1,0 +1,1112 @@
+{
+  "schema": "cue_recorded_collection_v1",
+  "timezone": "America/Los_Angeles",
+  "source": "franka_station/autonomous_run/shots/shot_*/shot.json and stroke.csv",
+  "count_definition": "One physical shot record with a recorded stroke log. Includes four strokes interrupted by a reflex after recorded ball motion; excludes directories without a shot record and simulated replays.",
+  "elapsed_definition": "Elapsed time between first and last recording timestamps. Includes planning, perception, fitting, tooling, table resets, and breaks; these overlapping scopes are not additive.",
+  "scopes": [
+    {
+      "name": "Full recorded collection",
+      "physical_shots": 159,
+      "first_shot": "shot_20261024_184040",
+      "last_shot": "shot_20261026_055112",
+      "first_recording_local": "2026-10-24T18:40:40",
+      "last_recording_local": "2026-10-26T05:51:12",
+      "elapsed_seconds": 126632,
+      "note": "Includes multiple runs, table resets, and breaks between sessions.",
+      "shots": [
+        "shot_20261024_184040",
+        "shot_20261024_191404",
+        "shot_20261024_194202",
+        "shot_20261024_202352",
+        "shot_20261024_204910",
+        "shot_20261024_213345",
+        "shot_20261024_220349",
+        "shot_20261024_223338",
+        "shot_20261024_230419",
+        "shot_20261024_233105",
+        "shot_20261024_233958",
+        "shot_20261024_235307",
+        "shot_20261024_235932",
+        "shot_20261025_000611",
+        "shot_20261025_001048",
+        "shot_20261025_001457",
+        "shot_20261025_001945",
+        "shot_20261025_005218",
+        "shot_20261025_005607",
+        "shot_20261025_005905",
+        "shot_20261025_010618",
+        "shot_20261025_013100",
+        "shot_20261025_013740",
+        "shot_20261025_014726",
+        "shot_20261025_015334",
+        "shot_20261025_020028",
+        "shot_20261025_021311",
+        "shot_20261025_021903",
+        "shot_20261025_022508",
+        "shot_20261025_023057",
+        "shot_20261025_023941",
+        "shot_20261025_024609",
+        "shot_20261025_031038",
+        "shot_20261025_032735",
+        "shot_20261025_033151",
+        "shot_20261025_035531",
+        "shot_20261025_035950",
+        "shot_20261025_040508",
+        "shot_20261025_040829",
+        "shot_20261025_041121",
+        "shot_20261025_041404",
+        "shot_20261025_043644",
+        "shot_20261025_044006",
+        "shot_20261025_044325",
+        "shot_20261025_044635",
+        "shot_20261025_044926",
+        "shot_20261025_045332",
+        "shot_20261025_051154",
+        "shot_20261025_051512",
+        "shot_20261025_051811",
+        "shot_20261025_052107",
+        "shot_20261025_052557",
+        "shot_20261025_052856",
+        "shot_20261025_060135",
+        "shot_20261025_060455",
+        "shot_20261025_060832",
+        "shot_20261025_061141",
+        "shot_20261025_061526",
+        "shot_20261025_061827",
+        "shot_20261025_064442",
+        "shot_20261025_064758",
+        "shot_20261025_065136",
+        "shot_20261025_065517",
+        "shot_20261025_065910",
+        "shot_20261025_070557",
+        "shot_20261025_074312",
+        "shot_20261025_074655",
+        "shot_20261025_074945",
+        "shot_20261025_075246",
+        "shot_20261025_075533",
+        "shot_20261025_075854",
+        "shot_20261025_174854",
+        "shot_20261025_175242",
+        "shot_20261025_175630",
+        "shot_20261025_180014",
+        "shot_20261025_180321",
+        "shot_20261025_180620",
+        "shot_20261025_183113",
+        "shot_20261025_183424",
+        "shot_20261025_183747",
+        "shot_20261025_184145",
+        "shot_20261025_184456",
+        "shot_20261025_184805",
+        "shot_20261025_190018",
+        "shot_20261025_190338",
+        "shot_20261025_190804",
+        "shot_20261025_191540",
+        "shot_20261025_191950",
+        "shot_20261025_192257",
+        "shot_20261025_194819",
+        "shot_20261025_195147",
+        "shot_20261025_195516",
+        "shot_20261025_195846",
+        "shot_20261025_200236",
+        "shot_20261025_200601",
+        "shot_20261025_203912",
+        "shot_20261025_204232",
+        "shot_20261025_204523",
+        "shot_20261025_204847",
+        "shot_20261025_205220",
+        "shot_20261025_205608",
+        "shot_20261025_212701",
+        "shot_20261025_213018",
+        "shot_20261025_213337",
+        "shot_20261025_213644",
+        "shot_20261025_213932",
+        "shot_20261025_214236",
+        "shot_20261025_215619",
+        "shot_20261025_215944",
+        "shot_20261025_220410",
+        "shot_20261025_220717",
+        "shot_20261025_221011",
+        "shot_20261025_221312",
+        "shot_20261025_232506",
+        "shot_20261025_232801",
+        "shot_20261025_233104",
+        "shot_20261025_233421",
+        "shot_20261025_233729",
+        "shot_20261025_234046",
+        "shot_20261026_000928",
+        "shot_20261026_001215",
+        "shot_20261026_001531",
+        "shot_20261026_001840",
+        "shot_20261026_002156",
+        "shot_20261026_002459",
+        "shot_20261026_005406",
+        "shot_20261026_005706",
+        "shot_20261026_010020",
+        "shot_20261026_010832",
+        "shot_20261026_011139",
+        "shot_20261026_014855",
+        "shot_20261026_015201",
+        "shot_20261026_015523",
+        "shot_20261026_015828",
+        "shot_20261026_020141",
+        "shot_20261026_020436",
+        "shot_20261026_030537",
+        "shot_20261026_040102",
+        "shot_20261026_040355",
+        "shot_20261026_040655",
+        "shot_20261026_041007",
+        "shot_20261026_041246",
+        "shot_20261026_041603",
+        "shot_20261026_043802",
+        "shot_20261026_044101",
+        "shot_20261026_044402",
+        "shot_20261026_044715",
+        "shot_20261026_050237",
+        "shot_20261026_050535",
+        "shot_20261026_050835",
+        "shot_20261026_051151",
+        "shot_20261026_051430",
+        "shot_20261026_051745",
+        "shot_20261026_053611",
+        "shot_20261026_053903",
+        "shot_20261026_054203",
+        "shot_20261026_054516",
+        "shot_20261026_054800",
+        "shot_20261026_055112"
+      ]
+    },
+    {
+      "name": "First overnight collection",
+      "physical_shots": 71,
+      "first_shot": "shot_20261024_184040",
+      "last_shot": "shot_20261025_075854",
+      "first_recording_local": "2026-10-24T18:40:40",
+      "last_recording_local": "2026-10-25T07:58:54",
+      "elapsed_seconds": 47894,
+      "note": "Includes calibration and letter trials separated by table resets.",
+      "shots": [
+        "shot_20261024_184040",
+        "shot_20261024_191404",
+        "shot_20261024_194202",
+        "shot_20261024_202352",
+        "shot_20261024_204910",
+        "shot_20261024_213345",
+        "shot_20261024_220349",
+        "shot_20261024_223338",
+        "shot_20261024_230419",
+        "shot_20261024_233105",
+        "shot_20261024_233958",
+        "shot_20261024_235307",
+        "shot_20261024_235932",
+        "shot_20261025_000611",
+        "shot_20261025_001048",
+        "shot_20261025_001457",
+        "shot_20261025_001945",
+        "shot_20261025_005218",
+        "shot_20261025_005607",
+        "shot_20261025_005905",
+        "shot_20261025_010618",
+        "shot_20261025_013100",
+        "shot_20261025_013740",
+        "shot_20261025_014726",
+        "shot_20261025_015334",
+        "shot_20261025_020028",
+        "shot_20261025_021311",
+        "shot_20261025_021903",
+        "shot_20261025_022508",
+        "shot_20261025_023057",
+        "shot_20261025_023941",
+        "shot_20261025_024609",
+        "shot_20261025_031038",
+        "shot_20261025_032735",
+        "shot_20261025_033151",
+        "shot_20261025_035531",
+        "shot_20261025_035950",
+        "shot_20261025_040508",
+        "shot_20261025_040829",
+        "shot_20261025_041121",
+        "shot_20261025_041404",
+        "shot_20261025_043644",
+        "shot_20261025_044006",
+        "shot_20261025_044325",
+        "shot_20261025_044635",
+        "shot_20261025_044926",
+        "shot_20261025_045332",
+        "shot_20261025_051154",
+        "shot_20261025_051512",
+        "shot_20261025_051811",
+        "shot_20261025_052107",
+        "shot_20261025_052557",
+        "shot_20261025_052856",
+        "shot_20261025_060135",
+        "shot_20261025_060455",
+        "shot_20261025_060832",
+        "shot_20261025_061141",
+        "shot_20261025_061526",
+        "shot_20261025_061827",
+        "shot_20261025_064442",
+        "shot_20261025_064758",
+        "shot_20261025_065136",
+        "shot_20261025_065517",
+        "shot_20261025_065910",
+        "shot_20261025_070557",
+        "shot_20261025_074312",
+        "shot_20261025_074655",
+        "shot_20261025_074945",
+        "shot_20261025_075246",
+        "shot_20261025_075533",
+        "shot_20261025_075854"
+      ]
+    },
+    {
+      "name": "Initial calibration run",
+      "physical_shots": 17,
+      "first_shot": "shot_20261024_184040",
+      "last_shot": "shot_20261025_001945",
+      "first_recording_local": "2026-10-24T18:40:40",
+      "last_recording_local": "2026-10-25T00:19:45",
+      "elapsed_seconds": 20345,
+      "note": "No table resets; robot recoveries and software changes occurred.",
+      "shots": [
+        "shot_20261024_184040",
+        "shot_20261024_191404",
+        "shot_20261024_194202",
+        "shot_20261024_202352",
+        "shot_20261024_204910",
+        "shot_20261024_213345",
+        "shot_20261024_220349",
+        "shot_20261024_223338",
+        "shot_20261024_230419",
+        "shot_20261024_233105",
+        "shot_20261024_233958",
+        "shot_20261024_235307",
+        "shot_20261024_235932",
+        "shot_20261025_000611",
+        "shot_20261025_001048",
+        "shot_20261025_001457",
+        "shot_20261025_001945"
+      ],
+      "table_resets": 0
+    },
+    {
+      "name": "First ten shots shown in the video timeline",
+      "physical_shots": 10,
+      "first_shot": "shot_20261024_184040",
+      "last_shot": "shot_20261024_233105",
+      "first_recording_local": "2026-10-24T18:40:40",
+      "last_recording_local": "2026-10-24T23:31:05",
+      "elapsed_seconds": 17425,
+      "note": "An excerpt of the initial calibration run.",
+      "shots": [
+        "shot_20261024_184040",
+        "shot_20261024_191404",
+        "shot_20261024_194202",
+        "shot_20261024_202352",
+        "shot_20261024_204910",
+        "shot_20261024_213345",
+        "shot_20261024_220349",
+        "shot_20261024_223338",
+        "shot_20261024_230419",
+        "shot_20261024_233105"
+      ]
+    }
+  ],
+  "recorded_strokes": [
+    {
+      "id": "shot_20261024_184040",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_191404",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_194202",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": false
+    },
+    {
+      "id": "shot_20261024_202352",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_204910",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_213345",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_220349",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_223338",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": false
+    },
+    {
+      "id": "shot_20261024_230419",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_233105",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_233958",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_235307",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261024_235932",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_000611",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": false
+    },
+    {
+      "id": "shot_20261025_001048",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_001457",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_001945",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_005218",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_005607",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_005905",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_010618",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_013100",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_013740",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_014726",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_015334",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_020028",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_021311",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_021903",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_022508",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_023057",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_023941",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_024609",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_031038",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_032735",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_033151",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_035531",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_035950",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_040508",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_040829",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_041121",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_041404",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_043644",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_044006",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_044325",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_044635",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_044926",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_045332",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_051154",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_051512",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_051811",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_052107",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_052557",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_052856",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_060135",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_060455",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_060832",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_061141",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_061526",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_061827",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_064442",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_064758",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_065136",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_065517",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_065910",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_070557",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_074312",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_074655",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_074945",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_075246",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_075533",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_075854",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_174854",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_175242",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_175630",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_180014",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_180321",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_180620",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_183113",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_183424",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_183747",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_184145",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_184456",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_184805",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_190018",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_190338",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_190804",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_191540",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_191950",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_192257",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_194819",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_195147",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_195516",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_195846",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_200236",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_200601",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_203912",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_204232",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_204523",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_204847",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_205220",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_205608",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_212701",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_213018",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_213337",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_213644",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_213932",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_214236",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_215619",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_215944",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_220410",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_220717",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_221011",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_221312",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_232506",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_232801",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_233104",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_233421",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_233729",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261025_234046",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_000928",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_001215",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_001531",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_001840",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_002156",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_002459",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_005406",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_005706",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_010020",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_010832",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_011139",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_014855",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_015201",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_015523",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_015828",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_020141",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_020436",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_030537",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": false
+    },
+    {
+      "id": "shot_20261026_040102",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_040355",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_040655",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_041007",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_041246",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_041603",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_043802",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_044101",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_044402",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_044715",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_050237",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_050535",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_050835",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_051151",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_051430",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_051745",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_053611",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_053903",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_054203",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_054516",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_054800",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    },
+    {
+      "id": "shot_20261026_055112",
+      "stroke_recorded": true,
+      "stroke_completed_without_reflex": true
+    }
+  ]
+}

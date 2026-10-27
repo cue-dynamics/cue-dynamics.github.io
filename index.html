@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="/styles/real-table.css"/>
 <link rel="stylesheet" href="/styles/lessons.css"/>
 <link href="/styles/unseen-shots.css" rel="stylesheet">
-</head><body class="paper-project"><div class="styles w-embed"><link rel="stylesheet" href="/styles/custom-02.css"/><link rel="stylesheet" href="/styles/paper.css"/><link rel="stylesheet" href="/styles/layouts.css"/><link rel="stylesheet" href="/styles/study-method.css"/></div><div id="top" class="top"></div><div class="main pointer-events-disabled"><header class="paper-hero" aria-labelledby="paper-title">
+</head><body class="paper-project"><div class="styles w-embed"><link rel="stylesheet" href="/styles/custom-02.css"/><link rel="stylesheet" href="/styles/paper.css"/><link rel="stylesheet" href="/styles/layouts.css"/><link rel="stylesheet" href="/styles/study-method.css"/></div><div id="top" class="top"></div><div class="main pointer-events-disabled"><nav class="lab-index" aria-label="Study sections"><a class="lab-index-brand" href="#top" aria-label="CUE home"><img src="/media/branding/cue-logo.png" width="2496" height="1248" alt="CUE" decoding="async"></a><div class="lab-index-links"><a href="#real-table" data-section-link="real-table">Real-world control</a><a href="#dynamics-gap" data-section-link="dynamics-gap">Simulation gap</a><a href="#project-video" data-section-link="project-video">Project video</a><a href="#calibration-loop" data-section-link="calibration-loop">Calibration</a><a href="#prediction-results" data-section-link="prediction-results">Prediction accuracy</a><a href="#limitations" data-section-link="limitations">Lessons learned</a></div></nav>
+<header class="paper-hero" aria-labelledby="paper-title">
   <div class="paper-hero-shell">
     <div class="paper-hero-masthead">
       <a href="#top" class="paper-brand" aria-label="CUE home">
@@ -26,15 +27,16 @@
 <div class="lab-shell">
   <header class="lab-section-heading corl-heading">
     <div class="lab-heading-copy"><h2 id="real-title" class="lab-title font-header-clean">A robot that teaches its own simulator</h2>
+      <p class="lab-section-intro">CUE learns the table’s physics through its own experiments, then uses the calibrated simulator to plan real shots. Here, that Real2Sim2Real loop arranges balls into letters.</p>
 </div>
-    <div class="corl-tools">
+  </header>
+  <div class="lab-tool-row corl-tools">
       <div class="lab-tabs" role="group" aria-label="CORL demonstration view">
         <button type="button" class="lab-tab is-active" data-corl-view="real" aria-pressed="true">Real</button>
         <button type="button" class="lab-tab" data-corl-view="simulation" aria-pressed="false">Simulation</button>
       </div>
       <span class="lab-micro lab-hover-hint">Hover to see the simulation</span>
-    </div>
-  </header>
+  </div>
   <div class="corl-grid" data-corl-grid aria-label="C O R L demonstrations">
     <figure class="corl-tile" data-corl-tile="C" data-real-crop="0,0,960,540" data-sim-crop="960,0,960,540">
   <div class="corl-stage" tabindex="0" role="group" aria-label="Letter C real and simulation comparison">
@@ -65,7 +67,6 @@
   </div>
 </figure>
   </div>
-  <p class="corl-caption">CUE learns the table’s physics through its own experiments, then uses the calibrated simulator to plan real shots. Here, that Real2Sim2Real loop arranges balls into letters.</p>
   <p class="corl-status" data-corl-status role="status" aria-live="polite"></p>
   <video class="corl-source" data-corl-source data-alpha-layout="corl" data-src="/media/real-table/corl-blender-alpha.mp4" data-mobile-src="/media/real-table/corl-blender-alpha-mobile.mp4" data-frame-width="3840" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
 </div>
@@ -74,19 +75,9 @@
     </div>
   </div>
 </header>
-<section id="project-video" class="lab-section paper-video-section" aria-labelledby="project-video-title">
-  <div class="paper-video-shell">
-    <header class="paper-video-heading"><h2 id="project-video-title" class="font-header-clean">Project video</h2></header>
-        <figure class="paper-film" aria-label="CUE project video">
-          <div class="paper-video-placeholder paper-hero-video">
-            <video data-loop-video data-video-controls controls autoplay muted loop playsinline preload="metadata" src="/media/project-video/cue-v25-1080p-a83d65de9365.mp4" poster="/media/project-video/cue-v25-poster-a57f99a3e80d.jpg" width="1920" height="1080" aria-label="CUE project overview"></video>
-          </div>
-        </figure>
-  </div>
-</section>
 <div class="content"><div class="grid-content-wrapper">
-<nav class="lab-index" aria-label="Study sections"><a class="lab-index-brand" href="#top" aria-label="CUE home"><img src="/media/branding/cue-logo.png" width="2496" height="1248" alt="CUE" decoding="async"></a><div class="lab-index-links"><a href="#real-table" data-section-link="real-table">Forming letters</a><a href="#dynamics-gap" data-section-link="dynamics-gap">Simulation gap</a><a href="#shot-selection" data-section-link="shot-selection">Choosing shots</a><a href="#calibration-loop" data-section-link="calibration-loop">Calibration</a><a href="#prediction-results" data-section-link="prediction-results">Prediction accuracy</a><a href="#limitations" data-section-link="limitations">Lessons learned</a></div></nav><section id="dynamics-gap" class="lab-section lab-section-immersive" aria-labelledby="gap-title"><div class="lab-shell"><header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="gap-title" class="lab-title font-header-clean gap-reveal-title">Real2Sim2Real is <span class="gap-not" aria-hidden="true">NOT</span> solved!</h2>
-<p class="lab-section-intro gap-reveal-copy" aria-hidden="true">Visual reconstruction alone does not reliably identify the dynamics.</p>
+<section id="dynamics-gap" class="lab-section lab-section-immersive" aria-labelledby="gap-title"><div class="lab-shell"><header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="gap-title" class="lab-title font-header-clean">Real2Sim2Real is <span class="gap-not">NOT</span> solved!</h2>
+<p class="lab-section-intro">Visual reconstruction alone does not reliably identify the dynamics.</p>
 </div></header>
 <div class="lab-tool-row lab-gap-toolbar"><div class="lab-tabs" role="group" aria-label="Comparison example"><button type="button" class="lab-tab is-active" data-gap-example="Cushion" aria-pressed="true">Cushion rebound</button><button type="button" class="lab-tab" data-gap-example="Collision" aria-pressed="false">Collision</button></div><p class="lab-gap-caption" data-gap-caption>The real cushion absorbs more energy than the model expects.</p></div>
 <div class="lab-comparison" data-video-sync data-gap-comparison><div class="lab-frame" data-gap-real><video data-loop-video autoplay muted loop playsinline preload="auto" src="/media/dynamics-gap/cushion-real-matched-34d591866d.mp4" poster="/media/dynamics-gap/cushion-real-matched-9aebd8d65b.jpg" aria-label="Real: cushion rebound example"></video>
@@ -99,59 +90,58 @@
 
  </div></div>
 <span class="lab-gap-status" data-gap-status role="status" aria-live="polite"></span>
-</div></section><section id="shot-selection" class="lab-section lab-section-muted lab-method-section" aria-labelledby="selection-title">
-<div class="lab-shell">
-  <header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="selection-title" class="lab-title font-header-clean">What the agent discovered</h2>
-<p class="lab-section-intro">CUE builds its own calibration tools and chooses physical experiments to improve its simulator. Follow its recorded decisions alongside the shots below.</p></div></header>
-  <div class="lab-planner lab-method-planner">
-    <div class="lab-plan-canvas">
-      <div class="lab-decision-topline">
-        <div class="lab-tabs" role="group" aria-label="Experiment view">
-          <button type="button" class="lab-tab is-active" data-decision-mode="predicted" aria-pressed="true">Predicted outcomes</button>
-          <button type="button" class="lab-tab" data-decision-mode="executed" aria-pressed="false">Executed shot</button>
-        </div>
-      </div>
-      <div class="lab-decision-stage">
-        <div id="decision-map" class="lab-decision-map" data-decision-map role="group" aria-labelledby="decision-map-title">
-          <span id="decision-map-title" class="lab-study-status">Simulated outcomes: Selected shot</span>
-          <img class="lab-decision-render" data-candidate-visual="0" src="/media/calibration-loop/selection-chosen.webp" width="1920" height="1296" decoding="async" alt="Selected shot: predicted ball paths fan out across the table.">
-          <img class="lab-decision-render" data-candidate-visual="1" src="/media/calibration-loop/selection-low.webp" width="1920" height="1296" decoding="async" alt="Little to learn: predicted ball paths stay close together." hidden>
-          <img class="lab-decision-render" data-candidate-visual="2" src="/media/calibration-loop/selection-noisy.webp" width="1920" height="1296" decoding="async" alt="Hard to interpret: predicted ball paths spread toward the middle pocket." hidden>
-          <img class="lab-decision-render" data-candidate-visual="3" src="/media/calibration-loop/selection-blocked.webp" width="1920" height="1296" decoding="async" alt="Unreachable/Unsafe: the black ball is highlighted and a red clearance marker crosses the rail." hidden>
-        </div>
-        <div class="lab-decision-executed" data-decision-executed hidden>
-          <video data-loop-video data-method-video muted loop playsinline preload="metadata" src="/media/calibration-loop/interact.mp4" poster="/media/calibration-loop/interact.jpg" aria-label="Real footage of the robot executing the selected yellow-ball shot."></video>
-        </div>
-      </div>
-      <div class="lab-decision-legend" data-decision-legend><span><i class="lab-key-prediction" aria-hidden="true"></i>Predicted paths</span></div>
-    </div>
-    <aside class="lab-candidate-list" aria-label="Inspect candidate experiments">
-      <div class="agent-terminal" role="note" aria-label="Agent experiment decision summary">
-        <div class="agent-terminal-window"><span aria-hidden="true">● ● ●</span><span>claude — experiment selection</span></div>
-        <div class="agent-terminal-bar"><pre class="agent-terminal-mark" aria-hidden="true">▐▛███▜▌
-▝▜█████▛▘
-  ▘▘ ▝▝</pre><div><strong>Claude Code</strong><span class="agent-terminal-context">CUE · experiment selection</span></div></div>
-
-        <div class="agent-terminal-prompt"><span aria-hidden="true">❯</span> Choose the next experiment.</div>
-        <div class="agent-terminal-entry"><span aria-hidden="true">●</span><p>Comparing 282 candidate shots across 10 models.</p></div>
-        <div class="agent-terminal-entry"><span aria-hidden="true">●</span><p data-agent-decision>Differences between models exceed variation from the strike.</p></div>
-        <div class="agent-terminal-entry agent-terminal-result"><span aria-hidden="true">⎿</span><p>Recorded choice: yellow ball, 0.35 m/s.</p></div>
-        <div class="agent-terminal-input" aria-hidden="true">❯ <span>▌</span></div>
-        <p class="agent-terminal-source">Illustrated session · not a verbatim transcript</p>
-      </div>
-      <div class="lab-list-heading">Which shot teaches us more?</div>
-      <button type="button" class="lab-candidate lab-method-candidate" data-candidate="1" aria-pressed="false" aria-controls="decision-map"><span class="lab-candidate-ball" style="--ball-color:var(--ball-purple)"></span><span class="lab-candidate-copy">Little to learn<span>Purple · 0.15 m/s</span></span></button>
-      <button type="button" class="lab-candidate lab-method-candidate" data-candidate="2" aria-pressed="false" aria-controls="decision-map"><span class="lab-candidate-ball" style="--ball-color:var(--ball-purple)"></span><span class="lab-candidate-copy">Hard to interpret<span>Purple · 0.45 m/s</span></span></button>
-      <button type="button" class="lab-candidate lab-method-candidate" data-candidate="3" aria-pressed="false" aria-controls="decision-map"><span class="lab-candidate-ball" style="--ball-color:#151714"></span><span class="lab-candidate-copy">Unreachable/<wbr>Unsafe<span>Black · Clearance limit</span></span><span class="lab-candidate-verdict">Blocked</span></button>
-      <button type="button" class="lab-candidate lab-method-candidate is-active" data-candidate="0" aria-pressed="true" aria-controls="decision-map"><span class="lab-candidate-ball" style="--ball-color:var(--ball-yellow)"></span><span class="lab-candidate-copy">Selected shot<span>Yellow · 0.35 m/s</span></span><span class="lab-candidate-verdict">Chosen</span></button>
-    </aside>
+</div></section>
+<section id="project-video" class="lab-section paper-video-section" aria-labelledby="project-video-title">
+  <div class="lab-shell paper-video-shell">
+    <header class="lab-section-heading"><h2 id="project-video-title" class="lab-title font-header-clean">Project video</h2></header>
+        <figure class="paper-film" aria-label="CUE project video">
+          <div class="paper-video-placeholder paper-hero-video">
+            <video data-loop-video data-video-controls controls muted loop playsinline preload="none" src="/media/project-video/cue-v30-1080p-43fec0c81b1f.mp4" poster="/media/project-video/cue-v30-poster-b7e09787c1e7.jpg" width="1920" height="1080" aria-label="CUE project overview"></video>
+          </div>
+        </figure>
   </div>
-  <span class="lab-study-status" data-decision-status role="status" aria-live="polite"></span>
-  <script id="decision-details" type="application/json">[{"id":"chosen","title":"Selected shot","ball":"yellow","yaw":-90.0,"speed":0.35,"infoMm":20.2,"noiseMm":11.5,"pocketEstimate":0.0,"start":[230.6,346.11],"nominalEnd":[581.17,302.45],"regeneratedNominalDifferenceMm":0.046,"recordedRank":1,"description":"Differences between models exceed variation from the strike."},{"id":"low","title":"Little to learn","ball":"purple","yaw":20.0,"speed":0.15,"infoMm":0.6,"noiseMm":1.5,"pocketEstimate":0.0,"start":[219.59,195.13],"nominalEnd":[197.57,134.63],"regeneratedNominalDifferenceMm":0.103,"recordedRank":279,"description":"The models already predict similar motion."},{"id":"noisy","title":"Hard to interpret","ball":"purple","yaw":-70.0,"speed":0.45,"infoMm":48.5,"noiseMm":65.4,"pocketEstimate":0.44,"start":[219.59,195.13],"nominalEnd":null,"regeneratedNominalDifferenceMm":null,"recordedRank":142,"description":"Variation in the strike overwhelms the differences between models, with a risk of pocketing the ball."},{"id":"blocked","title":"Unreachable/Unsafe","ball":"black","yaw":-180.0,"speed":null,"infoMm":null,"noiseMm":null,"pocketEstimate":null,"start":[559.27,136.79],"stroke":[[559.27,67.18],[559.27,244.36]],"reason":"Clearing the rail needs 42° of cue pitch; the planner allows 20°.","description":"The rail blocks the cue’s approach."}]</script>
-</div></section><section id="calibration-loop" class="lab-section lab-method-section" aria-labelledby="loop-title">
+</section>
+<section id="calibration-loop" class="lab-section lab-method-section" aria-labelledby="loop-title">
 <div class="lab-shell">
   <header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="loop-title" class="lab-title font-header-clean">What the agent learns from the shot</h2>
-<p class="lab-section-intro">The robot carries out the selected experiment on the real table, then uses the recorded motion to update the simulator’s physics.</p></div></header>
+<p class="lab-section-intro">CUE reconstructs the table, chooses an informative experiment, and uses the recorded motion to update the simulator’s physics.</p></div></header>
+  <div class="lab-loop-flow-shell">
+    <div class="lab-loop-flow-viewport">
+  <div class="lab-loop-flow">
+    <svg class="lab-flow-track" viewBox="0 0 1000 150" preserveAspectRatio="none" fill="none" aria-hidden="true">
+      <defs><marker id="calibration-loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="currentColor" stroke-width="1.4"/></marker></defs>
+      <path data-loop-connection="0" d="M124 30H276" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+      <path data-loop-connection="1" d="M324 30H476" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+      <path data-loop-connection="2" d="M524 30H676" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+      <path data-loop-connection="3" d="M724 30H876" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+      <path data-loop-return-path d="M924 30h52q16 0 16 16v74q0 16-16 16H24Q8 136 8 120V46q0-16 16-16h52" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+    </svg>
+    <div class="lab-step-list" role="group" aria-label="Explore the calibration stages">
+      <button type="button" class="lab-step is-active" data-loop-step="0" aria-label="Reconstruct" aria-describedby="loop-step-purpose-0" aria-pressed="true" aria-controls="loop-panel-0">
+        <span class="lab-flow-node"><span class="lab-step-label">Reconstruct</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
+        <span id="loop-step-purpose-0" class="lab-step-purpose">Build the digital scene</span>
+      </button>
+      <button type="button" class="lab-step" data-loop-step="1" aria-label="Choose" aria-describedby="loop-step-purpose-1" aria-pressed="false" aria-controls="loop-panel-1">
+        <span class="lab-flow-node"><span class="lab-step-label">Choose</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
+        <span id="loop-step-purpose-1" class="lab-step-purpose">Find an informative shot</span>
+      </button>
+      <button type="button" class="lab-step" data-loop-step="2" aria-label="Strike" aria-describedby="loop-step-purpose-2" aria-pressed="false" aria-controls="loop-panel-2">
+        <span class="lab-flow-node"><span class="lab-step-label">Strike</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
+        <span id="loop-step-purpose-2" class="lab-step-purpose">Test it on the table</span>
+      </button>
+      <button type="button" class="lab-step" data-loop-step="3" aria-label="Compare" aria-describedby="loop-step-purpose-3" aria-pressed="false" aria-controls="loop-panel-3">
+        <span class="lab-flow-node"><span class="lab-step-label">Compare</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
+        <span id="loop-step-purpose-3" class="lab-step-purpose">Measure the mismatch</span>
+      </button>
+      <button type="button" class="lab-step" data-loop-step="4" aria-label="Update" aria-describedby="loop-step-purpose-4" aria-pressed="false" aria-controls="loop-panel-4">
+        <span class="lab-flow-node"><span class="lab-step-label">Update</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
+        <span id="loop-step-purpose-4" class="lab-step-purpose">Fit the simulator</span>
+      </button>
+    </div>
+  </div>
+    </div>
+    <div class="lab-flow-return-label"><span aria-hidden="true">Next experiment</span><span aria-hidden="true">·</span><button type="button" data-loop-play aria-label="Pause automatic walkthrough" aria-pressed="false">Pause</button></div>
+  </div>
   <div class="lab-loop-layout">
     <div class="lab-loop-workspace">
       <div class="lab-method-stage" data-loop-stage>
@@ -169,7 +159,23 @@
             <span class="lab-reconstruction-grip" aria-hidden="true"><svg viewBox="0 0 24 16" fill="none"><path d="m8 4-4 4 4 4m8-8 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
-        <div id="loop-panel-1" class="lab-method-panel lab-reconstruction" data-loop-panel="1" data-reconstruction data-real-label="real footage" data-simulation-label="earlier model" hidden>
+        <div id="loop-panel-1" class="lab-method-panel lab-choice" data-loop-panel="1" hidden>
+          <div id="decision-map" class="lab-choice-visual" data-decision-map role="group" aria-labelledby="decision-map-title">
+            <span id="decision-map-title" class="lab-study-status">Simulated outcomes: Selected shot</span>
+            <img class="lab-decision-render" data-candidate-visual="0" src="/media/calibration-loop/selection-chosen.webp" width="1920" height="1296" decoding="async" alt="Selected shot: predicted ball paths fan out across the table.">
+            <img class="lab-decision-render" data-candidate-visual="1" src="/media/calibration-loop/selection-low.webp" width="1920" height="1296" decoding="async" alt="Little to learn: predicted ball paths stay close together." hidden>
+            <img class="lab-decision-render" data-candidate-visual="2" src="/media/calibration-loop/selection-noisy.webp" width="1920" height="1296" decoding="async" alt="Hard to interpret: predicted ball paths spread toward the middle pocket." hidden>
+            <img class="lab-decision-render" data-candidate-visual="3" src="/media/calibration-loop/selection-blocked.webp" width="1920" height="1296" decoding="async" alt="Unreachable/Unsafe: the black ball is highlighted and a red clearance marker crosses the rail." hidden>
+            <div class="lab-choice-legend"><span><i class="lab-key-prediction" aria-hidden="true"></i>Predicted paths</span></div>
+          </div>
+          <div class="lab-choice-candidates" role="group" aria-label="Inspect candidate experiments">
+            <button type="button" class="lab-candidate lab-method-candidate" data-candidate="1" aria-pressed="false" aria-controls="decision-map" style="--ball-color:var(--ball-purple)"><span class="lab-candidate-ball"></span><span class="lab-candidate-copy">Little to learn<span>Purple · 0.15 m/s</span></span></button>
+            <button type="button" class="lab-candidate lab-method-candidate" data-candidate="2" aria-pressed="false" aria-controls="decision-map" style="--ball-color:var(--ball-purple)"><span class="lab-candidate-ball"></span><span class="lab-candidate-copy">Hard to interpret<span>Purple · 0.45 m/s</span></span></button>
+            <button type="button" class="lab-candidate lab-method-candidate" data-candidate="3" aria-pressed="false" aria-controls="decision-map" style="--ball-color:#151714"><span class="lab-candidate-ball"></span><span class="lab-candidate-copy">Unreachable / unsafe<span>Black · Clearance limit</span></span></button>
+            <button type="button" class="lab-candidate lab-method-candidate is-active" data-candidate="0" aria-pressed="true" aria-controls="decision-map" style="--ball-color:var(--ball-yellow)"><span class="lab-candidate-ball"></span><span class="lab-candidate-copy">Selected shot<span>Yellow · 0.35 m/s</span></span></button>
+          </div>
+        </div>
+        <div id="loop-panel-2" class="lab-method-panel lab-reconstruction" data-loop-panel="2" data-reconstruction data-real-label="real footage" data-simulation-label="earlier model" hidden>
           <div class="lab-reconstruction-real"><img draggable="false" src="/media/calibration-loop/calibration-strike-prior-v1-real-e8f1ec76b2.webp" width="960" height="672" loading="lazy" decoding="async" alt="Recorded yellow-ball shot, from the angled camera."></div>
           <div class="lab-reconstruction-model"><img draggable="false" src="/media/calibration-loop/calibration-strike-prior-v1-model-7a0cca30c2.png" width="960" height="672" loading="lazy" decoding="async" alt="Earlier model of the same shot, from the same camera viewpoint."></div>
           <video class="lab-calibration-source" data-calibration-source data-src="/media/calibration-loop/calibration-strike-prior-v1-pair-b22e2c9dbf.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
@@ -178,19 +184,19 @@
             <span class="lab-reconstruction-grip" aria-hidden="true"><svg viewBox="0 0 24 16" fill="none"><path d="m8 4-4 4 4 4m8-8 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
-        <div id="loop-panel-2" class="lab-method-panel lab-reconstruction" data-loop-panel="2" data-reconstruction data-real-label="real footage" data-simulation-label="earlier model" hidden>
-          <div class="lab-reconstruction-real"><img draggable="false" src="/media/calibration-loop/calibration-compare-prior-v1-real-32ad92e234.webp" width="960" height="672" loading="lazy" decoding="async" alt="Recorded yellow-ball shot, from the overhead camera."></div>
-          <div class="lab-reconstruction-model"><img draggable="false" src="/media/calibration-loop/calibration-compare-prior-v1-model-7f7a9c37e4.png" width="960" height="672" loading="lazy" decoding="async" alt="Earlier model of the same shot, from the same camera viewpoint."></div>
-          <video class="lab-calibration-source" data-calibration-source data-src="/media/calibration-loop/calibration-compare-prior-v1-pair-d74e68b077.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        <div id="loop-panel-3" class="lab-method-panel lab-reconstruction" data-loop-panel="3" data-reconstruction data-real-label="real footage" data-simulation-label="earlier model" hidden>
+          <div class="lab-reconstruction-real"><img draggable="false" src="/media/calibration-loop/calibration-compare-prior-clean-v2-real-ebd12dea18.webp" width="960" height="672" loading="lazy" decoding="async" alt="Recorded yellow-ball shot, from the overhead camera."></div>
+          <div class="lab-reconstruction-model"><img draggable="false" src="/media/calibration-loop/calibration-compare-prior-clean-v2-model-129200c488.png" width="960" height="672" loading="lazy" decoding="async" alt="Earlier model of the same shot, from the same camera viewpoint."></div>
+          <video class="lab-calibration-source" data-calibration-source data-src="/media/calibration-loop/calibration-compare-prior-clean-v2-pair-6111c0a1cc.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
           <span class="lab-scene-label">Real footage</span><span class="lab-scene-label lab-scene-label-model">Earlier model</span>
           <div class="lab-reconstruction-handle" data-reconstruction-handle role="slider" tabindex="0" aria-label="Reveal real footage and earlier model" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% real footage, 50% earlier model">
             <span class="lab-reconstruction-grip" aria-hidden="true"><svg viewBox="0 0 24 16" fill="none"><path d="m8 4-4 4 4 4m8-8 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </div>
         </div>
-        <div id="loop-panel-3" class="lab-method-panel lab-reconstruction" data-loop-panel="3" data-reconstruction data-real-label="real footage" data-simulation-label="updated model" hidden>
-          <div class="lab-reconstruction-real"><img draggable="false" src="/media/calibration-loop/calibration-update-fitted-v1-real-35119bf468.webp" width="960" height="672" loading="lazy" decoding="async" alt="Recorded yellow-ball shot, from the overhead camera."></div>
-          <div class="lab-reconstruction-model"><img draggable="false" src="/media/calibration-loop/calibration-update-fitted-v1-model-4a48c79e12.png" width="960" height="672" loading="lazy" decoding="async" alt="Updated model of the same shot, from the same camera viewpoint."></div>
-          <video class="lab-calibration-source" data-calibration-source data-src="/media/calibration-loop/calibration-update-fitted-v1-pair-2bf19f48fc.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        <div id="loop-panel-4" class="lab-method-panel lab-reconstruction" data-loop-panel="4" data-reconstruction data-real-label="real footage" data-simulation-label="updated model" hidden>
+          <div class="lab-reconstruction-real"><img draggable="false" src="/media/calibration-loop/calibration-update-fitted-clean-v2-real-4a0715a130.webp" width="960" height="672" loading="lazy" decoding="async" alt="Recorded yellow-ball shot, from the overhead camera."></div>
+          <div class="lab-reconstruction-model"><img draggable="false" src="/media/calibration-loop/calibration-update-fitted-clean-v2-model-3da01d2a96.png" width="960" height="672" loading="lazy" decoding="async" alt="Updated model of the same shot, from the same camera viewpoint."></div>
+          <video class="lab-calibration-source" data-calibration-source data-src="/media/calibration-loop/calibration-update-fitted-clean-v2-pair-cd18f18860.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
           <span class="lab-scene-label">Real footage</span><span class="lab-scene-label lab-scene-label-model">Updated model</span>
           <div class="lab-reconstruction-handle" data-reconstruction-handle role="slider" tabindex="0" aria-label="Reveal real footage and updated model" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% real footage, 50% updated model">
             <span class="lab-reconstruction-grip" aria-hidden="true"><svg viewBox="0 0 24 16" fill="none"><path d="m8 4-4 4 4 4m8-8 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -199,21 +205,25 @@
       </div>
     </div>
     <aside class="agent-calibration-sidebar" aria-label="Agent calibration process">
-    <div class="lab-step-list" role="group" aria-label="Explore the calibration stages">
-      <button type="button" class="lab-step is-active" data-loop-step="0" aria-pressed="true" aria-controls="loop-panel-0"><span class="lab-method-step-copy"><span class="lab-step-label">Reconstruct</span></span></button><button type="button" class="lab-step" data-loop-step="1" aria-pressed="false" aria-controls="loop-panel-1"><span class="lab-method-step-copy"><span class="lab-step-label">Strike</span></span></button><button type="button" class="lab-step" data-loop-step="2" aria-pressed="false" aria-controls="loop-panel-2"><span class="lab-method-step-copy"><span class="lab-step-label">Compare</span></span></button><button type="button" class="lab-step" data-loop-step="3" aria-pressed="false" aria-controls="loop-panel-3"><span class="lab-method-step-copy"><span class="lab-step-label">Update</span></span></button>
-    </div>
-    <div class="agent-terminal" role="note" aria-label="Agent calibration summary">
-      <div class="agent-terminal-window"><span aria-hidden="true">● ● ●</span><span>claude — calibration</span></div>
-        <div class="agent-terminal-bar"><pre class="agent-terminal-mark" aria-hidden="true">▐▛███▜▌
-▝▜█████▛▘
-  ▘▘ ▝▝</pre><div><strong>Claude Code</strong><span class="agent-terminal-context">CUE · calibration</span></div></div>
 
-      <div class="agent-terminal-prompt"><span aria-hidden="true">❯</span> Calibrate the simulator.</div>
-      <div class="agent-terminal-stage">● <span data-agent-stage>reconstruct</span></div>
-      <div class="agent-terminal-entry"><span aria-hidden="true">⎿</span><p data-agent-calibration>Recreate the table and measured ball positions in simulation.</p></div>
-      <p class="agent-terminal-footnote">Fit on this shot; test on new shots.</p>
-      <div class="agent-terminal-input" aria-hidden="true">❯ <span>▌</span></div>
+    <div class="agent-terminal" role="note" aria-label="Agent calibration summary">
+      <div class="agent-terminal-window"><span aria-hidden="true">● ● ●</span><span>CUE · calibration</span></div>
+      <div class="agent-terminal-bar">
+        <svg class="agent-terminal-mark" viewBox="0 0 16 10" width="56" height="35" fill="currentColor" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+          <path fill-rule="evenodd" d="M2 0h12v4h2v2h-2v2h-1v2h-1V8h-1v2h-1V8H6v2H5V8H4v2H3V8H2V6H0V4h2ZM4 2v2h1V2Zm7 0v2h1V2Z"/>
+        </svg>
+        <strong>Claude Code</strong>
+      </div>
+
+      <div class="agent-terminal-output">
+        <div class="agent-terminal-stage"><span aria-hidden="true">●</span> <span data-agent-stage>Reconstruct</span></div>
+        <div class="agent-terminal-entry"><span aria-hidden="true">⎿</span><p data-agent-calibration>Build the digital scene from the camera view and measured ball positions.</p></div>
+        <div class="agent-terminal-entry" data-agent-candidate hidden><span aria-hidden="true">●</span><p data-agent-decision>Selected shot: Differences between models exceed variation from the strike.</p></div>
+        <div class="agent-terminal-entry agent-terminal-result" data-agent-choice hidden><span aria-hidden="true">⎿</span><p>Recorded choice: yellow ball, 0.35 m/s.</p></div>
+        <p class="agent-terminal-footnote" data-agent-fit-note hidden>Accuracy on new shots is evaluated separately.</p>
+      </div>
       <p class="agent-terminal-source">Illustrated session · not a verbatim transcript</p>
+      <div class="agent-terminal-prompt"><span aria-hidden="true">❯</span> <span>Make no mistakes :)</span></div>
     </div>
     </aside>
   </div>
@@ -221,8 +231,9 @@
     <p data-loop-summary>Recreate the real table and measured ball positions in simulation.</p>
     <div class="lab-method-error" data-loop-error hidden><strong data-loop-error-value></strong><span data-loop-error-label>Endpoint error</span></div>
   </div>
+  <script id="decision-details" type="application/json">[{"id":"chosen","title":"Selected shot","ball":"yellow","yaw":-90.0,"speed":0.35,"infoMm":20.2,"noiseMm":11.5,"pocketEstimate":0.0,"start":[230.6,346.11],"nominalEnd":[581.17,302.45],"regeneratedNominalDifferenceMm":0.046,"recordedRank":1,"description":"Differences between models exceed variation from the strike."},{"id":"low","title":"Little to learn","ball":"purple","yaw":20.0,"speed":0.15,"infoMm":0.6,"noiseMm":1.5,"pocketEstimate":0.0,"start":[219.59,195.13],"nominalEnd":[197.57,134.63],"regeneratedNominalDifferenceMm":0.103,"recordedRank":279,"description":"The models already predict similar motion."},{"id":"noisy","title":"Hard to interpret","ball":"purple","yaw":-70.0,"speed":0.45,"infoMm":48.5,"noiseMm":65.4,"pocketEstimate":0.44,"start":[219.59,195.13],"nominalEnd":null,"regeneratedNominalDifferenceMm":null,"recordedRank":142,"description":"Variation in the strike overwhelms the differences between models, with a risk of pocketing the ball."},{"id":"blocked","title":"Unreachable/Unsafe","ball":"black","yaw":-180.0,"speed":null,"infoMm":null,"noiseMm":null,"pocketEstimate":null,"start":[559.27,136.79],"stroke":[[559.27,67.18],[559.27,244.36]],"reason":"Clearing the rail needs 42° of cue pitch; the planner allows 20°.","description":"The rail blocks the cue’s approach."}]</script>
   <span class="lab-study-status" data-loop-status role="status" aria-live="polite"></span>
-<script id="calibration-reveal-data" type="application/json">{"shot":"shot_20261024_191404","fps":60,"stages":[{"stage":"strike","panel":1,"model":"pred_iter01","video":"/media/calibration-loop/calibration-strike-prior-v1-pair-b22e2c9dbf.mp4","real_poster":"/media/calibration-loop/calibration-strike-prior-v1-real-e8f1ec76b2.webp","model_poster":"/media/calibration-loop/calibration-strike-prior-v1-model-7a0cca30c2.png","width":2880,"height":672,"fps":60,"frames":216,"real_region":[0,0,960,672],"model_region":[960,0,960,672],"alpha_region":[1920,0,960,672],"endpoint_error_mm":99.3,"source_states":"labpc_assets/franka_station/autonomous_run/shots/shot_20261024_191404/sim/pred_iter01/sim_states.npz","states_sha256":"8fce2dc42e74cff2a5964f21892430488525ea683b392db1b80128fc4e98f87e","scene_sha256":"36a2bc27d0e75ceec79df09dca7fc4c0f7db4d64fd8e809a8d181ec909dd5187","camera":"angled","trails_sha256":"37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570","annotations":"none","render":{"job":"calibration-strike-prior-v1","renderer":"Blender Cycles OptiX","samples":24,"denoiser":"OpenImageDenoise GPU","frames":216,"fps":60,"delivery":"alpha","output_size":[3840,1344],"scene_sha256":"36a2bc27d0e75ceec79df09dca7fc4c0f7db4d64fd8e809a8d181ec909dd5187","geometry":"Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only","physics_stepped":false,"trajectories_modified":false,"camera_registration_modified":false,"source":{"shot":"shot_20261024_191404","states":"sim/pred_iter01/sim_states.npz","motion":"Archived saved ball and recorded cue poses","physics_stepped":false},"shot":"shot_20261024_191404"}},{"stage":"compare","panel":2,"model":"pred_iter01","video":"/media/calibration-loop/calibration-compare-prior-v1-pair-d74e68b077.mp4","real_poster":"/media/calibration-loop/calibration-compare-prior-v1-real-32ad92e234.webp","model_poster":"/media/calibration-loop/calibration-compare-prior-v1-model-7f7a9c37e4.png","width":2880,"height":672,"fps":60,"frames":216,"real_region":[0,0,960,672],"model_region":[960,0,960,672],"alpha_region":[1920,0,960,672],"endpoint_error_mm":99.3,"source_states":"labpc_assets/franka_station/autonomous_run/shots/shot_20261024_191404/sim/pred_iter01/sim_states.npz","states_sha256":"8fce2dc42e74cff2a5964f21892430488525ea683b392db1b80128fc4e98f87e","scene_sha256":"d6eeb23885a46b29afd0e9f7893983ce9b515d86a0390315b29038cd093d6a9e","camera":"overhead","trails_sha256":"a956022358d20a9f1168654058d6bbe84890fd56a3a14c48b9cd138baf950fb0","annotations":"observed white and earlier-model red on both views","render":{"job":"calibration-compare-prior-v1","renderer":"Blender Cycles OptiX","samples":24,"denoiser":"OpenImageDenoise GPU","frames":216,"fps":60,"delivery":"alpha","output_size":[3840,1344],"scene_sha256":"d6eeb23885a46b29afd0e9f7893983ce9b515d86a0390315b29038cd093d6a9e","geometry":"Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only","physics_stepped":false,"trajectories_modified":false,"camera_registration_modified":false,"source":{"shot":"shot_20261024_191404","states":"sim/pred_iter01/sim_states.npz","motion":"Archived saved ball and recorded cue poses","physics_stepped":false},"shot":"shot_20261024_191404"}},{"stage":"update","panel":3,"model":"fit_iter02","video":"/media/calibration-loop/calibration-update-fitted-v1-pair-2bf19f48fc.mp4","real_poster":"/media/calibration-loop/calibration-update-fitted-v1-real-35119bf468.webp","model_poster":"/media/calibration-loop/calibration-update-fitted-v1-model-4a48c79e12.png","width":2880,"height":672,"fps":60,"frames":216,"real_region":[0,0,960,672],"model_region":[960,0,960,672],"alpha_region":[1920,0,960,672],"endpoint_error_mm":2.3,"source_states":"labpc_assets/franka_station/autonomous_run/shots/shot_20261024_191404/sim/fit_iter02/sim_states.npz","states_sha256":"b07057ac3d9c6e8403225b23f8e34b3ce7e3ab5a3bfe084110af18ba817b6f10","scene_sha256":"fb067a000abdb38e2535d2adad0b64a9e09cb3f6091a47bc0d3ce638b451e8d3","camera":"overhead","trails_sha256":"c440fc0a616089b1adebe16964ca5dd37062b68c0006e32c9801da134b6625ef","annotations":"observed white / fitted model red","render":{"job":"calibration-update-fitted-v1","renderer":"Blender Cycles OptiX","samples":24,"denoiser":"OpenImageDenoise GPU","frames":216,"fps":60,"delivery":"alpha","output_size":[3840,1344],"scene_sha256":"fb067a000abdb38e2535d2adad0b64a9e09cb3f6091a47bc0d3ce638b451e8d3","geometry":"Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only","physics_stepped":false,"trajectories_modified":false,"camera_registration_modified":false,"source":{"shot":"shot_20261024_191404","states":"sim/fit_iter02/sim_states.npz","motion":"Archived saved ball and recorded cue poses","physics_stepped":false},"shot":"shot_20261024_191404"}}],"static_geometry_sha256":"9c99dc0ba524d7a30141d6b4cba41a8b1439afee8f40225796e017763481c854","camera_grade_sha256":"ff4a4691784f03609589157b4ac473df8f38dcc8d0a7232545bb5717eb0ac17f","playback":"One video clock per stage; real, simulated RGB and simulated alpha share each frame.","interpretation":"Earlier model pred_iter01; updated model fit_iter02 fitted on this shot, not a held-out prediction."}</script>
+<script id="calibration-reveal-data" type="application/json">{"shot":"shot_20261024_191404","fps":60,"stages":[{"stage":"strike","panel":2,"model":"pred_iter01","video":"/media/calibration-loop/calibration-strike-prior-v1-pair-b22e2c9dbf.mp4","real_poster":"/media/calibration-loop/calibration-strike-prior-v1-real-e8f1ec76b2.webp","model_poster":"/media/calibration-loop/calibration-strike-prior-v1-model-7a0cca30c2.png","width":2880,"height":672,"fps":60,"frames":216,"real_region":[0,0,960,672],"model_region":[960,0,960,672],"alpha_region":[1920,0,960,672],"endpoint_error_mm":99.3,"source_states":"labpc_assets/franka_station/autonomous_run/shots/shot_20261024_191404/sim/pred_iter01/sim_states.npz","states_sha256":"8fce2dc42e74cff2a5964f21892430488525ea683b392db1b80128fc4e98f87e","scene_sha256":"36a2bc27d0e75ceec79df09dca7fc4c0f7db4d64fd8e809a8d181ec909dd5187","camera":"angled","trails_sha256":"37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570","annotations":"none","render":{"job":"calibration-strike-prior-v1","renderer":"Blender Cycles OptiX","samples":24,"denoiser":"OpenImageDenoise GPU","frames":216,"fps":60,"delivery":"alpha","output_size":[3840,1344],"scene_sha256":"36a2bc27d0e75ceec79df09dca7fc4c0f7db4d64fd8e809a8d181ec909dd5187","geometry":"Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only","physics_stepped":false,"trajectories_modified":false,"camera_registration_modified":false,"source":{"shot":"shot_20261024_191404","states":"sim/pred_iter01/sim_states.npz","motion":"Archived saved ball and recorded cue poses","physics_stepped":false},"shot":"shot_20261024_191404"}},{"stage":"compare","panel":3,"model":"pred_iter01","video":"/media/calibration-loop/calibration-compare-prior-clean-v2-pair-6111c0a1cc.mp4","real_poster":"/media/calibration-loop/calibration-compare-prior-clean-v2-real-ebd12dea18.webp","model_poster":"/media/calibration-loop/calibration-compare-prior-clean-v2-model-129200c488.png","width":2880,"height":672,"fps":60,"frames":216,"real_region":[0,0,960,672],"model_region":[960,0,960,672],"alpha_region":[1920,0,960,672],"endpoint_error_mm":99.3,"source_states":"labpc_assets/franka_station/autonomous_run/shots/shot_20261024_191404/sim/pred_iter01/sim_states.npz","states_sha256":"8fce2dc42e74cff2a5964f21892430488525ea683b392db1b80128fc4e98f87e","scene_sha256":"1ba3f785b7fda4eb4fdf317c34e3651f22f57e8e9165b71921e5b9f5faf70dec","camera":"overhead","trails_sha256":"37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570","annotations":"Ball-sized markers follow their shared smoothed paths; own path solid, counterpart dashed","annotation_style":{"version":3,"colors":{"observed":[238,237,231],"model":[255,108,100]},"real":{"observed":"solid","model":"dashed"},"simulation":{"observed":"dashed","model":"solid"},"dash_px":[9,6],"line_width_px":2,"markers":"Ball-sized continuous markers; filled own ball and outlined counterpart","sizing":"Projected silhouette of the approved 12.5 mm radius ball, including camera distortion and crop","smoothing":{"observed_window_frames":11,"polynomial":3,"curve":"shape-preserving cubic","model":"Exact saved positions; no tracking noise filter","shared_path_and_marker":true,"fixed_endpoints_and_contact_knots":true,"stationary_tolerance_ball_radius":0.18}},"annotation_renderer_sha256":"887e60ab36114df1c57a29000a8fbd810cbed084add0ada7177ee75bb331be32","render":{"job":"calibration-compare-prior-clean-v2","renderer":"Blender Cycles OptiX","samples":24,"denoiser":"OpenImageDenoise GPU","frames":216,"fps":60,"delivery":"alpha","output_size":[3840,1344],"scene_sha256":"1ba3f785b7fda4eb4fdf317c34e3651f22f57e8e9165b71921e5b9f5faf70dec","geometry":"Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only","physics_stepped":false,"trajectories_modified":false,"camera_registration_modified":false,"source":{"shot":"shot_20261024_191404","states":"sim/pred_iter01/sim_states.npz","motion":"Archived saved ball and recorded cue poses","physics_stepped":false},"shot":"shot_20261024_191404"}},{"stage":"update","panel":4,"model":"fit_iter02","video":"/media/calibration-loop/calibration-update-fitted-clean-v2-pair-cd18f18860.mp4","real_poster":"/media/calibration-loop/calibration-update-fitted-clean-v2-real-4a0715a130.webp","model_poster":"/media/calibration-loop/calibration-update-fitted-clean-v2-model-3da01d2a96.png","width":2880,"height":672,"fps":60,"frames":216,"real_region":[0,0,960,672],"model_region":[960,0,960,672],"alpha_region":[1920,0,960,672],"endpoint_error_mm":2.3,"source_states":"labpc_assets/franka_station/autonomous_run/shots/shot_20261024_191404/sim/fit_iter02/sim_states.npz","states_sha256":"b07057ac3d9c6e8403225b23f8e34b3ce7e3ab5a3bfe084110af18ba817b6f10","scene_sha256":"7f69f2304888e27a247012103f2ad855e3e05ddebfaa108d36c83c17bef97f5a","camera":"overhead","trails_sha256":"37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570","annotations":"Ball-sized markers follow their shared smoothed paths; own path solid, counterpart dashed","annotation_style":{"version":3,"colors":{"observed":[238,237,231],"model":[255,108,100]},"real":{"observed":"solid","model":"dashed"},"simulation":{"observed":"dashed","model":"solid"},"dash_px":[9,6],"line_width_px":2,"markers":"Ball-sized continuous markers; filled own ball and outlined counterpart","sizing":"Projected silhouette of the approved 12.5 mm radius ball, including camera distortion and crop","smoothing":{"observed_window_frames":11,"polynomial":3,"curve":"shape-preserving cubic","model":"Exact saved positions; no tracking noise filter","shared_path_and_marker":true,"fixed_endpoints_and_contact_knots":true,"stationary_tolerance_ball_radius":0.18}},"annotation_renderer_sha256":"887e60ab36114df1c57a29000a8fbd810cbed084add0ada7177ee75bb331be32","render":{"job":"calibration-update-fitted-clean-v2","renderer":"Blender Cycles OptiX","samples":24,"denoiser":"OpenImageDenoise GPU","frames":216,"fps":60,"delivery":"alpha","output_size":[3840,1344],"scene_sha256":"7f69f2304888e27a247012103f2ad855e3e05ddebfaa108d36c83c17bef97f5a","geometry":"Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only","physics_stepped":false,"trajectories_modified":false,"camera_registration_modified":false,"source":{"shot":"shot_20261024_191404","states":"sim/fit_iter02/sim_states.npz","motion":"Archived saved ball and recorded cue poses","physics_stepped":false},"shot":"shot_20261024_191404"}}],"static_geometry_sha256":"9c99dc0ba524d7a30141d6b4cba41a8b1439afee8f40225796e017763481c854","camera_grade_sha256":"ff4a4691784f03609589157b4ac473df8f38dcc8d0a7232545bb5717eb0ac17f","playback":"One video clock per stage; real, simulated RGB and simulated alpha share each frame.","interpretation":"Earlier model pred_iter01; updated model fit_iter02 fitted on this shot, not a held-out prediction."}</script>
 </div></section><section id="prediction-results" class="lab-section lab-section-muted" aria-labelledby="results-title">
 <div class="lab-shell">
   <header class="lab-section-heading"><div class="lab-heading-copy">
@@ -230,14 +241,14 @@
     <p class="lab-section-intro">Ten shots excluded from fitting, replayed with the same frozen model.</p>
   </div></header>
   <div class="unseen-layout">
-    <div class="unseen-main">
-      <div class="unseen-toolbar">
-        <div class="lab-tabs" role="group" aria-label="Prediction comparison view">
-          <button type="button" class="lab-tab is-active" data-unseen-view="real" aria-pressed="true">Real</button>
-          <button type="button" class="lab-tab" data-unseen-view="simulation" aria-pressed="false">Simulation</button>
-        </div>
-        <span class="lab-micro lab-hover-hint" data-unseen-hint>Hover to see the simulation</span>
+    <div class="unseen-toolbar">
+      <div class="lab-tabs" role="group" aria-label="Prediction comparison view">
+        <button type="button" class="lab-tab is-active" data-unseen-view="real" aria-pressed="true">Real</button>
+        <button type="button" class="lab-tab" data-unseen-view="simulation" aria-pressed="false">Simulation</button>
       </div>
+      <span class="lab-micro lab-hover-hint" data-unseen-hint>Hover to see the simulation</span>
+    </div>
+    <div class="unseen-main">
       <div id="unseen-comparison" class="unseen-pair" data-unseen-pair>
         <figure class="unseen-view">
           <div class="unseen-stage" tabindex="0" role="group" aria-label="Shot 1: purple ball, real footage" aria-describedby="unseen-help">
@@ -260,32 +271,29 @@
     <aside class="unseen-selector" aria-labelledby="unseen-selector-title">
       <h3 id="unseen-selector-title">Choose a shot</h3>
       <div class="unseen-shots" role="group" aria-label="Choose one of 10 recorded shots">
-        <button type="button" class="unseen-shot" data-unseen-shot="unseen-183113" aria-pressed="true" tabindex="0" aria-label="Shot 1, purple ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">01</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-purple, #151714)" aria-hidden="true"></span><span>Purple</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-183424" aria-pressed="false" tabindex="-1" aria-label="Shot 2, yellow ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">02</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-yellow, #151714)" aria-hidden="true"></span><span>Yellow</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-184145" aria-pressed="false" tabindex="-1" aria-label="Shot 3, blue ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">03</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-blue, #151714)" aria-hidden="true"></span><span>Blue</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-192257" aria-pressed="false" tabindex="-1" aria-label="Shot 4, yellow ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">04</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-yellow, #151714)" aria-hidden="true"></span><span>Yellow</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-204232" aria-pressed="false" tabindex="-1" aria-label="Shot 5, red ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">05</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-red, #151714)" aria-hidden="true"></span><span>Red</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-204523" aria-pressed="false" tabindex="-1" aria-label="Shot 6, purple ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">06</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-purple, #151714)" aria-hidden="true"></span><span>Purple</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-204847" aria-pressed="false" tabindex="-1" aria-label="Shot 7, black ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">07</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-black, #151714)" aria-hidden="true"></span><span>Black</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-205220" aria-pressed="false" tabindex="-1" aria-label="Shot 8, yellow ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">08</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-yellow, #151714)" aria-hidden="true"></span><span>Yellow</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-213932" aria-pressed="false" tabindex="-1" aria-label="Shot 9, yellow ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">09</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-yellow, #151714)" aria-hidden="true"></span><span>Yellow</span>
-</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-214236" aria-pressed="false" tabindex="-1" aria-label="Shot 10, blue ball" aria-controls="unseen-comparison">
-  <span class="unseen-shot-number">10</span><span class="unseen-shot-ball" style="--shot-ball:var(--ball-blue, #151714)" aria-hidden="true"></span><span>Blue</span>
+        <button type="button" class="unseen-shot" data-unseen-shot="unseen-183113" data-unseen-ball="purple" style="--shot-ball:var(--ball-purple, #151714)" aria-pressed="true" tabindex="0" aria-label="Shot 1, purple ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">01</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Purple</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-183424" data-unseen-ball="yellow" style="--shot-ball:var(--ball-yellow, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 2, yellow ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">02</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Yellow</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-184145" data-unseen-ball="blue" style="--shot-ball:var(--ball-blue, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 3, blue ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">03</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Blue</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-192257" data-unseen-ball="yellow" style="--shot-ball:var(--ball-yellow, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 4, yellow ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">04</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Yellow</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-204232" data-unseen-ball="red" style="--shot-ball:var(--ball-red, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 5, red ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">05</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Red</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-204523" data-unseen-ball="purple" style="--shot-ball:var(--ball-purple, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 6, purple ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">06</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Purple</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-204847" data-unseen-ball="black" style="--shot-ball:var(--ball-black, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 7, black ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">07</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Black</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-205220" data-unseen-ball="yellow" style="--shot-ball:var(--ball-yellow, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 8, yellow ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">08</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Yellow</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-213932" data-unseen-ball="yellow" style="--shot-ball:var(--ball-yellow, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 9, yellow ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">09</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Yellow</span>
+</button><button type="button" class="unseen-shot" data-unseen-shot="unseen-214236" data-unseen-ball="blue" style="--shot-ball:var(--ball-blue, #151714)" aria-pressed="false" tabindex="-1" aria-label="Shot 10, blue ball" aria-controls="unseen-comparison">
+  <span class="unseen-shot-number">10</span><span class="unseen-shot-ball" aria-hidden="true"></span><span>Blue</span>
 </button>
       </div>
     </aside>
-  </div>
-  <div class="unseen-notes">
-    <p>Simulation follows the recorded cue motion. Errors average over the balls that moved.</p>
   </div>
   <p id="unseen-help" class="unseen-status">Hover to reveal the opposite view, or hold Space while the comparison is focused. Use the Real and Simulation buttons on touch screens.</p>
   <p class="unseen-status" data-unseen-status role="status" aria-live="polite"></p>
@@ -295,17 +303,24 @@
   <div class="lab-shell">
     <header class="lab-section-heading"><h2 id="limits-title" class="lab-title font-header-clean">Lessons learned</h2></header>
     <div class="lesson-tabs" role="tablist" aria-label="Lessons from the real table">
-      <button type="button" id="lesson-tab-effort" class="lesson-tab" role="tab" aria-selected="true" aria-controls="lesson-panel-effort" tabindex="0" data-lesson-tab="effort">Effort allocation</button>
-      <button type="button" id="lesson-tab-time" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-time" tabindex="-1" data-lesson-tab="time">Experiment time</button>
-      <button type="button" id="lesson-tab-model" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-model" tabindex="-1" data-lesson-tab="model">Model limits</button>
+      <button type="button" id="lesson-tab-model" class="lesson-tab" role="tab" aria-selected="true" aria-controls="lesson-panel-model" tabindex="0" data-lesson-tab="model">Calibration has limits</button>
+      <button type="button" id="lesson-tab-effort" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-effort" tabindex="-1" data-lesson-tab="effort">Perception is still hard</button>
+      <button type="button" id="lesson-tab-time" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-time" tabindex="-1" data-lesson-tab="time">Physical experiments are expensive</button>
     </div>
     <div class="lesson-panels">
-      <article id="lesson-panel-effort" class="lesson-panel" role="tabpanel" aria-labelledby="lesson-tab-effort" data-lesson-panel="effort">
+      <article id="lesson-panel-model" class="lesson-panel" role="tabpanel" aria-labelledby="lesson-tab-model" data-lesson-panel="model">
         <header class="lesson-intro">
-          <h3>Spend effort where it matters</h3>
-          <p>The agent builds its tools as it goes. Unreliable perception can become the bottleneck.</p>
+          <p>The table isn’t flat, and the balls aren’t perfectly round.<br>A three-ball break still departs from the fitted simulation, calling for richer models and continued online adaptation.</p>
         </header>
-        <div class="lesson-track-legend"><span>Initial position</span><span>Recorded estimate</span></div>
+        <div class="lesson-break-pair">
+          <figure><figcaption>Real</figcaption><video class="lesson-video" data-lesson-video src="/media/lessons/break-real.mp4" poster="/media/lessons/break-real.jpg" muted loop playsinline preload="none" width="960" height="600" aria-label="Recorded three-ball break"></video></figure>
+          <figure><figcaption>Fitted simulation</figcaption><div class="lesson-model-media"><video class="lesson-video" data-lesson-video data-alpha-packed src="/media/lessons/break-model-blender-1e7e4400fd.mp4" poster="/media/lessons/break-model-blender-2541ad1d08.webp" muted loop playsinline preload="none" width="1920" height="1200" aria-label="Blender replay of the three-ball break using the original fitted parameters"></video></div></figure>
+        </div>
+      </article>
+      <article id="lesson-panel-effort" class="lesson-panel" role="tabpanel" aria-labelledby="lesson-tab-effort" data-lesson-panel="effort" hidden>
+        <header class="lesson-intro">
+          <p>Tracking errors can corrupt the observations used to calibrate the simulator.</p>
+        </header>
         <figure class="lesson-tracking" aria-label="Original overhead footage and recorded tracking error">
           <video class="lesson-video" data-lesson-video data-tracking-video src="/media/lessons/tracking.mp4" poster="/media/lessons/tracking.jpg" muted loop playsinline preload="none" width="960" height="540" aria-label="A stationary ball and the lifted cue"></video>
           <svg id="lesson-tracking-overlay" data-tracking-overlay viewBox="0 0 960 540" aria-hidden="true" hidden>
@@ -314,26 +329,18 @@
             <circle class="lesson-reference" data-track-reference r="20"></circle>
             <circle class="lesson-estimate" data-track-estimate r="23"></circle>
           </svg>
+          <figcaption class="lesson-track-legend"><span>Initial position</span><span>Recorded estimate</span></figcaption>
         </figure>
       </article>
       <article id="lesson-panel-time" class="lesson-panel" role="tabpanel" aria-labelledby="lesson-tab-time" data-lesson-panel="time" hidden>
         <header class="lesson-intro">
-          <h3>Physical experiments are expensive</h3>
           <p>Choosing how to spend the exploration budget matters as much as fitting the model.</p>
         </header>
         <div class="lesson-time-layout">
-          <div class="lesson-time-story">
-            <div class="lesson-time-metrics">
-              <p><strong>10</strong><span>physical shots</span></p>
-              <p><strong>4<span>h</span>50<span>m</span></strong><span>between first and tenth</span></p>
+          <div class="lesson-time-metrics" aria-label="Full recorded collection">
+              <p><strong>159</strong><span>recorded physical shots</span></p>
+              <p><strong>35<span>h</span>10<span>m</span></strong><span>first-to-last collection span</span></p>
             </div>
-            <div class="lesson-timeline-window">
-              <div class="lesson-timeline" data-shot-timeline role="group" aria-label="Ten shots positioned by their recording timestamps" aria-describedby="lesson-timeline-help">
-                <span class="lesson-timeline-endpoint">18:40</span><span class="lesson-timeline-endpoint">23:31</span>
-              </div>
-            </div>
-            <p id="lesson-timeline-help" class="lesson-caption">Select a shot to see the experiment. Intervals include planning, perception, fitting, and tooling between recordings.</p>
-          </div>
           <figure id="lesson-shot-detail" class="lesson-shot-preview">
             <video class="lesson-video" data-lesson-video data-shot-video src="/media/lessons/shot-01.mp4" poster="/media/lessons/shot-01.jpg" muted loop playsinline preload="none" width="640" height="360" aria-label="Selected physical experiment"></video>
             <figcaption>
@@ -341,16 +348,17 @@
               <p data-shot-description>An isolated shot probes rolling and cushion behavior.</p>
             </figcaption>
           </figure>
-        </div>
-      </article>
-      <article id="lesson-panel-model" class="lesson-panel" role="tabpanel" aria-labelledby="lesson-tab-model" data-lesson-panel="model" hidden>
-        <header class="lesson-intro">
-          <h3>Calibration has limits</h3>
-          <p>A three-ball break still departs from the fitted simulation.<br>Richer models and continued online adaptation remain necessary.</p>
-        </header>
-        <div class="lesson-break-pair">
-          <figure><figcaption>Real</figcaption><video class="lesson-video" data-lesson-video src="/media/lessons/break-real.mp4" poster="/media/lessons/break-real.jpg" muted loop playsinline preload="none" width="960" height="600" aria-label="Recorded three-ball break"></video></figure>
-          <figure><figcaption>Fitted simulation</figcaption><video class="lesson-video" data-lesson-video src="/media/lessons/break-model.mp4" poster="/media/lessons/break-model.jpg" muted loop playsinline preload="none" width="960" height="600" aria-label="Three-ball break replay using the original fitted parameters"></video></figure>
+          <div class="lesson-time-story">
+            <div class="lesson-timeline-heading">
+              <h4>Explore the first 10 shots</h4>
+              <p>4h50m elapsed</p>
+            </div>
+            <div class="lesson-timeline-window">
+              <div class="lesson-timeline" data-shot-timeline role="group" aria-label="Ten shots positioned by their recording timestamps">
+                <span class="lesson-timeline-endpoint">18:40</span><span class="lesson-timeline-endpoint">23:31</span>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
     </div>

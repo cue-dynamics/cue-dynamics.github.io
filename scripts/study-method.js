@@ -1,217 +1,270 @@
-/* The yellow-ball probe, shown as a calibration cycle and a recorded decision. */
+/* Follow one recorded experiment from scene reconstruction through model fitting. */
 document.addEventListener('DOMContentLoaded', () => {
   const loop = document.getElementById('calibration-loop');
-  const selection = document.getElementById('shot-selection');
+  if (!loop) return;
   const press = (buttons, active) => buttons.forEach((button) => {
     const selected = button === active;
     button.classList.toggle('is-active', selected);
     button.setAttribute('aria-pressed', String(selected));
   });
-  const play = (video) => {
-    if (!video || video.error) return;
-    video.muted = true;
-    video.play().catch(() => {});
-  };
   const visible = new Map();
-  const syncVideos = (section) => {
-    section.querySelectorAll('[data-method-video]').forEach((video) => {
-      const shown = visible.get(section) && !document.hidden && !video.closest('[hidden]');
-      if (shown) play(video);
-      else video.pause();
-    });
+
+  const buttons = [...loop.querySelectorAll('[data-loop-step]')];
+  const panels = [...loop.querySelectorAll('[data-loop-panel]')];
+  const caption = loop.querySelector('.lab-method-caption');
+  const summary = loop.querySelector('[data-loop-summary]');
+  const error = loop.querySelector('[data-loop-error]');
+  const value = loop.querySelector('[data-loop-error-value]');
+  const label = loop.querySelector('[data-loop-error-label]');
+  const status = loop.querySelector('[data-loop-status]');
+  const records = JSON.parse(document.getElementById('decision-details').textContent);
+  const choice = loop.querySelector('.lab-choice-candidates');
+  const candidates = [...choice.querySelectorAll('[data-candidate]')];
+  const drawings = [...loop.querySelectorAll('[data-candidate-visual]')];
+  const chosen = records.findIndex((record) => record.id === 'chosen');
+  let selectedCandidate = chosen;
+  const showCandidate = (index) => {
+    const record = records[index];
+    loop.querySelector('[data-agent-decision]').textContent = record.title + ': ' + record.description;
+    drawings.forEach((drawing) => { drawing.hidden = Number(drawing.dataset.candidateVisual) !== index; });
+    candidates.forEach((button) => button.classList.toggle('is-preview', Number(button.dataset.candidate) === index));
+    loop.querySelector('#decision-map-title').textContent = 'Simulated outcomes: ' + record.title;
   };
-
-  if (loop) {
-    const buttons = [...loop.querySelectorAll('[data-loop-step]')];
-    const panels = [...loop.querySelectorAll('[data-loop-panel]')];
-    const caption = loop.querySelector('.lab-method-caption');
-    const summary = loop.querySelector('[data-loop-summary]');
-    const error = loop.querySelector('[data-loop-error]');
-    const value = loop.querySelector('[data-loop-error-value]');
-    const label = loop.querySelector('[data-loop-error-label]');
-    const status = loop.querySelector('[data-loop-status]');
-    const stages = [
-      { summary: "Recreate the real table and measured ball positions in simulation." },
-      { summary: "Execute the selected shot and compare it with the earlier model." },
-      { summary: "Compare the observed motion (white) with the earlier prediction (red).", error: '99.3 mm', label: 'Earlier-model endpoint error' },
-      { summary: 'Update the simulator from this shot, then replay it with the fitted physics.', error: '2.3 mm', label: 'Updated-model endpoint error' },
-    ];
-    let current = 0;
-    let pinned = false;
-    let timer;
-    let hovering = false;
-    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-    const schedule = () => {
-      clearTimeout(timer);
-      if (pinned || hovering || reducedMotion.matches || !visible.get(loop) || document.hidden) return;
-      timer = setTimeout(() => show((current + 1) % stages.length), current === 0 ? 4000 : 7200);
-    };
-    const show = (index, userAction = false) => {
-      current = index;
-      if (userAction) pinned = true;
-      press(buttons, buttons[index]);
-      panels.forEach((panel, position) => { panel.hidden = position !== index; });
-      summary.textContent = stages[index].summary;
-      loop.querySelector('[data-agent-stage]').textContent = buttons[index].textContent.trim().toLowerCase();
-      loop.querySelector('[data-agent-calibration]').textContent = [
-        'Recreate the table and measured ball positions in simulation.',
-        'Execute the selected yellow-ball probe and record its motion.',
-        'Earlier-model endpoint error on this shot: 99.3 mm.',
-        'Fit the model to the observed motion. Endpoint error on this shot: 99.3 mm → 2.3 mm.',
-      ][index];
-      caption.hidden = !stages[index].summary && !stages[index].error;
-      error.hidden = !stages[index].error;
-      value.textContent = stages[index].error || '';
-      label.textContent = stages[index].label || '';
-      loop.dispatchEvent(new CustomEvent('study:stage', { detail: { index } }));
-      syncVideos(loop);
-      schedule();
-      if (userAction) status.textContent = buttons[index].textContent.trim().replace(/\s+/g, ' ') + ' selected.';
-    };
-    buttons.forEach((button, index) => button.addEventListener('click', () => show(index, true)));
-
-    loop.querySelectorAll('[data-reconstruction]').forEach((reconstruction) => {
-      const handle = reconstruction.querySelector('[data-reconstruction-handle]');
-      if (!handle) return;
-      const stageIndex = Number(reconstruction.dataset.loopPanel);
-      const realLabel = reconstruction.dataset.realLabel || 'real scene';
-      const simulationLabel = reconstruction.dataset.simulationLabel || 'digital twin';
-      let reveal = 50;
-      let pointer = null;
-      const setReveal = (position) => {
-        reveal = Math.max(0, Math.min(100, position));
-        reconstruction.style.setProperty('--reveal-position', `${reveal}%`);
-        const real = Math.round(reveal);
-        handle.setAttribute('aria-valuenow', String(real));
-        handle.setAttribute('aria-valuetext', `${real}% ${realLabel}, ${100 - real}% ${simulationLabel}`);
-        reconstruction.dispatchEvent(new Event('study:reveal'));
-      };
-      const moveReveal = (event) => {
-        const bounds = reconstruction.getBoundingClientRect();
-        if (bounds.width > 0) setReveal((event.clientX - bounds.left) / bounds.width * 100);
-      };
-      reconstruction.addEventListener('pointerdown', (event) => {
-        if (event.isPrimary === false || event.button !== 0 || pointer !== null) return;
-        show(stageIndex, true);
-        pointer = event.pointerId;
-        handle.focus({ preventScroll: true });
-        reconstruction.setPointerCapture(pointer);
-        reconstruction.classList.add('is-dragging');
-        moveReveal(event);
-        if (event.pointerType === 'mouse') event.preventDefault();
-      });
-      reconstruction.addEventListener('pointermove', (event) => {
-        if (event.pointerId === pointer) moveReveal(event);
-      }, { passive: true });
-      const finishDrag = (event) => {
-        if (event.pointerId !== pointer) return;
-        const captured = pointer;
-        pointer = null;
-        reconstruction.classList.remove('is-dragging');
-        if (reconstruction.hasPointerCapture(captured)) reconstruction.releasePointerCapture(captured);
-      };
-      reconstruction.addEventListener('pointerup', (event) => {
-        if (event.pointerId === pointer) moveReveal(event);
-        finishDrag(event);
-      });
-      reconstruction.addEventListener('pointercancel', finishDrag);
-      reconstruction.addEventListener('lostpointercapture', finishDrag);
-      handle.addEventListener('focus', () => show(stageIndex, true));
-      handle.addEventListener('keydown', (event) => {
-        const step = event.shiftKey ? 10 : 1;
-        const positions = { ArrowLeft: reveal - step, ArrowDown: reveal - step, ArrowRight: reveal + step, ArrowUp: reveal + step, PageDown: reveal - 10, PageUp: reveal + 10, Home: 0, End: 100 };
-        if (!(event.key in positions)) return;
-        event.preventDefault();
-        show(stageIndex, true);
-        setReveal(positions[event.key]);
-      });
-      setReveal(50);
+  const stages = [
+    { summary: 'Recreate the real table and measured ball positions in simulation.', agent: 'Build the digital scene from the camera view and measured ball positions.' },
+    { summary: 'Choose an informative shot: CUE compares 282 candidate shots across 10 models, looking for differences that a real experiment can distinguish reliably.', agent: 'Compare predictions from candidate models.' },
+    { summary: 'Execute the selected shot and compare it with the earlier model.', agent: 'Strike the yellow ball at 0.35 m/s and track its motion.' },
+    { summary: 'White follows recorded motion; red follows the earlier model. Dashed paths show the counterpart.', agent: 'Compare the recorded motion with the initial model. Endpoint error: 99.3 mm.', error: '99.3 mm', label: 'Earlier-model endpoint error' },
+    { summary: 'White follows recorded motion; red follows the fitted model. Dashed paths show the counterpart.', agent: 'Fit the physics to the recorded motion. Endpoint error: 2.3 mm on this shot.', error: '2.3 mm', label: 'Updated-model endpoint error' },
+  ];
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const progress = buttons.map((button) => button.querySelector('[data-loop-progress]'));
+  const playback = loop.querySelector('[data-loop-play]');
+  const holds = new Set();
+  let current = -1;
+  let clock = null;
+  let manualPaused = reducedMotion.matches;
+  const syncClock = () => {
+    const running = !manualPaused && !holds.size && visible.get(loop) && !document.hidden;
+    if (clock) {
+      if (running && clock.playState !== 'running') clock.play();
+      else if (!running && clock.playState !== 'paused') clock.pause();
+    }
+    playback.textContent = manualPaused ? 'Resume' : 'Pause';
+    playback.setAttribute('aria-label', manualPaused ? 'Resume automatic walkthrough' : 'Pause automatic walkthrough');
+    playback.setAttribute('aria-pressed', String(manualPaused));
+  };
+  const hold = (key, paused) => {
+    if (paused) holds.add(key);
+    else holds.delete(key);
+    syncClock();
+  };
+  const restartClock = () => {
+    clock?.cancel();
+    progress.forEach((bar, index) => {
+      bar.style.transform = index < current ? 'scaleX(1)' : 'scaleX(0)';
+      buttons[index].classList.toggle('is-complete', index < current);
     });
-
-    const controls = loop.querySelector('.lab-step-list');
-    controls.addEventListener('pointerenter', () => { hovering = true; schedule(); });
-    controls.addEventListener('pointerleave', () => { hovering = false; schedule(); });
-    controls.addEventListener('focusin', () => { hovering = true; schedule(); });
-    controls.addEventListener('focusout', (event) => {
-      if (!controls.contains(event.relatedTarget)) { hovering = false; schedule(); }
-    });
-    loop.addEventListener('study:visibility', () => { syncVideos(loop); schedule(); });
-    reducedMotion.addEventListener('change', schedule);
-  }
-
-  if (selection) {
-    const records = JSON.parse(document.getElementById('decision-details').textContent);
-    const buttons = [...selection.querySelectorAll('[data-candidate]')];
-    const drawings = [...selection.querySelectorAll('[data-candidate-visual]')];
-    const modes = [...selection.querySelectorAll('[data-decision-mode]')];
-    const map = selection.querySelector('[data-decision-map]');
-    const executed = selection.querySelector('[data-decision-executed]');
-    const legend = selection.querySelector('[data-decision-legend]');
-    const chosen = records.findIndex((record) => record.id === 'chosen');
-    let selected = chosen;
-    let mode = 'predicted';
-    const setMode = (next) => {
-      mode = next;
-      map.hidden = mode !== 'predicted';
-      executed.hidden = mode !== 'executed';
-      legend.style.visibility = mode === 'predicted' ? '' : 'hidden';
-      press(modes, modes.find((button) => button.dataset.decisionMode === mode));
-      syncVideos(selection);
+    const animation = progress[current].animate(
+      [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
+      { duration: 8000, easing: 'linear', fill: 'forwards' },
+    );
+    clock = animation;
+    animation.onfinish = () => {
+      if (clock === animation && !manualPaused && !holds.size && visible.get(loop) && !document.hidden) show((current + 1) % stages.length);
     };
-    const show = (index) => {
-      const record = records[index];
-      selection.querySelector('[data-agent-decision]').textContent = record.description;
-      drawings.forEach((drawing) => drawing.toggleAttribute('hidden', Number(drawing.dataset.candidateVisual) !== index));
-      buttons.forEach((button) => button.classList.toggle('is-preview', Number(button.dataset.candidate) === index));
-      selection.querySelector('#decision-map-title').textContent = 'Simulated outcomes: ' + record.title;
-      if (index !== chosen && mode === 'executed') setMode('predicted');
-    };
-    buttons.forEach((button) => {
-      const index = Number(button.dataset.candidate);
-      button.addEventListener('pointerenter', () => show(index));
-      button.addEventListener('focus', () => show(index));
-      button.addEventListener('click', () => {
-        selected = index;
-        press(buttons, button);
-        show(index);
-        selection.querySelector('[data-decision-status]').textContent = records[index].title + ' selected.';
-      });
-    });
-    const list = selection.querySelector('.lab-candidate-list');
-    list.addEventListener('pointerleave', () => show(selected));
-    list.addEventListener('focusout', (event) => {
-      if (!list.contains(event.relatedTarget)) show(selected);
-    });
-    modes.forEach((button) => button.addEventListener('click', () => {
-      if (button.dataset.decisionMode === 'executed') {
-        selected = chosen;
-        press(buttons, buttons.find((button) => Number(button.dataset.candidate) === chosen));
-        show(chosen);
+    syncClock();
+  };
+  const show = (index, userAction = false) => {
+    const changed = current !== index;
+    current = index;
+    if (changed) {
+      if (index !== 1) {
+        holds.delete('candidate-focus');
+        holds.delete('candidate-pointer');
       }
-      setMode(button.dataset.decisionMode);
-    }));
-    selection.addEventListener('study:visibility', () => syncVideos(selection));
-    show(chosen);
-  }
-
-  [loop, selection].filter(Boolean).forEach((section) => {
-    section.querySelectorAll('[data-method-video]').forEach((video) => {
-      video.addEventListener('loadeddata', () => syncVideos(section));
+      loop.querySelectorAll('[data-reconstruction]').forEach((panel) => {
+        if (Number(panel.dataset.loopPanel) !== index) {
+          holds.delete(panel);
+          holds.delete(panel.querySelector('[data-reconstruction-handle]'));
+        }
+      });
+    }
+    press(buttons, buttons[index]);
+    drawFlow();
+    panels.forEach((panel, position) => { panel.hidden = position !== index; });
+    summary.textContent = stages[index].summary;
+    loop.querySelector('[data-agent-stage]').textContent = buttons[index].getAttribute('aria-label');
+    loop.querySelector('[data-agent-calibration]').textContent = stages[index].agent;
+    loop.querySelector('[data-agent-candidate]').hidden = index !== 1;
+    loop.querySelector('[data-agent-choice]').hidden = index !== 1;
+    loop.querySelector('[data-agent-fit-note]').hidden = index < 3;
+    if (index === 1 && changed) {
+      selectedCandidate = chosen;
+      press(candidates, candidates.find((button) => Number(button.dataset.candidate) === chosen));
+      showCandidate(chosen);
+    }
+    caption.hidden = !stages[index].summary && !stages[index].error;
+    error.hidden = !stages[index].error;
+    value.textContent = stages[index].error || '';
+    label.textContent = stages[index].label || '';
+    loop.dispatchEvent(new CustomEvent('study:stage', { detail: { index } }));
+    if (changed || !clock) restartClock();
+    else syncClock();
+    const viewport = loop.querySelector('.lab-loop-flow-viewport');
+    if (viewport.scrollWidth > viewport.clientWidth) {
+      const active = buttons[index];
+      viewport.scrollTo({ left: active.offsetLeft + active.offsetWidth / 2 - viewport.clientWidth / 2, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+    }
+    if (userAction) status.textContent = buttons[index].getAttribute('aria-label') + ' selected.';
+  };
+  playback.addEventListener('click', () => {
+    manualPaused = !manualPaused;
+    syncClock();
+  });
+  buttons.forEach((button, index) => button.addEventListener('click', () => show(index, true)));
+  candidates.forEach((button) => {
+    const index = Number(button.dataset.candidate);
+    button.addEventListener('pointerenter', () => showCandidate(index));
+    button.addEventListener('focus', () => {
+      if (button.matches(':focus-visible')) hold('candidate-focus', true);
+      showCandidate(index);
+    });
+    button.addEventListener('click', () => {
+      selectedCandidate = index;
+      press(candidates, button);
+      showCandidate(index);
+      restartClock();
+      status.textContent = 'Inspecting ' + records[index].title.toLowerCase() + '. Recorded choice: yellow ball, 0.35 m/s.';
     });
   });
+  choice.addEventListener('pointerleave', () => showCandidate(selectedCandidate));
+  choice.addEventListener('focusout', (event) => {
+    if (!choice.contains(event.relatedTarget)) {
+      hold('candidate-focus', false);
+      showCandidate(selectedCandidate);
+    }
+  });
+
+  loop.querySelectorAll('[data-reconstruction]').forEach((reconstruction) => {
+    const handle = reconstruction.querySelector('[data-reconstruction-handle]');
+    if (!handle) return;
+    const stageIndex = Number(reconstruction.dataset.loopPanel);
+    const realLabel = reconstruction.dataset.realLabel || 'real scene';
+    const simulationLabel = reconstruction.dataset.simulationLabel || 'digital twin';
+    let reveal = 50;
+    let pointer = null;
+    const setReveal = (position) => {
+      reveal = Math.max(0, Math.min(100, position));
+      reconstruction.style.setProperty('--reveal-position', `${reveal}%`);
+      const real = Math.round(reveal);
+      handle.setAttribute('aria-valuenow', String(real));
+      handle.setAttribute('aria-valuetext', `${real}% ${realLabel}, ${100 - real}% ${simulationLabel}`);
+      reconstruction.dispatchEvent(new Event('study:reveal'));
+    };
+    const moveReveal = (event) => {
+      const bounds = reconstruction.getBoundingClientRect();
+      if (bounds.width > 0) setReveal((event.clientX - bounds.left) / bounds.width * 100);
+    };
+    reconstruction.addEventListener('pointerdown', (event) => {
+      if (event.isPrimary === false || event.button !== 0 || pointer !== null) return;
+      hold(reconstruction, true);
+      show(stageIndex, true);
+      pointer = event.pointerId;
+      handle.focus({ preventScroll: true });
+      reconstruction.setPointerCapture(pointer);
+      reconstruction.classList.add('is-dragging');
+      moveReveal(event);
+      if (event.pointerType === 'mouse') event.preventDefault();
+    });
+    reconstruction.addEventListener('pointermove', (event) => {
+      if (event.pointerId === pointer) moveReveal(event);
+    }, { passive: true });
+    const finishDrag = (event) => {
+      if (event.pointerId !== pointer) return;
+      const captured = pointer;
+      pointer = null;
+      hold(reconstruction, false);
+      reconstruction.classList.remove('is-dragging');
+      if (reconstruction.hasPointerCapture(captured)) reconstruction.releasePointerCapture(captured);
+    };
+    reconstruction.addEventListener('pointerup', (event) => {
+      if (event.pointerId === pointer) moveReveal(event);
+      finishDrag(event);
+    });
+    reconstruction.addEventListener('pointercancel', finishDrag);
+    reconstruction.addEventListener('lostpointercapture', finishDrag);
+    handle.addEventListener('focus', () => {
+      if (handle.matches(':focus-visible')) hold(handle, true);
+      show(stageIndex, true);
+    });
+    handle.addEventListener('blur', () => hold(handle, false));
+    handle.addEventListener('keydown', (event) => {
+      const step = event.shiftKey ? 10 : 1;
+      const positions = { ArrowLeft: reveal - step, ArrowDown: reveal - step, ArrowRight: reveal + step, ArrowUp: reveal + step, PageDown: reveal - 10, PageUp: reveal + 10, Home: 0, End: 100 };
+      if (!(event.key in positions)) return;
+      event.preventDefault();
+      hold(handle, true);
+      show(stageIndex, true);
+      setReveal(positions[event.key]);
+    });
+    setReveal(50);
+  });
+
+  choice.addEventListener('pointerenter', (event) => {
+    if (event.pointerType === 'mouse') hold('candidate-pointer', true);
+  });
+  choice.addEventListener('pointerleave', () => hold('candidate-pointer', false));
+  const navigation = loop.querySelector('.lab-step-list');
+  navigation.addEventListener('focusin', (event) => {
+    if (event.target.matches(':focus-visible')) hold('navigation-focus', true);
+  });
+  navigation.addEventListener('focusout', (event) => {
+    if (!navigation.contains(event.relatedTarget)) hold('navigation-focus', false);
+  });
+  navigation.addEventListener('pointerdown', () => hold('navigation-focus', false));
+  loop.addEventListener('study:visibility', syncClock);
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) manualPaused = true;
+    syncClock();
+  });
+  const flow = loop.querySelector('.lab-loop-flow');
+  const track = flow.querySelector('.lab-flow-track');
+  const drawFlow = () => {
+    const bounds = flow.getBoundingClientRect();
+    if (!bounds.width) return;
+    const nodes = buttons.map((button) => {
+      const node = button.querySelector('.lab-flow-node').getBoundingClientRect();
+      return { x: node.left + node.width / 2 - bounds.left, y: node.top + node.height / 2 - bounds.top, radius: node.width / 2 };
+    });
+    track.setAttribute('viewBox', `0 0 ${bounds.width} ${bounds.height}`);
+    track.querySelectorAll('[data-loop-connection]').forEach((path, index) => {
+      const from = nodes[index], to = nodes[index + 1];
+      const gap = Math.min(6, Math.max(0, (to.x - to.radius - from.x - from.radius) / 4));
+      path.setAttribute('d', `M${from.x + from.radius + gap} ${from.y}H${to.x - to.radius - gap}`);
+    });
+    const first = nodes[0], last = nodes[nodes.length - 1];
+    const outset = bounds.width < 400 ? 12 : 0;
+    const left = -outset, right = bounds.width + outset, bottom = bounds.height - 14;
+    const radius = Math.min(14, right - last.x - last.radius - 6, first.x - first.radius - 6 - left);
+    track.querySelector('[data-loop-return-path]').setAttribute('d',
+      `M${last.x + last.radius + 6} ${last.y}H${right - radius}Q${right} ${last.y} ${right} ${last.y + radius}V${bottom - radius}Q${right} ${bottom} ${right - radius} ${bottom}H${left + radius}Q${left} ${bottom} ${left} ${bottom - radius}V${first.y + radius}Q${left} ${first.y} ${left + radius} ${first.y}H${first.x - first.radius - 6}`);
+  };
+  if ('ResizeObserver' in window) new ResizeObserver(drawFlow).observe(flow);
+  else window.addEventListener('resize', drawFlow);
+  document.fonts?.ready.then(drawFlow);
+  show(0);
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       visible.set(entry.target, entry.isIntersecting);
       entry.target.dispatchEvent(new CustomEvent('study:visibility', { detail: { visible: entry.isIntersecting } }));
     }), { threshold: .12 });
-    [loop, selection].filter(Boolean).forEach((section) => observer.observe(section));
+    observer.observe(loop);
   } else {
-    [loop, selection].filter(Boolean).forEach((section) => {
-      visible.set(section, true);
-      section.dispatchEvent(new CustomEvent('study:visibility', { detail: { visible: true } }));
-    });
+    visible.set(loop, true);
+    loop.dispatchEvent(new CustomEvent('study:visibility', { detail: { visible: true } }));
   }
   document.addEventListener('visibilitychange', () => {
-    [loop, selection].filter(Boolean).forEach((section) => section.dispatchEvent(new CustomEvent('study:visibility', { detail: { visible: visible.get(section) } })));
+    loop.dispatchEvent(new CustomEvent('study:visibility', { detail: { visible: visible.get(loop) } }));
   });
 });

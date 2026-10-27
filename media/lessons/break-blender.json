@@ -1,0 +1,28 @@
+{
+  "model": {
+    "video": "/media/lessons/break-model-blender-1e7e4400fd.mp4",
+    "poster": "/media/lessons/break-model-blender-2541ad1d08.webp",
+    "frames": 178,
+    "duration_s": 2.966666666666667,
+    "width": 1920,
+    "height": 1200,
+    "fps": 60,
+    "packed_width": 3840,
+    "alpha": "Synchronized alpha plane in the right half",
+    "sha256": "1e7e4400fd68ee14830c6784b2235f9f89ec7c6a29d48be3d61ab742641616b1",
+    "renderer": "Blender Cycles OptiX"
+  },
+  "render": {
+    "job": "lesson-break-fitted-v1",
+    "samples": 24,
+    "geometry": "Approved table, cushions and pocket caps",
+    "states_sha256": "782dbc199f9ff052cfeffb67442a5790d3078b304b2f418c669ee12e2c459b44",
+    "parameters_sha256": "99a93a137e5397391d03825146b32cfaf9901947b9f34438fd63440e17ae267e",
+    "max_ball_coordinate_error_m": 0.0,
+    "original_frame_times_match": true,
+    "physics_stepped": false,
+    "per_shot_launch_fit": false,
+    "camera_registration_changed": false,
+    "real_video_changed": false
+  }
+}

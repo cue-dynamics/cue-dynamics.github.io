@@ -1,8 +1,7 @@
 /* Four camera-matched demonstrations share one decoded video timeline. */
 #real-table { --corl-width: min(calc(2 * clamp(420px, 40vw, 1000px)), calc((100svh - 240px) * 16 / 9)); }
 #real-table > .lab-shell { padding-top: clamp(38px, 4vw, 60px); }
-#real-table .corl-heading { width: var(--corl-width); margin-bottom: 23px; align-items: flex-start; }
-#real-table .corl-tools { display: grid; gap: 9px; justify-items: end; flex-shrink: 0; }
+#real-table .corl-tools { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: var(--lab-heading-gap); }
 #real-table .corl-tools .lab-tabs { padding: 0; }
 #real-table .corl-tools .lab-tab { min-height: 44px; padding: 8px 0; }
 #real-table .corl-tools .lab-hover-hint { font-size: 14px; }
@@ -14,7 +13,7 @@
   width: var(--corl-width);
   max-width: calc(100% - 2 * var(--content-padding));
   margin: 0 auto;
-  padding-bottom: clamp(52px, 5.5vw, 88px);
+  padding-bottom: var(--lab-section-space);
 }
 #real-table .corl-composite { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 #real-table .has-compositor .corl-tile { z-index: 1; }
@@ -71,27 +70,16 @@
 /* The opening demonstration shares the original hero's width and rhythm. */
 .paper-hero #real-table { --corl-width: 100%; border: 0; }
 .paper-hero #real-table > .lab-shell { width: 100%; max-width: none; padding: 0; }
-.paper-hero #real-table .corl-heading { width: 100%; max-width: none; margin: 0 0 20px; align-items: center; }
-.paper-hero #real-table .lab-title { margin: 0; font-size: clamp(24px, 2.3vw, 32px); }
-.paper-hero #real-table .corl-tools { display: flex; align-items: center; gap: 24px; }
+.paper-hero #real-table .corl-heading, .paper-hero #real-table .corl-tools { width: 100%; max-width: none; }
 .paper-hero #real-table .lab-hover-hint { padding: 0; }
 .paper-hero #real-table .corl-grid { width: 100%; max-width: none; padding-bottom: 0; }
-.paper-hero #real-table .corl-caption { max-width: 78ch; margin: 20px 0 0; color: var(--lab-muted); font-size: 16px; line-height: 1.65; text-wrap: pretty; }
-
-@media (max-width: 991px) {
-  .paper-hero #real-table .corl-tools { display: grid; gap: 3px; }
-}
 @media (max-width: 767px) {
-  #real-table .corl-grid { gap: 12px; padding-bottom: 46px; }
+  #real-table .corl-grid { gap: 12px; }
 }
 @media (max-width: 540px) {
   #real-table .corl-grid { grid-template-columns: 1fr; gap: 26px; }
-  #real-table .corl-heading { flex-direction: column; align-items: flex-start; gap: 17px; }
   #real-table .corl-tools { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
   #real-table .lab-hover-hint { max-width: 170px; font-size: 14px; }
-  .paper-hero #real-table .corl-heading { align-items: flex-start; gap: 10px; }
-  .paper-hero #real-table .corl-tools { width: 100%; display: flex; gap: 14px; justify-content: space-between; }
-  .paper-hero #real-table .corl-caption { font-size: 15px; }
 }
 @media (hover: none) { .paper-hero #real-table .lab-hover-hint { display: none; } }
 @media (prefers-reduced-motion: reduce) {
