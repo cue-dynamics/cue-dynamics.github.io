@@ -30,10 +30,20 @@ window.createVideoRevealRenderer = (video, canvas) => {
         context.setTransform(ratio, 0, 0, ratio, 0, 0);
         context.clearRect(0, 0, width, height);
         for (const scene of scenes) {
-          const base = scene.simulationBase ? scene.simulation : scene.real;
+          const split = Number.isFinite(scene.splitPosition) ? Math.max(0, Math.min(1, scene.splitPosition)) : -1;
+          const base = split >= 0 ? scene.real : scene.simulationBase ? scene.simulation : scene.real;
           const alternate = scene.simulationBase ? scene.real : scene.simulation;
           const [x, y, w, h] = scene.viewport;
           context.drawImage(video, ...base, x, y, w, h);
+          if (split >= 0) {
+            context.save();
+            context.beginPath();
+            context.rect(x + w * split, y, w * (1 - split), h);
+            context.clip();
+            context.drawImage(video, ...scene.simulation, x, y, w, h);
+            context.restore();
+            continue;
+          }
           if (scene.revealing) {
             context.save();
             context.beginPath();
@@ -79,7 +89,7 @@ window.createVideoRevealRenderer = (video, canvas) => {
       uniform sampler2D frame;
       uniform vec2 videoSize, tileSize, pointer;
       uniform vec4 realRegion, simulationRegion, maskRegion;
-      uniform float radius, revealing, full, simulationBase, overlayOpacity;
+      uniform float radius, revealing, full, simulationBase, overlayOpacity, splitPosition;
       varying vec2 local;
       vec3 sampleRegion(vec4 region) {
         vec2 pixel = region.xy + clamp(local * region.zw, vec2(.5), region.zw - .5);
@@ -90,6 +100,10 @@ window.createVideoRevealRenderer = (video, canvas) => {
         return vec4(sampleRegion(simulationRegion) * alpha, alpha);
       }
       void main() {
+        if (splitPosition >= 0.) {
+          gl_FragColor = local.x < splitPosition ? vec4(sampleRegion(realRegion), 1.) : simulationColor();
+          return;
+        }
         if (overlayOpacity >= 0.) {
           vec4 prediction = simulationColor();
           float opacity = clamp(overlayOpacity, 0., 1.);
@@ -130,7 +144,7 @@ window.createVideoRevealRenderer = (video, canvas) => {
   gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
   gl.uniform1i(gl.getUniformLocation(program, 'frame'), 0);
   const uniforms = Object.fromEntries(['videoSize', 'tileSize', 'pointer', 'realRegion',
-    'simulationRegion', 'maskRegion', 'radius', 'revealing', 'full', 'simulationBase', 'overlayOpacity']
+    'simulationRegion', 'maskRegion', 'radius', 'revealing', 'full', 'simulationBase', 'overlayOpacity', 'splitPosition']
     .map((name) => [name, gl.getUniformLocation(program, name)]));
   canvas.dataset.videoRenderer = 'webgl';
   return {
@@ -170,6 +184,7 @@ window.createVideoRevealRenderer = (video, canvas) => {
           gl.uniform1f(uniforms.full, Number(scene.full));
           gl.uniform1f(uniforms.simulationBase, Number(scene.simulationBase));
           gl.uniform1f(uniforms.overlayOpacity, Number.isFinite(scene.overlayOpacity) ? scene.overlayOpacity : -1);
+          gl.uniform1f(uniforms.splitPosition, Number.isFinite(scene.splitPosition) ? Math.max(0, Math.min(1, scene.splitPosition)) : -1);
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
         stats.draws++;

@@ -9,17 +9,19 @@
 .lesson-intro { display: flex; align-items: baseline; justify-content: space-between; gap: 32px; margin-bottom: 26px; }
 .lesson-intro h3 { flex: 0 1 43%; margin: 0; font-size: clamp(23px, 2.1vw, 30px); font-weight: 400; line-height: 1.2; letter-spacing: -.025em; text-wrap: balance; }
 .lesson-intro p { flex: 0 1 52%; max-width: 60ch; margin: 0; color: var(--lab-muted); font-size: 16px; line-height: 1.65; text-wrap: pretty; }
-.lesson-media-controls { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 16px; }
-.lesson-toggle { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 15px; color: var(--lab-ink); cursor: pointer; }
-.lesson-toggle input { appearance: auto; width: 17px; height: 17px; margin: 0; accent-color: var(--lab-accent); cursor: pointer; }
-.lesson-track-legend { display: flex; flex-wrap: wrap; gap: 22px; color: var(--lab-muted); font-size: 14px; }
+/* Group each lesson's title and description above its evidence. */
+#lesson-panel-effort { width: min(100%, 960px); margin-inline: auto; }
+:is(#lesson-panel-effort, #lesson-panel-model) .lesson-intro { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; justify-content: stretch; gap: 8px; margin-bottom: 24px; }
+:is(#lesson-panel-effort, #lesson-panel-model) .lesson-intro h3 { margin: 0; }
+:is(#lesson-panel-effort, #lesson-panel-model) .lesson-intro p { max-width: 65ch; }
+.lesson-track-legend { display: flex; flex-wrap: wrap; gap: 8px 24px; width: min(100%, 960px); margin: 0 auto 12px; color: var(--lab-muted); font-size: 14px; line-height: 1.5; }
 .lesson-track-legend span { display: inline-flex; align-items: center; gap: 8px; }
 .lesson-track-legend span::before { content: ''; width: 13px; height: 13px; border: 1.5px dashed #fff; border-radius: 50%; }
 .lesson-track-legend span:last-child::before { border-style: solid; border-color: var(--ball-orange); }
 .lesson-tracking { position: relative; width: min(100%, 960px); margin: 0 auto; aspect-ratio: 16 / 9; background: var(--lab-panel-deep); }
 .lesson-video { display: block; width: 100%; height: auto; object-fit: contain; pointer-events: none; background: var(--lab-panel-deep); }
 .lesson-tracking svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
-.lesson-tracking svg[hidden], .lesson-track-legend[hidden] { display: none; }
+.lesson-tracking svg[hidden] { display: none; }
 .lesson-reference { fill: none; stroke: #fff; stroke-width: 2; stroke-dasharray: 5 5; }
 .lesson-estimate { fill: none; stroke: var(--ball-orange); stroke-width: 3; }
 .lesson-track-trail { fill: none; stroke: var(--ball-orange); stroke-width: 2; stroke-opacity: .7; stroke-linecap: round; stroke-linejoin: round; }
@@ -51,10 +53,12 @@
 .lesson-shot-preview figcaption p { margin: 10px 0 0; color: var(--lab-muted); font-size: 15px; line-height: 1.65; text-wrap: pretty; }
 .lesson-time-story > .lesson-caption { margin-top: 21px; }
 
-.lesson-break-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-top: 8px; }
+.lesson-break-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .lesson-break-pair figure { margin: 0; min-width: 0; }
 .lesson-break-pair figcaption { margin-bottom: 14px; color: var(--lab-ink); font-size: 16px; }
 .lesson-break-pair .lesson-video { aspect-ratio: 8 / 5; }
+.lesson-model-media { position: relative; aspect-ratio: 8 / 5; background: transparent; }
+.lesson-model-media > .lesson-video { width: 100%; height: 100%; background: transparent; }
 .lesson-panel-status { margin-top: 16px; color: var(--lab-muted); font-size: 15px; }
 .lesson-panel-status:empty { display: none; }
 
@@ -75,8 +79,7 @@
   .lesson-panel { padding-top: 24px; }
   .lesson-intro { margin-bottom: 20px; }
   .lesson-intro p { font-size: 16px; }
-  .lesson-media-controls { flex-wrap: wrap; gap: 3px 20px; margin-bottom: 14px; }
-  .lesson-track-legend { font-size: 14px; gap: 17px; }
+  .lesson-track-legend { font-size: 14px; gap: 8px 20px; }
   .lesson-time-layout { grid-template-columns: 1fr; gap: 24px; padding-top: 8px; }
   .lesson-time-metrics { grid-template-columns: .65fr 1fr; margin-bottom: 26px; }
   .lesson-time-metrics strong { font-size: clamp(48px, 9vw, 68px); }

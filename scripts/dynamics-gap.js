@@ -2,6 +2,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   const group = document.querySelector('[data-gap-comparison]');
   if (!group) return;
+  const section = group.closest('section');
+  let inView = !('IntersectionObserver' in window);
+  const reveal = () => {
+    if (!inView || section.classList.contains('has-dynamics-reveal')) return;
+    section.classList.add('has-dynamics-reveal');
+    section.querySelectorAll('.gap-not, .gap-reveal-copy').forEach((element) => element.removeAttribute('aria-hidden'));
+    group.removeEventListener('media:loop', reveal);
+    observer?.disconnect();
+  };
+  const observer = 'IntersectionObserver' in window ? new IntersectionObserver(([entry]) => {
+    inView = entry.isIntersecting;
+    if (inView && matchMedia('(prefers-reduced-motion: reduce)').matches) reveal();
+  }, { threshold: .35 }) : null;
+  observer?.observe(section);
+  group.addEventListener('media:loop', reveal);
+  if (inView && matchMedia('(prefers-reduced-motion: reduce)').matches) reveal();
   const buttons = [...document.querySelectorAll('[data-gap-example]')];
   const real = group.querySelector('[data-gap-real] video');
   const model = group.querySelector('[data-gap-sim] video');

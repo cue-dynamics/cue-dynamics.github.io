@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const videos = [...section.querySelectorAll('[data-lesson-video]')];
   const tracking = section.querySelector('[data-tracking-video]');
   const overlay = section.querySelector('[data-tracking-overlay]');
-  const toggle = section.querySelector('[data-tracking-toggle]');
-  const legend = section.querySelector('[data-tracking-legend]');
   const preview = section.querySelector('[data-shot-video]');
   const timeline = section.querySelector('[data-shot-timeline]');
   const status = section.querySelector('[data-lessons-status]');
@@ -26,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     element.setAttribute('cy', point.y);
   };
   const drawTracking = () => {
-    if (!manifest || !toggle.checked) return;
+    if (!manifest) return;
     const data = manifest.tracking;
     const time = Math.min(tracking.currentTime, data.source_end_s - data.source_start_s);
     const samples = data.samples.filter((point) => point.t <= time);
@@ -100,11 +98,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         selectLesson(tabs[next].dataset.lessonTab, true);
       }
     });
-  });
-  toggle.addEventListener('change', () => {
-    overlay.toggleAttribute('hidden', !toggle.checked);
-    legend.hidden = !toggle.checked;
-    drawTracking();
   });
   videos.forEach((video) => {
     video.muted = true;
@@ -184,8 +177,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       shotButtons.push(button);
       timeline.append(button);
     });
-    overlay.toggleAttribute('hidden', !toggle.checked);
     drawTracking();
+    overlay.removeAttribute('hidden');
     updatePlayback();
   } catch (error) {
     status.textContent = 'The experiment timeline could not load. Refresh to try again.';

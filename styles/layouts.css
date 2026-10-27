@@ -9,12 +9,20 @@
   --lab-accent: var(--paper-accent);
 }
 
-/* Restrained ball accents connect section navigation to active content. */
-#dynamics-gap, .lab-index-links a[data-section-link="dynamics-gap"] { --lab-accent: var(--ball-blue); }
-#calibration-loop, #shot-selection, .lab-index-links a[data-section-link="calibration-loop"], .lab-index-links a[data-section-link="shot-selection"] { --lab-accent: var(--ball-yellow); }
-#prediction-results, .lab-index-links a[data-section-link="prediction-results"] { --lab-accent: var(--ball-red); }
-#real-table, .lab-index-links a[data-section-link="real-table"] { --lab-accent: var(--ball-purple); }
-#limitations, .lab-index-links a[data-section-link="limitations"] { --lab-accent: var(--ball-orange); }
+/* Ball accents within each demonstration. */
+#dynamics-gap { --lab-accent: var(--ball-blue); }
+#calibration-loop, #shot-selection { --lab-accent: var(--ball-yellow); }
+#prediction-results { --lab-accent: var(--ball-red); }
+#real-table { --lab-accent: var(--ball-purple); }
+#limitations { --lab-accent: var(--ball-orange); }
+
+/* Navigation follows the numbered ball colors from left to right. */
+.lab-index-links a:nth-child(1) { --lab-accent: var(--ball-yellow); }
+.lab-index-links a:nth-child(2) { --lab-accent: var(--ball-blue); }
+.lab-index-links a:nth-child(3) { --lab-accent: var(--ball-red); }
+.lab-index-links a:nth-child(4) { --lab-accent: var(--ball-purple); }
+.lab-index-links a:nth-child(5) { --lab-accent: var(--ball-orange); }
+.lab-index-links a:nth-child(6) { --lab-accent: var(--ball-green); }
 
 .lab-section, .lab-index, .lab-footer { pointer-events: auto; }
 .lab-section *, .lab-index *, .lab-footer * { box-sizing: border-box; }
@@ -274,6 +282,13 @@
 .lab-footer-byline { display: grid; gap: 10px; margin-top: 16px; }
 .lab-footer-byline .paper-authors, .lab-footer-byline .paper-affiliations { justify-content: center; }
 .lab-footer-byline .paper-authors { column-gap: 25px; color: var(--lab-ink); font-size: 16px; }
+.lab-footer-byline .paper-authors {
+  --author-yellow: #4b3b00;
+  --author-blue: #123468;
+  --author-red: #721b21;
+  --author-purple: #4e246f;
+  --author-orange: #5c2700;
+}
 .lab-footer-byline .paper-affiliations, .lab-footer-byline .paper-contributions { color: var(--lab-muted); font-size: 14px; }
 .lab-footer-byline sup { margin-left: 2px; font-size: .65em; }
 .lab-resource-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }

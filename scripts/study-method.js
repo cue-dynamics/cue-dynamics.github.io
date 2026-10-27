@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const status = loop.querySelector('[data-loop-status]');
     const stages = [
       { summary: "Recreate the real table and measured ball positions in simulation." },
-      { summary: "Take the selected shot and record the ball’s motion." },
-      { summary: "Measure where the prediction departs from the observed path.", error: '99.3 mm', label: 'Earlier-model endpoint error' },
-      { summary: '' },
+      { summary: "Execute the selected shot and compare it with the earlier model." },
+      { summary: "Compare the observed motion (white) with the earlier prediction (red).", error: '99.3 mm', label: 'Earlier-model endpoint error' },
+      { summary: 'Update the simulator from this shot, then replay it with the fitted physics.', error: '2.3 mm', label: 'Updated-model endpoint error' },
     ];
     let current = 0;
     let pinned = false;
@@ -52,19 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
       press(buttons, buttons[index]);
       panels.forEach((panel, position) => { panel.hidden = position !== index; });
       summary.textContent = stages[index].summary;
+      loop.querySelector('[data-agent-stage]').textContent = buttons[index].textContent.trim().toLowerCase();
+      loop.querySelector('[data-agent-calibration]').textContent = [
+        'Recreate the table and measured ball positions in simulation.',
+        'Execute the selected yellow-ball probe and record its motion.',
+        'Earlier-model endpoint error on this shot: 99.3 mm.',
+        'Fit the model to the observed motion. Endpoint error on this shot: 99.3 mm → 2.3 mm.',
+      ][index];
       caption.hidden = !stages[index].summary && !stages[index].error;
       error.hidden = !stages[index].error;
       value.textContent = stages[index].error || '';
       label.textContent = stages[index].label || '';
+      loop.dispatchEvent(new CustomEvent('study:stage', { detail: { index } }));
       syncVideos(loop);
       schedule();
       if (userAction) status.textContent = buttons[index].textContent.trim().replace(/\s+/g, ' ') + ' selected.';
     };
     buttons.forEach((button, index) => button.addEventListener('click', () => show(index, true)));
 
-    const reconstruction = loop.querySelector('[data-reconstruction]');
-    const handle = reconstruction?.querySelector('[data-reconstruction-handle]');
-    if (handle) {
+    loop.querySelectorAll('[data-reconstruction]').forEach((reconstruction) => {
+      const handle = reconstruction.querySelector('[data-reconstruction-handle]');
+      if (!handle) return;
+      const stageIndex = Number(reconstruction.dataset.loopPanel);
+      const realLabel = reconstruction.dataset.realLabel || 'real scene';
+      const simulationLabel = reconstruction.dataset.simulationLabel || 'digital twin';
       let reveal = 50;
       let pointer = null;
       const setReveal = (position) => {
@@ -72,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
         reconstruction.style.setProperty('--reveal-position', `${reveal}%`);
         const real = Math.round(reveal);
         handle.setAttribute('aria-valuenow', String(real));
-        handle.setAttribute('aria-valuetext', `${real}% real scene, ${100 - real}% digital twin`);
+        handle.setAttribute('aria-valuetext', `${real}% ${realLabel}, ${100 - real}% ${simulationLabel}`);
+        reconstruction.dispatchEvent(new Event('study:reveal'));
       };
       const moveReveal = (event) => {
         const bounds = reconstruction.getBoundingClientRect();
@@ -80,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       reconstruction.addEventListener('pointerdown', (event) => {
         if (event.isPrimary === false || event.button !== 0 || pointer !== null) return;
-        show(0, true);
+        show(stageIndex, true);
         pointer = event.pointerId;
         handle.focus({ preventScroll: true });
         reconstruction.setPointerCapture(pointer);
@@ -104,17 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       reconstruction.addEventListener('pointercancel', finishDrag);
       reconstruction.addEventListener('lostpointercapture', finishDrag);
-      handle.addEventListener('focus', () => show(0, true));
+      handle.addEventListener('focus', () => show(stageIndex, true));
       handle.addEventListener('keydown', (event) => {
         const step = event.shiftKey ? 10 : 1;
         const positions = { ArrowLeft: reveal - step, ArrowDown: reveal - step, ArrowRight: reveal + step, ArrowUp: reveal + step, PageDown: reveal - 10, PageUp: reveal + 10, Home: 0, End: 100 };
         if (!(event.key in positions)) return;
         event.preventDefault();
-        show(0, true);
+        show(stageIndex, true);
         setReveal(positions[event.key]);
       });
       setReveal(50);
-    }
+    });
 
     const controls = loop.querySelector('.lab-step-list');
     controls.addEventListener('pointerenter', () => { hovering = true; schedule(); });
@@ -148,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const show = (index) => {
       const record = records[index];
+      selection.querySelector('[data-agent-decision]').textContent = record.description;
       drawings.forEach((drawing) => drawing.toggleAttribute('hidden', Number(drawing.dataset.candidateVisual) !== index));
       buttons.forEach((button) => button.classList.toggle('is-preview', Number(button.dataset.candidate) === index));
       selection.querySelector('#decision-map-title').textContent = 'Simulated outcomes: ' + record.title;
@@ -189,16 +202,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       visible.set(entry.target, entry.isIntersecting);
-      entry.target.dispatchEvent(new Event('study:visibility'));
+      entry.target.dispatchEvent(new CustomEvent('study:visibility', { detail: { visible: entry.isIntersecting } }));
     }), { threshold: .12 });
     [loop, selection].filter(Boolean).forEach((section) => observer.observe(section));
   } else {
     [loop, selection].filter(Boolean).forEach((section) => {
       visible.set(section, true);
-      section.dispatchEvent(new Event('study:visibility'));
+      section.dispatchEvent(new CustomEvent('study:visibility', { detail: { visible: true } }));
     });
   }
   document.addEventListener('visibilitychange', () => {
-    [loop, selection].filter(Boolean).forEach((section) => section.dispatchEvent(new Event('study:visibility')));
+    [loop, selection].filter(Boolean).forEach((section) => section.dispatchEvent(new CustomEvent('study:visibility', { detail: { visible: visible.get(section) } })));
   });
 });

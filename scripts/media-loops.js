@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (leader.paused) return;
       const duration = Math.min(...tracks.map((video) => video.duration));
       if (Number.isFinite(duration) && leader.currentTime >= duration - .03) {
+        group.dispatchEvent(new Event('media:loop'));
         tracks.forEach((video) => { video.currentTime = 0; });
       } else {
         align(leader.currentTime);
@@ -81,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         frame = 0;
       });
       video.addEventListener('ended', () => {
+        group.dispatchEvent(new Event('media:loop'));
         tracks.forEach((track) => { track.currentTime = 0; });
         playTogether();
       });
