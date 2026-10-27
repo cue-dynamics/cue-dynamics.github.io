@@ -278,16 +278,17 @@
 </div></section>
 <section id="limitations" class="lab-section lab-section-muted lab-lessons" aria-labelledby="limits-title">
   <div class="lab-shell">
-    <header class="lab-section-heading"><h2 id="limits-title" class="lab-title font-header-clean">How to Solve Real2Sim2Real</h2></header>
+    <header class="lab-section-heading"><h2 id="limits-title" class="lab-title font-header-clean">How to “Actually” Solve Real2Sim2Real</h2></header>
     <div class="lesson-tabs" role="tablist" aria-label="Lessons from the real table">
-      <button type="button" id="lesson-tab-model" class="lesson-tab" role="tab" aria-selected="true" aria-controls="lesson-panel-model" tabindex="0" data-lesson-tab="model">Calibration has limits</button>
-      <button type="button" id="lesson-tab-effort" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-effort" tabindex="-1" data-lesson-tab="effort">Perception is still hard</button>
-      <button type="button" id="lesson-tab-time" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-time" tabindex="-1" data-lesson-tab="time">Physical experiments are expensive</button>
+      <button type="button" id="lesson-tab-model" class="lesson-tab" role="tab" aria-selected="true" aria-controls="lesson-panel-model" tabindex="0" data-lesson-tab="model">Agentic reconstruction needs richer dynamics models</button>
+      <button type="button" id="lesson-tab-effort" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-effort" tabindex="-1" data-lesson-tab="effort">Agentic robotics needs stronger vision tools</button>
+      <button type="button" id="lesson-tab-time" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-time" tabindex="-1" data-lesson-tab="time">Agentic robotics needs better experimental judgment</button>
     </div>
     <div class="lesson-panels">
       <article id="lesson-panel-model" class="lesson-panel" role="tabpanel" aria-labelledby="lesson-tab-model" data-lesson-panel="model" aria-hidden="false">
         <header class="lesson-intro">
-          <p>The table isn’t flat, and the balls aren’t perfectly round.<br>A three-ball break still departs from the fitted simulation, calling for richer models and continued online adaptation.</p>
+          <p>Agents inferred that the table was not flat and added cloth curvature to the simulator. That improved the fit, but small ball imperfections and local surface variations remain difficult to reconstruct from camera views. Parameter tuning cannot capture effects outside the model, and explicitly modeling every imperfection means continually extending the simulator.</p>
+          <p>A concrete direction is a combination of physics-based simulation and data-driven dynamics models: keep geometry and contact mechanics in the simulator, and learn corrections to its predicted motion from real trajectories. The agent could then select experiments that expose those errors and update the learned component.</p>
         </header>
         <div class="lesson-break-pair">
           <figure><figcaption>Real</figcaption><video class="lesson-video" data-lesson-video src="/media/lessons/break-real.mp4" poster="/media/lessons/break-real.jpg" muted loop playsinline preload="none" width="960" height="600" aria-label="Recorded three-ball break"></video></figure>
@@ -296,7 +297,7 @@
       </article>
       <article id="lesson-panel-effort" class="lesson-panel" role="tabpanel" aria-labelledby="lesson-tab-effort" data-lesson-panel="effort" hidden aria-hidden="true" inert>
         <header class="lesson-intro">
-          <p>Tracking errors can corrupt the observations used to calibrate the simulator.</p>
+          <p>While many claim computer vision is solved, agents still struggle to build reliable vision pipelines for real robotic experiments. Even offline tracking of balls on a clean green background, with clear boundaries, proved brittle: tracks jumped from stationary balls onto the moving cue. Agents kept patching the pipeline and needed prompting to reconsider the approach. Agentic robotics creates a concrete opportunity for the vision community: robust, reusable tools that agents can reliably assemble, verify, and use in the physical world.</p>
         </header>
         <figure class="lesson-tracking" aria-label="Original overhead footage and recorded tracking error">
           <video class="lesson-video" data-lesson-video data-tracking-video src="/media/lessons/tracking.mp4" poster="/media/lessons/tracking.jpg" muted loop playsinline preload="none" width="960" height="540" aria-label="A stationary ball and the lifted cue"></video>
@@ -311,7 +312,7 @@
       </article>
       <article id="lesson-panel-time" class="lesson-panel" role="tabpanel" aria-labelledby="lesson-tab-time" data-lesson-panel="time" hidden aria-hidden="true" inert>
         <header class="lesson-intro">
-          <p>Choosing how to spend the exploration budget matters as much as fitting the model.</p>
+          <p>Our coding agent needed guidance on how to spend time and compute across long physical experiments. In the initial run, its shot choices left the remaining balls against cushions and in corners, making them inaccessible and forcing it to stop exploration after only 17 shots. We need systems that preserve future exploration options and help agents decide when to think, act, refit, or backtrack in the physical world.</p>
         </header>
         <div class="lesson-time-layout">
           <div class="lesson-time-metrics" aria-label="Full recorded collection">

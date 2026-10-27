@@ -10,6 +10,7 @@
 .lesson-panel[hidden] { display: block !important; visibility: hidden; pointer-events: none; }
 .lesson-intro { margin-bottom: 24px; }
 .lesson-intro p { max-width: 65ch; margin: 0; color: var(--lab-muted); font-size: var(--lab-subtitle-size); line-height: 1.65; text-wrap: pretty; }
+.lesson-intro p + p { margin-top: 14px; }
 /* Align the tracking description with its evidence. */
 #lesson-panel-effort, #lesson-panel-time { width: min(100%, 960px); margin-inline: auto; }
 .lesson-track-legend { position: absolute; z-index: 2; top: 16px; left: 16px; display: flex; flex-wrap: wrap; gap: 6px 20px; width: fit-content; max-width: calc(100% - 32px); margin: 0; padding: 8px 12px; border: 1px solid var(--lab-line); background: #22231fe8; backdrop-filter: blur(8px); color: var(--lab-ink); font-size: 14px; line-height: 1.5; pointer-events: none; }
