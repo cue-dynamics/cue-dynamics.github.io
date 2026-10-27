@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!grid || !source) return;
   const controls = [...document.querySelectorAll('[data-corl-view]')];
   const status = document.querySelector('[data-corl-status]');
-  const hint = document.querySelector('#real-table .lab-hover-hint');
   const output = document.createElement('canvas');
   output.className = 'corl-composite';
   output.setAttribute('aria-hidden', 'true');
@@ -141,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
       control.setAttribute('aria-pressed', String(active));
     });
     grid.classList.toggle('is-simulation', mode === 'simulation');
-    if (hint) hint.textContent = mode === 'simulation' ? 'Hover to see the real footage' : 'Hover to see the simulation';
     tiles.forEach((tile) => {
       const simulation = mode === 'simulation';
       tile.poster.src = simulation ? tile.poster.dataset.simulationPoster : tile.poster.dataset.realPoster;

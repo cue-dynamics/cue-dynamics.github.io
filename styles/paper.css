@@ -135,4 +135,5 @@ body.paper-project {
 @media (prefers-reduced-motion: reduce) { .paper-hero a { transition: none; } }
 
 /* Emphasis is part of the heading from the first render. */
-.gap-not { color: #e99a7c; font-weight: 600; }
+.gap-not, .agentic-highlight { color: #e99a7c; }
+.gap-not { font-weight: 600; }

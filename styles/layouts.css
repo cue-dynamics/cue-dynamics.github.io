@@ -10,6 +10,7 @@
   --lab-content-max: 1280px;
   --lab-section-space: clamp(40px, 4.5vw, 64px);
   --lab-heading-gap: 24px;
+  --lab-subtitle-size: clamp(18px, calc(2px + 1.2vw), 20px);
 }
 
 /* Ball accents within each demonstration. */
@@ -19,18 +20,19 @@
 #real-table { --lab-accent: var(--ball-purple); }
 #limitations { --lab-accent: var(--ball-orange); }
 
-/* Navigation follows the numbered ball colors from left to right. */
-.lab-index-links a:nth-child(1) { --lab-accent: var(--ball-yellow); }
-.lab-index-links a:nth-child(2) { --lab-accent: var(--ball-blue); }
-.lab-index-links a:nth-child(3) { --lab-accent: var(--ball-red); }
-.lab-index-links a:nth-child(4) { --lab-accent: var(--ball-purple); }
-.lab-index-links a:nth-child(5) { --lab-accent: var(--ball-orange); }
-.lab-index-links a:nth-child(6) { --lab-accent: var(--ball-green); }
+/* Keep navigation accents tied to their sections. */
+.lab-index-links a[data-section-link="dynamics-gap"] { --lab-accent: var(--ball-blue); }
+.lab-index-links a[data-section-link="calibration-loop"] { --lab-accent: var(--ball-red); }
+.lab-index-links a[data-section-link="prediction-results"] { --lab-accent: var(--ball-purple); }
+.lab-index-links a[data-section-link="limitations"] { --lab-accent: var(--ball-orange); }
+.lab-index-links a[data-section-link="project-video"] { --lab-accent: var(--ball-green); }
 
 .lab-section, .lab-index, .lab-footer { pointer-events: auto; }
 .lab-section *, .lab-index *, .lab-footer * { box-sizing: border-box; }
 .lab-section button, .lab-index, .lab-footer button { font-family: 'Geist Wght', sans-serif; }
 .lab-section button { cursor: pointer; }
+/* Selection controls default to CUE green; calibration stages set their own accents. */
+.lab-section button[aria-pressed], .lab-section button[role="tab"] { --lab-accent: var(--paper-accent); }
 .lab-section button:focus-visible, .lab-index a:focus-visible, .lab-footer a:focus-visible, .lab-footer button:focus-visible {
   outline: 2px solid var(--lab-ink);
   outline-offset: 5px;
@@ -91,7 +93,7 @@
 
 .lab-section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin: 0 0 var(--lab-heading-gap); text-align: left; }
 .lab-heading-copy { min-width: 0; width: 100%; }
-.lab-section-intro { max-width: 76ch; margin: 12px 0 0; color: var(--lab-muted); font-size: clamp(16px, 1.2vw, 18px); line-height: 1.65; text-wrap: pretty; }
+.lab-section-intro { max-width: 76ch; margin: 12px 0 0; color: var(--lab-muted); font-size: var(--lab-subtitle-size); line-height: 1.65; text-wrap: pretty; }
 .lab-eyebrow, .lab-micro, .lab-outline-tag, .lab-frame-tag, .lab-frame-code, .lab-frame-center,
 .lab-caption-slot, .lab-workspace-caption, .lab-panel-topline, .lab-plan-bottom,
 .lab-list-heading, .lab-list-footnote, .lab-selection-strip, .lab-condition-current,
@@ -109,11 +111,11 @@
 .lab-tab { min-height: 44px; padding: 8px 0; border: 0; background: transparent; color: var(--lab-muted); font-size: 14px; line-height: 1.5; transition: background .2s, color .2s; }
 .lab-tab:hover { color: var(--lab-ink); }
 .lab-tab.is-active { color: var(--lab-ink); background: transparent; box-shadow: inset 0 -2px var(--lab-accent); }
-.lab-tab:is([data-corl-view], [data-unseen-view]).is-active { box-shadow: inset 0 -2px var(--paper-accent); }
-#dynamics-gap .lab-tabs { gap: 2px; padding: 3px; border: 1px solid var(--lab-line); }
-#dynamics-gap .lab-tab { padding-inline: 18px; }
-#dynamics-gap .lab-tab:hover { background: #ffffff08; }
-#dynamics-gap .lab-tab.is-active { background: color-mix(in srgb, var(--lab-accent) 22%, var(--lab-panel-deep)); box-shadow: none; }
+/* Shared framed controls for example selection and real/simulation views. */
+.lab-tabs.lab-tabs-framed { flex: 0 0 auto; flex-wrap: nowrap; gap: 2px; padding: 3px; border: 1px solid var(--lab-line); }
+.lab-tabs-framed .lab-tab { padding: 8px 18px; white-space: nowrap; }
+.lab-tabs-framed .lab-tab:hover { background: #ffffff08; }
+.lab-tabs-framed .lab-tab.is-active { background: var(--lab-accent); color: var(--paper-accent-ink); box-shadow: none; }
 
 .lab-pair-label { display: flex; align-items: center; gap: 8px; }
 .lab-sync-icon { font-size: 20px; font-family: sans-serif; line-height: 1; }

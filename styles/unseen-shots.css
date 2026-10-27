@@ -1,10 +1,10 @@
 /* One comparison with a compact selector; real/simulation share one video clock. */
 #prediction-results { --unseen-background: color-mix(in srgb, var(--paper-charcoal) 95.3%, black); }
+#prediction-results #results-title { max-width: none; }
+#prediction-results .unseen-heading-logo { display: inline-block; width: 2.3em; height: 1.15em; object-fit: contain; vertical-align: -.22em; }
 #prediction-results .unseen-layout { --unseen-selector-width: 188px; --unseen-column-gap: clamp(24px, 3vw, 44px); container-type: inline-size; display: grid; grid-template-columns: minmax(0, 1fr) var(--unseen-selector-width); align-items: start; column-gap: var(--unseen-column-gap); row-gap: 12px; }
 #prediction-results .unseen-main { grid-column: 1; grid-row: 2; min-width: 0; }
 #prediction-results .unseen-toolbar { grid-column: 1; grid-row: 1; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-#prediction-results .unseen-toolbar .lab-tabs { gap: 22px; }
-#prediction-results .unseen-toolbar .lab-tab { padding: 8px 0; }
 #prediction-results .unseen-toolbar .lab-hover-hint { padding: 0; }
 #prediction-results .unseen-pair { position: relative; width: 100%; }
 #prediction-results .unseen-view { min-width: 0; margin: 0; }

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/styles/real-table.css"/>
 <link rel="stylesheet" href="/styles/lessons.css"/>
 <link href="/styles/unseen-shots.css" rel="stylesheet">
-</head><body class="paper-project"><div class="styles w-embed"><link rel="stylesheet" href="/styles/custom-02.css"/><link rel="stylesheet" href="/styles/paper.css"/><link rel="stylesheet" href="/styles/layouts.css"/><link rel="stylesheet" href="/styles/study-method.css"/></div><div id="top" class="top"></div><div class="main pointer-events-disabled"><nav class="lab-index" aria-label="Study sections"><a class="lab-index-brand" href="#top" aria-label="CUE home"><img src="/media/branding/cue-logo.png" width="2496" height="1248" alt="CUE" decoding="async"></a><div class="lab-index-links"><a href="#real-table" data-section-link="real-table">Real-world control</a><a href="#dynamics-gap" data-section-link="dynamics-gap">Simulation gap</a><a href="#calibration-loop" data-section-link="calibration-loop">Calibration</a><a href="#prediction-results" data-section-link="prediction-results">Prediction accuracy</a><a href="#limitations" data-section-link="limitations">Lessons learned</a><a href="#project-video" data-section-link="project-video">Project video</a></div></nav>
+</head><body class="paper-project"><div class="styles w-embed"><link rel="stylesheet" href="/styles/custom-02.css"/><link rel="stylesheet" href="/styles/paper.css"/><link rel="stylesheet" href="/styles/layouts.css"/><link rel="stylesheet" href="/styles/study-method.css"/></div><div id="top" class="top"></div><div class="main pointer-events-disabled"><nav class="lab-index" aria-label="Study sections"><a class="lab-index-brand" href="#top" aria-label="CUE home"><img src="/media/branding/cue-logo.png" width="2496" height="1248" alt="CUE" decoding="async"></a><div class="lab-index-links"><a href="#dynamics-gap" data-section-link="dynamics-gap">Simulation gap</a><a href="#calibration-loop" data-section-link="calibration-loop">Calibration</a><a href="#prediction-results" data-section-link="prediction-results">Prediction accuracy</a><a href="#limitations" data-section-link="limitations">How to Solve Real2Sim2Real</a><a href="#project-video" data-section-link="project-video">Project video</a></div></nav>
 <header class="paper-hero" aria-labelledby="paper-title">
   <div class="paper-hero-shell">
     <div class="paper-hero-masthead">
@@ -18,7 +18,7 @@
         <h1 id="paper-title" class="paper-title font-header-clean">Closing the Dynamics Gap through Self-Directed Robotic Interaction</h1>
         <div class="paper-byline" aria-label="Authors and affiliations">
           <div class="paper-authors"><span>Xilun Zhang<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-contribution-marker">*</span></sup></span><span>Liam Achenbach<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-pool-ball" data-ball="2"><span>2</span></span><span class="paper-marker-separator">,</span><span class="paper-pool-ball" data-ball="4"><span>4</span></span><span class="paper-marker-separator">,</span><span class="paper-contribution-marker">*</span></sup></span><span>Luis Pabon<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-contribution-marker">†</span></sup></span><span>Matthew Foutter<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-contribution-marker">†</span></sup></span><span>Marco Pavone<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-pool-ball" data-ball="3"><span>3</span></span></sup></span></div>
-          <div class="paper-affiliations"><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="1"><span>1</span></span></sup> Stanford University</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="2"><span>2</span></span></sup> ETH Zurich</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="3"><span>3</span></span></sup> NVIDIA Research</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="4"><span>4</span></span></sup> Microagi</span></div>
+          <div class="paper-affiliations"><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="1"><span>1</span></span></sup> Stanford University</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="2"><span>2</span></span></sup> ETH Zurich</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="3"><span>3</span></span></sup> NVIDIA Research</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="4"><span>4</span></span></sup> microagi</span></div>
           <p class="paper-contributions"><span>* Project Co-Lead</span><span>† Equal Contribution</span></p>
         </div>
         <a class="paper-video-link" href="#project-video"><svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4 2.5v11L13 8Z"/></svg><span>Watch full project video</span></a>
@@ -27,11 +27,10 @@
 <section id="real-table" class="lab-section lab-section-immersive paper-hero-letters" aria-label="Real-world control">
 <div class="lab-shell">
   <div class="lab-tool-row corl-tools">
-      <div class="lab-tabs" role="group" aria-label="CORL demonstration view">
+      <div class="lab-tabs lab-tabs-framed" role="group" aria-label="CORL demonstration view">
         <button type="button" class="lab-tab is-active" data-corl-view="real" aria-pressed="true">Real</button>
         <button type="button" class="lab-tab" data-corl-view="simulation" aria-pressed="false">Simulation</button>
       </div>
-      <span class="lab-micro lab-hover-hint">Hover to see the simulation</span>
   </div>
   <div class="corl-grid" data-corl-grid aria-label="C O R L demonstrations">
     <figure class="corl-tile" data-corl-tile="C" data-real-crop="0,0,960,540" data-sim-crop="960,0,960,540">
@@ -75,12 +74,12 @@
 <section id="dynamics-gap" class="lab-section lab-section-immersive" aria-labelledby="gap-title"><div class="lab-shell"><header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="gap-title" class="lab-title font-header-clean">Real2Sim2Real is <span class="gap-not">NOT</span> solved!</h2>
 <p class="lab-section-intro">Visual reconstruction alone does not reliably identify the dynamics.</p>
 </div></header>
-<div class="lab-tool-row lab-gap-toolbar"><div class="lab-tabs" role="group" aria-label="Comparison example"><button type="button" class="lab-tab is-active" data-gap-example="Cushion" aria-pressed="true">Cushion rebound</button><button type="button" class="lab-tab" data-gap-example="Collision" aria-pressed="false">Collision</button></div></div>
-<div class="lab-comparison" data-video-sync data-gap-comparison><div class="lab-frame" data-gap-real><video data-loop-video autoplay muted loop playsinline preload="auto" src="/media/dynamics-gap/cushion-real-matched-34d591866d.mp4" poster="/media/dynamics-gap/cushion-real-matched-9aebd8d65b.jpg" aria-label="Real: cushion rebound example"></video>
+<div class="lab-tool-row lab-gap-toolbar"><div class="lab-tabs lab-tabs-framed" role="group" aria-label="Comparison example"><button type="button" class="lab-tab is-active" data-gap-example="Cushion" aria-pressed="true">Cushion rebound</button><button type="button" class="lab-tab" data-gap-example="Collision" aria-pressed="false">Collision</button></div></div>
+<div class="lab-comparison" data-video-sync data-gap-comparison><div class="lab-frame" data-gap-real><video data-loop-video muted loop playsinline preload="none" src="/media/dynamics-gap/cushion-real-matched-34d591866d.mp4" poster="/media/dynamics-gap/cushion-real-matched-9aebd8d65b.jpg" aria-label="Real: cushion rebound example"></video>
  <span class="lab-frame-tag"><span>Real</span></span>
  <div class="lab-frame-center"><span class="lab-placeholder-meta">Loading footage</span></div>
 
- </div><div class="lab-frame lab-frame-simulation" data-gap-sim><video data-loop-video autoplay muted loop playsinline preload="auto" data-alpha-packed src="/media/dynamics-gap/cushion-model-alpha.mp4" poster="/media/dynamics-gap/cushion-model.png" aria-label="Simulation without CUE: cushion rebound example"></video>
+ </div><div class="lab-frame lab-frame-simulation" data-gap-sim><video data-loop-video muted loop playsinline preload="none" data-alpha-packed src="/media/dynamics-gap/cushion-model-alpha.mp4" data-mobile-src="/media/dynamics-gap/cushion-model-mobile-fa3ff4dc39.mp4" poster="/media/dynamics-gap/cushion-model.png" aria-label="Simulation without CUE: cushion rebound example"></video>
  <span class="lab-frame-tag"><span>Simulation without CUE</span></span>
  <div class="lab-frame-center"><span class="lab-placeholder-meta">Loading replay</span></div>
 
@@ -89,39 +88,34 @@
 </div></section>
 <section id="calibration-loop" class="lab-section lab-method-section" aria-labelledby="loop-title">
 <div class="lab-shell">
-  <header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="loop-title" class="lab-title font-header-clean">The CUE loop</h2>
+  <header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="loop-title" class="lab-title font-header-clean">Active scene reconstruction through <span class="agentic-highlight">agentic</span> self play</h2>
 </div></header>
   <div class="lab-loop-flow-shell">
     <div class="lab-loop-flow-viewport">
   <div class="lab-loop-flow">
-    <svg class="lab-flow-track" viewBox="0 0 1000 150" preserveAspectRatio="none" fill="none" aria-hidden="true">
-      <defs><marker id="calibration-loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-      <path data-loop-connection="0" d="M124 30H276" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
-      <path data-loop-connection="1" d="M324 30H476" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
-      <path data-loop-connection="2" d="M524 30H676" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
-      <path data-loop-connection="3" d="M724 30H876" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
-      <path data-loop-return-path d="M924 30h52q16 0 16 16v74q0 16-16 16H24Q8 136 8 120V46q0-16 16-16h52" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+    <svg class="lab-flow-track" viewBox="0 0 1000 96" preserveAspectRatio="none" fill="none" aria-hidden="true">
+      <defs><marker id="calibration-loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="m2 2 6 3-6 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+      <path data-loop-connection="0" d="M191 36H209" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+      <path data-loop-connection="1" d="M391 36H409" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+      <path data-loop-connection="2" d="M591 36H609" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+      <path data-loop-connection="3" d="M791 36H809" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
+      <path data-loop-return-path d="M900 66V76Q900 84 892 84H108Q100 84 100 76V68" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
     </svg>
     <div class="lab-step-list" role="group" aria-label="Explore the calibration stages">
-      <button type="button" class="lab-step is-active" data-loop-step="0" aria-label="Reconstruct" aria-describedby="loop-step-purpose-0" aria-pressed="true" aria-controls="loop-panel-0">
+      <button type="button" class="lab-step is-active" data-loop-step="0" aria-label="Reconstruct" aria-pressed="true" aria-controls="loop-panel-0">
         <span class="lab-flow-node"><span class="lab-step-label">Reconstruct</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
-        <span id="loop-step-purpose-0" class="lab-step-purpose">Build the digital scene</span>
       </button>
-      <button type="button" class="lab-step" data-loop-step="1" aria-label="Choose" aria-describedby="loop-step-purpose-1" aria-pressed="false" aria-controls="loop-panel-1">
+      <button type="button" class="lab-step" data-loop-step="1" aria-label="Choose" aria-pressed="false" aria-controls="loop-panel-1">
         <span class="lab-flow-node"><span class="lab-step-label">Choose</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
-        <span id="loop-step-purpose-1" class="lab-step-purpose">Find an informative shot</span>
       </button>
-      <button type="button" class="lab-step" data-loop-step="2" aria-label="Strike" aria-describedby="loop-step-purpose-2" aria-pressed="false" aria-controls="loop-panel-2">
+      <button type="button" class="lab-step" data-loop-step="2" aria-label="Strike" aria-pressed="false" aria-controls="loop-panel-2">
         <span class="lab-flow-node"><span class="lab-step-label">Strike</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
-        <span id="loop-step-purpose-2" class="lab-step-purpose">Test it on the table</span>
       </button>
-      <button type="button" class="lab-step" data-loop-step="3" aria-label="Compare" aria-describedby="loop-step-purpose-3" aria-pressed="false" aria-controls="loop-panel-3">
+      <button type="button" class="lab-step" data-loop-step="3" aria-label="Compare" aria-pressed="false" aria-controls="loop-panel-3">
         <span class="lab-flow-node"><span class="lab-step-label">Compare</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
-        <span id="loop-step-purpose-3" class="lab-step-purpose">Measure the mismatch</span>
       </button>
-      <button type="button" class="lab-step" data-loop-step="4" aria-label="Update" aria-describedby="loop-step-purpose-4" aria-pressed="false" aria-controls="loop-panel-4">
+      <button type="button" class="lab-step" data-loop-step="4" aria-label="Update" aria-pressed="false" aria-controls="loop-panel-4">
         <span class="lab-flow-node"><span class="lab-step-label">Update</span><span class="lab-flow-progress" aria-hidden="true"><span data-loop-progress></span></span></span>
-        <span id="loop-step-purpose-4" class="lab-step-purpose">Fit the simulator</span>
       </button>
     </div>
   </div>
@@ -222,15 +216,14 @@
 </div></section><section id="prediction-results" class="lab-section lab-section-muted" aria-labelledby="results-title">
 <div class="lab-shell">
   <header class="lab-section-heading"><div class="lab-heading-copy">
-    <h2 id="results-title" class="lab-title font-header-clean">Predicting new shots</h2>
+    <h2 id="results-title" class="lab-title font-header-clean">After <img class="unseen-heading-logo" src="/media/branding/cue-logo.png" width="2496" height="1248" alt="CUE" decoding="async"> the Real2Sim2Real dynamics match</h2>
   </div></header>
   <div class="unseen-layout">
     <div class="unseen-toolbar">
-      <div class="lab-tabs" role="group" aria-label="Prediction comparison view">
+      <div class="lab-tabs lab-tabs-framed" role="group" aria-label="Prediction comparison view">
         <button type="button" class="lab-tab is-active" data-unseen-view="real" aria-pressed="true">Real</button>
         <button type="button" class="lab-tab" data-unseen-view="simulation" aria-pressed="false">Simulation</button>
       </div>
-      <span class="lab-micro lab-hover-hint" data-unseen-hint>Hover to see the simulation</span>
     </div>
     <div class="unseen-main">
       <div id="unseen-comparison" class="unseen-pair" data-unseen-pair>
@@ -285,7 +278,7 @@
 </div></section>
 <section id="limitations" class="lab-section lab-section-muted lab-lessons" aria-labelledby="limits-title">
   <div class="lab-shell">
-    <header class="lab-section-heading"><h2 id="limits-title" class="lab-title font-header-clean">Lessons learned</h2></header>
+    <header class="lab-section-heading"><h2 id="limits-title" class="lab-title font-header-clean">How to Solve Real2Sim2Real</h2></header>
     <div class="lesson-tabs" role="tablist" aria-label="Lessons from the real table">
       <button type="button" id="lesson-tab-model" class="lesson-tab" role="tab" aria-selected="true" aria-controls="lesson-panel-model" tabindex="0" data-lesson-tab="model">Calibration has limits</button>
       <button type="button" id="lesson-tab-effort" class="lesson-tab" role="tab" aria-selected="false" aria-controls="lesson-panel-effort" tabindex="-1" data-lesson-tab="effort">Perception is still hard</button>
@@ -372,7 +365,7 @@
         <h2 id="footer-paper-title" class="lab-footer-paper-title font-header-clean">Closing the Dynamics Gap through Self-Directed Robotic Interaction</h2>
         <div class="lab-footer-byline" aria-label="Authors and affiliations">
           <div class="paper-authors"><span>Xilun Zhang<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-contribution-marker">*</span></sup></span><span>Liam Achenbach<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-pool-ball" data-ball="2"><span>2</span></span><span class="paper-marker-separator">,</span><span class="paper-pool-ball" data-ball="4"><span>4</span></span><span class="paper-marker-separator">,</span><span class="paper-contribution-marker">*</span></sup></span><span>Luis Pabon<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-contribution-marker">†</span></sup></span><span>Matthew Foutter<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-contribution-marker">†</span></sup></span><span>Marco Pavone<sup class="paper-author-markers"><span class="paper-pool-ball" data-ball="1"><span>1</span></span><span class="paper-marker-separator">,</span><span class="paper-pool-ball" data-ball="3"><span>3</span></span></sup></span></div>
-          <div class="paper-affiliations"><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="1"><span>1</span></span></sup> Stanford University</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="2"><span>2</span></span></sup> ETH Zurich</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="3"><span>3</span></span></sup> NVIDIA Research</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="4"><span>4</span></span></sup> Microagi</span></div>
+          <div class="paper-affiliations"><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="1"><span>1</span></span></sup> Stanford University</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="2"><span>2</span></span></sup> ETH Zurich</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="3"><span>3</span></span></sup> NVIDIA Research</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="4"><span>4</span></span></sup> microagi</span></div>
           <p class="paper-contributions"><span>* Project Co-Lead</span><span>† Equal Contribution</span></p>
         </div>
         <div class="lab-resource-links" aria-label="Paper resources">

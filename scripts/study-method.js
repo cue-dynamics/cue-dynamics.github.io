@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!bounds.width) return;
     const nodes = buttons.map((button) => {
       const node = button.querySelector('.lab-flow-node').getBoundingClientRect();
-      return { x: node.left + node.width / 2 - bounds.left, y: node.top + node.height / 2 - bounds.top, radius: node.width / 2 };
+      return { x: node.left + node.width / 2 - bounds.left, y: node.top + node.height / 2 - bounds.top, bottom: node.bottom - bounds.top, radius: node.width / 2 };
     });
     track.setAttribute('viewBox', `0 0 ${bounds.width} ${bounds.height}`);
     track.querySelectorAll('[data-loop-connection]').forEach((path, index) => {
@@ -232,11 +232,11 @@ document.addEventListener('DOMContentLoaded', () => {
       path.setAttribute('d', `M${from.x + from.radius + gap} ${from.y}H${to.x - to.radius - gap}`);
     });
     const first = nodes[0], last = nodes[nodes.length - 1];
-    const outset = bounds.width < 400 ? 12 : 0;
-    const left = -outset, right = bounds.width + outset, bottom = bounds.height - 14;
-    const radius = Math.min(14, right - last.x - last.radius - 6, first.x - first.radius - 6 - left);
+    const bottom = bounds.height - 12;
+    const radius = 8;
+    // Return beneath the row with a straight approach to the first node.
     track.querySelector('[data-loop-return-path]').setAttribute('d',
-      `M${last.x + last.radius + 6} ${last.y}H${right - radius}Q${right} ${last.y} ${right} ${last.y + radius}V${bottom - radius}Q${right} ${bottom} ${right - radius} ${bottom}H${left + radius}Q${left} ${bottom} ${left} ${bottom - radius}V${first.y + radius}Q${left} ${first.y} ${left + radius} ${first.y}H${first.x - first.radius - 6}`);
+      `M${last.x} ${last.bottom + 6}V${bottom - radius}Q${last.x} ${bottom} ${last.x - radius} ${bottom}H${first.x + radius}Q${first.x} ${bottom} ${first.x} ${bottom - radius}V${first.bottom + 8}`);
   };
   if ('ResizeObserver' in window) new ResizeObserver(drawFlow).observe(flow);
   else window.addEventListener('resize', drawFlow);

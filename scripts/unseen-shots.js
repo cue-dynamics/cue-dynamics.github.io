@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const stage = pair.querySelector('.unseen-stage');
   const lens = pair.querySelector('.unseen-lens');
   const posters = [...pair.querySelectorAll('.unseen-poster')];
-  const hint = section.querySelector('[data-unseen-hint]');
   const status = section.querySelector('[data-unseen-status]');
   const output = document.createElement('canvas');
   output.className = 'unseen-composite';
@@ -47,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const base = mode === 'simulation' ? 'Simulation' : 'Real footage';
     const alternate = mode === 'simulation' ? 'Real footage' : 'Simulation';
     stage.setAttribute('aria-label', `Shot ${current.number}: ${current.target} ball. ${full ? alternate : base}${hovering && !full ? ` with a circular ${alternate.toLowerCase()} reveal` : ''}.`);
-    if (hint) hint.textContent = mode === 'simulation' ? 'Hover to see the real footage' : 'Hover to see the simulation';
   };
   const draw = () => {
     paintRequest = null;

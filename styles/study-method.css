@@ -1,4 +1,6 @@
 /* One recorded experiment connects reconstruction, choice, and identification. */
+#calibration-loop .lab-heading-copy { container-type: inline-size; }
+#loop-title { max-width: none; white-space: nowrap; text-wrap: nowrap; font-size: min(clamp(28px, calc(20px + 1.75vw), 48px), 4cqi); }
 .lab-method-section [hidden] { display: none !important; }
 .lab-method-stage { position: relative; width: 100%; aspect-ratio: 10 / 7; min-width: 0; min-height: 500px; overflow: hidden; background: transparent; }
 .lab-method-panel { position: absolute; inset: 0; overflow: hidden; }
@@ -98,18 +100,17 @@
 .lab-loop-flow-shell { position: relative; margin: 28px 0; }
 .lab-loop-flow-viewport { overflow-x: auto; scrollbar-width: none; }
 .lab-loop-flow-viewport::-webkit-scrollbar { display: none; }
-.lab-loop-flow { position: relative; width: 100%; min-width: 740px; height: 128px; }
+.lab-loop-flow { position: relative; width: 100%; min-width: 740px; height: 96px; }
 .lab-flow-track { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; color: var(--lab-muted); pointer-events: none; }
-.lab-flow-track > path { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .45; }
+.lab-flow-track > path { stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: .45; }
 .lab-flow-track > [data-loop-return-path] { opacity: .3; }
 .lab-method-section .lab-step-list { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: auto; border: 0; }
-.lab-method-section .lab-step { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; min-height: 98px; gap: 0; padding: 12px 15px 8px; border: 0; text-align: center; background: transparent; }
+.lab-method-section .lab-step { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; min-height: 60px; gap: 0; padding: 12px 15px 0; border: 0; text-align: center; background: transparent; }
 .lab-flow-node { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; min-width: 0; min-height: 48px; padding: 8px 6px 12px; overflow: hidden; border: 1px solid var(--lab-line); border-radius: 4px; background: var(--paper-charcoal, #423b44); color: var(--lab-muted); transition: color 180ms ease, border-color 180ms ease, background 180ms ease; }
 .lab-flow-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: #ffffff0a; pointer-events: none; }
 .lab-flow-progress > span { display: block; width: 100%; height: 100%; background: var(--lab-accent); transform: scaleX(0); transform-origin: left; }
 .lab-step.is-complete .lab-flow-progress > span { opacity: .55; }
 .lab-method-section .lab-step-label { font-size: 16px; line-height: 1.4; white-space: nowrap; }
-.lab-step-purpose { max-width: 20ch; margin-top: 9px; color: var(--lab-faint); font-size: 12px; line-height: 1.5; }
 .lab-method-section .lab-step:hover { background: transparent; color: var(--lab-ink); }
 .lab-method-section .lab-step:hover .lab-flow-node { color: var(--lab-ink); border-color: color-mix(in srgb, var(--lab-ink) 50%, transparent); }
 .lab-method-section .lab-step.is-active { color: var(--lab-ink); }
@@ -144,15 +145,14 @@
 .lab-candidate-ball { width: 8px; height: 8px; flex: 0 0 auto; margin-top: 6px; border-radius: 50%; background: var(--ball-color); box-shadow: 0 0 0 2px #ffffff08; }
 .lab-choice-candidates .lab-candidate-copy { display: grid; justify-content: start; min-width: 0; gap: 6px; font-size: 14px; line-height: 1.45; }
 .lab-choice-candidates .lab-candidate-copy > span { color: var(--lab-muted); font-size: 12px; }
-.lab-choice-candidates .lab-method-candidate.is-active { border-top-color: var(--ball-color); background: #ffffff03; }
-.lab-choice-candidates .lab-method-candidate.is-preview { border-top-color: var(--ball-color); color: var(--lab-ink); background: #ffffff06; }
+.lab-choice-candidates .lab-method-candidate.is-active { border-top-color: var(--lab-accent); background: #ffffff03; }
+.lab-choice-candidates .lab-method-candidate.is-preview { border-top-color: var(--lab-accent); color: var(--lab-ink); background: #ffffff06; }
 .lab-choice-candidates .lab-method-candidate:focus-visible { outline-offset: -4px; }
 
 @media (max-width: 900px) {
   .lab-loop-flow { min-width: 640px; }
-  .lab-method-section .lab-step { padding-inline: 8px; }
+  .lab-method-section .lab-step { padding-inline: 12px; }
   .lab-method-section .lab-step-label { font-size: 14px; }
-  .lab-step-purpose { max-width: 17ch; font-size: 11px; }
 }
 @media (max-width: 1100px) {
   .lab-method-section .lab-loop-layout { grid-template-columns: minmax(0, 1fr) 290px; gap: 22px; }
@@ -169,7 +169,6 @@
 @media (max-width: 700px) {
   .lab-method-section .lab-loop-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .lab-loop-flow-shell { margin: 24px -5px; }
-  .lab-loop-flow { height: 128px; }
   .lab-method-section .lab-step { border-right: 0; }
   .lab-method-stage { aspect-ratio: auto; min-height: 0; height: clamp(340px, 78vw, 480px); }
   .lab-choice-candidates { grid-template-columns: repeat(2, minmax(0, 1fr)); }

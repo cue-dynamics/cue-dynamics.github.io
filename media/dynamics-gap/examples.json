@@ -9,7 +9,8 @@
     "model": {
       "video": "/media/dynamics-gap/cushion-model-alpha.mp4",
       "poster": "/media/dynamics-gap/cushion-model.png",
-      "encoding": "rgb-alpha-horizontal"
+      "encoding": "rgb-alpha-horizontal",
+      "mobileVideo": "/media/dynamics-gap/cushion-model-mobile-fa3ff4dc39.mp4"
     },
     "metric": "121.9 mm",
     "metricLabel": "Purple-ball endpoint mismatch"
@@ -24,7 +25,8 @@
     "model": {
       "video": "/media/dynamics-gap/collision-model-alpha.mp4",
       "poster": "/media/dynamics-gap/collision-model.png",
-      "encoding": "rgb-alpha-horizontal"
+      "encoding": "rgb-alpha-horizontal",
+      "mobileVideo": "/media/dynamics-gap/collision-model-mobile-9dc2229a3f.mp4"
     },
     "metric": "Pocketed / On table",
     "metricLabel": "Real / Simulation without CUE"
