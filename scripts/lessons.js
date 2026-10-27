@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   let frame = 0;
   let manifest;
 
+  const syncPanels = () => panels.forEach((panel) => {
+    const inactive = panel.dataset.lessonPanel !== selected;
+    panel.hidden = inactive;
+    panel.inert = inactive;
+    panel.setAttribute('aria-hidden', String(inactive));
+  });
+  syncPanels();
+
   const activeVideos = () => videos.filter((video) => video.closest('[data-lesson-panel]').dataset.lessonPanel === selected);
   const shouldPlay = () => visible && !document.hidden && !reducedMotion.matches;
   const play = (video) => { video.play()?.catch(() => {}); };
@@ -82,7 +90,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       tab.tabIndex = current ? 0 : -1;
       if (current && focus) tab.focus();
     });
-    panels.forEach((panel) => { panel.hidden = panel.dataset.lessonPanel !== name; });
+    syncPanels();
     updatePlayback();
   };
   tabs.forEach((tab, index) => {

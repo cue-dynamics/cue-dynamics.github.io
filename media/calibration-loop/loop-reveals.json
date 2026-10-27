@@ -68,9 +68,9 @@
       "stage": "compare",
       "panel": 3,
       "model": "pred_iter01",
-      "video": "/media/calibration-loop/calibration-compare-prior-clean-v2-pair-6111c0a1cc.mp4",
-      "real_poster": "/media/calibration-loop/calibration-compare-prior-clean-v2-real-ebd12dea18.webp",
-      "model_poster": "/media/calibration-loop/calibration-compare-prior-clean-v2-model-129200c488.png",
+      "video": "/media/calibration-loop/calibration-compare-prior-clean-v2-pair-dda080f878.mp4",
+      "real_poster": "/media/calibration-loop/calibration-compare-prior-clean-v2-real-e844752ab5.webp",
+      "model_poster": "/media/calibration-loop/calibration-compare-prior-clean-v2-model-c590f22848.png",
       "width": 2880,
       "height": 672,
       "fps": 60,
@@ -101,7 +101,7 @@
       "trails_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
       "annotations": "Ball-sized markers follow their shared smoothed paths; own path solid, counterpart dashed",
       "annotation_style": {
-        "version": 3,
+        "version": 4,
         "colors": {
           "observed": [
             238,
@@ -127,7 +127,9 @@
           6
         ],
         "line_width_px": 2,
-        "markers": "Ball-sized continuous markers; filled own ball and outlined counterpart",
+        "markers": "Ball-sized hollow rings; solid own outline and dashed counterpart, no interior fill",
+        "marker_fill": false,
+        "marker_width_px": 2,
         "sizing": "Projected silhouette of the approved 12.5 mm radius ball, including camera distortion and crop",
         "smoothing": {
           "observed_window_frames": 11,
@@ -139,7 +141,7 @@
           "stationary_tolerance_ball_radius": 0.18
         }
       },
-      "annotation_renderer_sha256": "887e60ab36114df1c57a29000a8fbd810cbed084add0ada7177ee75bb331be32",
+      "annotation_renderer_sha256": "7166fce2b876c988277d9fa1aea5a269980e0d162e6a725b489a4c3a9a669166",
       "render": {
         "job": "calibration-compare-prior-clean-v2",
         "renderer": "Blender Cycles OptiX",
@@ -170,9 +172,9 @@
       "stage": "update",
       "panel": 4,
       "model": "fit_iter02",
-      "video": "/media/calibration-loop/calibration-update-fitted-clean-v2-pair-cd18f18860.mp4",
-      "real_poster": "/media/calibration-loop/calibration-update-fitted-clean-v2-real-4a0715a130.webp",
-      "model_poster": "/media/calibration-loop/calibration-update-fitted-clean-v2-model-3da01d2a96.png",
+      "video": "/media/calibration-loop/calibration-update-fitted-clean-v2-pair-b4e585ec1b.mp4",
+      "real_poster": "/media/calibration-loop/calibration-update-fitted-clean-v2-real-d540c1956b.webp",
+      "model_poster": "/media/calibration-loop/calibration-update-fitted-clean-v2-model-467ca47653.png",
       "width": 2880,
       "height": 672,
       "fps": 60,
@@ -203,7 +205,7 @@
       "trails_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
       "annotations": "Ball-sized markers follow their shared smoothed paths; own path solid, counterpart dashed",
       "annotation_style": {
-        "version": 3,
+        "version": 4,
         "colors": {
           "observed": [
             238,
@@ -229,7 +231,9 @@
           6
         ],
         "line_width_px": 2,
-        "markers": "Ball-sized continuous markers; filled own ball and outlined counterpart",
+        "markers": "Ball-sized hollow rings; solid own outline and dashed counterpart, no interior fill",
+        "marker_fill": false,
+        "marker_width_px": 2,
         "sizing": "Projected silhouette of the approved 12.5 mm radius ball, including camera distortion and crop",
         "smoothing": {
           "observed_window_frames": 11,
@@ -241,7 +245,7 @@
           "stationary_tolerance_ball_radius": 0.18
         }
       },
-      "annotation_renderer_sha256": "887e60ab36114df1c57a29000a8fbd810cbed084add0ada7177ee75bb331be32",
+      "annotation_renderer_sha256": "7166fce2b876c988277d9fa1aea5a269980e0d162e6a725b489a4c3a9a669166",
       "render": {
         "job": "calibration-update-fitted-clean-v2",
         "renderer": "Blender Cycles OptiX",
