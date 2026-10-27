@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Overhead color comparison</title>
+<style>
+@font-face { font-family: Geist; src: url('/assets/cdn.generalintuition.com/media/GeistMono-Light.woff2'); }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 30px; background: #2c3831; color: #eeede7; font: 15px/1.5 Geist, sans-serif; }
+h1 { font: 28px/1.2 Geist, sans-serif; margin: 0 0 26px; }
+main { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+figure { margin: 0; }
+figcaption { margin-bottom: 12px; }
+img { display: block; width: 100%; aspect-ratio: 10 / 7; object-fit: contain; background: #202a24; }
+.matched { filter: url('/styles/camera-color.svg#overhead-match'); }
+p { max-width: 80ch; margin-top: 26px; color: #bdc7bd; }
+@media(max-width:700px) { main { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>Overhead color match</h1>
+<main>
+<figure><figcaption>Overhead · before</figcaption><img src="/media/dynamics-gap/roll-real.jpg" alt="Original overhead colors"></figure>
+<figure><figcaption>Overhead · matched</figcaption><img class="matched" src="/media/dynamics-gap/roll-real.jpg" alt="Overhead footage with the display grade"></figure>
+<figure><figcaption>RealSense · reference</figcaption><img src="/media/calibration-loop/interact.jpg" alt="Unmodified angled RealSense camera"></figure>
+</main>
+<p>The same fixed display grade is used for all overhead views on the main page. It changes color only; the original files, scene geometry, and frame timing are retained.</p>
+</body>
+</html>

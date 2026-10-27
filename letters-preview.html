@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="A standalone CUE interaction preview: hover over real footage to reveal a synchronized, calibrated simulation.">
+  <title>CUE · CORL render preview</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/hover-reveal/demo.css">
+  <script src="/scripts/video-reveal.js" defer></script>
+<script src="/hover-reveal/letters.js" defer></script>
+  <style>
+    .letter-picker { display:grid; grid-template-columns:repeat(4,1fr); margin:0 0 26px; gap:8px; }
+    .letter-picker button { display:flex; align-items:baseline; justify-content:space-between; gap:8px; padding:14px 18px; border:1px solid var(--line); color:var(--muted); background:transparent; }
+    .letter-picker strong { font-size:28px; font-weight:450; color:var(--muted); }
+    .letter-picker span { font-family:'Geist Mono',monospace; font-size:10px; }
+    .letter-picker button[aria-pressed='true'] { background:#ffffff08; border-color:#d7c1bd88; }
+    .letter-picker button[aria-pressed='true'] strong { color:var(--text); }
+    .letter-picker button:hover { background:#ffffff06; }
+    .note a { margin-left:12px; text-decoration:none; color:#d7c1bd; white-space:nowrap; }
+    .letter-guide { position:absolute; inset:0; display:block; width:100%; height:100%; pointer-events:none; }
+    .stage.is-simulation-base .lens-label .sim-dot { background:#e9e5da; }
+    .stage .lens-outline, .stage .lens-label { left:0; top:0; will-change:transform; transition:opacity 100ms ease; }
+    @media(max-width:600px) { .letter-picker { gap:5px; } .letter-picker button { padding:10px; flex-direction:column; gap:3px; } .letter-picker strong { font-size:24px; } .note a { display:block; margin:12px 0 0; } }
+  </style>
+</head>
+<body>
+  <main class="demo">
+    <nav class="masthead" aria-label="Preview navigation">
+      <span class="wordmark">CUE<span class="divider">/</span><span class="eyebrow">CORL render preview</span></span>
+      <a href="/" target="_blank" rel="noopener">Project page <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <header class="intro">
+      <h1>At the real table.</h1>
+      <p>Six strokes, one letter. Follow the translucent target, then hover to compare reality and simulation.</p>
+    </header>
+
+    <nav class="letter-picker" aria-label="Letter demonstrations">
+      <button type="button" data-letter="C" aria-pressed="true"><strong>C</strong><span>Take c8</span></button>
+      <button type="button" data-letter="O" aria-pressed="false"><strong>O</strong><span>Take o2</span></button>
+      <button type="button" data-letter="R" aria-pressed="false"><strong>R</strong><span>Take r3</span></button>
+      <button type="button" data-letter="L" aria-pressed="false"><strong>L</strong><span>Take l5</span></button>
+    </nav>
+    <section class="comparison" aria-label="Interactive real and simulation comparison">
+      <div class="toolbar">
+        <div class="toolbar-group" role="group" aria-label="Camera angle">
+          <span class="toolbar-label">Camera</span>
+          <button type="button" data-camera="angled" aria-pressed="false">Angled</button>
+          <button type="button" data-camera="overhead" aria-pressed="true">Overhead</button>
+        </div>
+        <div class="toolbar-group" role="group" aria-label="Hover reveal style">
+          <span class="toolbar-label">Reveal</span>
+          <button type="button" data-mode="lens" aria-pressed="true">Lens</button>
+          <button type="button" data-mode="frame" aria-pressed="false">Full frame</button>
+        </div>
+      </div>
+
+      <div id="stage" class="stage" data-mode="lens" tabindex="0" role="group" aria-label="Hover to reveal the opposite real or simulation view" aria-describedby="interaction-help">
+        <canvas id="real-view" class="view" width="1280" height="720" role="img" aria-label="Original robot footage with no tracking overlays"></canvas>
+        <canvas id="sim-view" class="view sim-view" width="1280" height="720" aria-hidden="true"></canvas>
+        <svg id="letter-guide" class="letter-guide" viewBox="0 0 1280 720" fill="none" stroke="#f3f1eb" stroke-width="47.22" stroke-linecap="round" stroke-linejoin="round" opacity="0.2" aria-hidden="true" focusable="false"><path d="M 771.61 267.42 L 766.58 265.93 L 761.52 264.27 L 756.43 262.47 L 751.32 260.55 L 746.18 258.53 L 741.03 256.44 L 735.87 254.31 L 730.71 252.15 L 725.54 249.99 L 720.38 247.85 L 715.23 245.76 L 710.10 243.75 L 704.98 241.83 L 699.89 240.03 L 694.83 238.38 L 689.80 236.89 L 684.82 235.60 L 679.87 234.52 L 674.98 233.68 L 670.14 233.10 L 665.35 232.81 L 660.63 232.84 L 655.98 233.19 L 651.40 233.91 L 646.81 234.96 L 642.14 236.30 L 637.40 237.91 L 632.61 239.78 L 627.79 241.90 L 622.96 244.25 L 618.13 246.82 L 613.31 249.59 L 608.54 252.56 L 603.82 255.71 L 599.18 259.02 L 594.62 262.48 L 590.18 266.08 L 585.85 269.80 L 581.67 273.64 L 577.65 277.57 L 573.81 281.59 L 570.16 285.67 L 566.73 289.81 L 563.52 294.00 L 560.57 298.21 L 557.87 302.44 L 555.46 306.67 L 553.36 310.88 L 551.49 315.22 L 549.82 319.79 L 548.32 324.58 L 547.01 329.56 L 545.88 334.72 L 544.93 340.03 L 544.16 345.47 L 543.57 351.01 L 543.15 356.64 L 542.92 362.33 L 542.86 368.06 L 542.97 373.81 L 543.27 379.55 L 543.73 385.27 L 544.38 390.94 L 545.19 396.53 L 546.18 402.03 L 547.34 407.41 L 548.67 412.65 L 550.17 417.73 L 551.84 422.63 L 553.67 427.32 L 555.68 431.78 L 557.85 435.99 L 560.27 440.06 L 562.98 444.13 L 565.98 448.17 L 569.25 452.19 L 572.76 456.15 L 576.50 460.06 L 580.45 463.90 L 584.59 467.66 L 588.91 471.32 L 593.38 474.87 L 597.99 478.30 L 602.71 481.60 L 607.53 484.76 L 612.44 487.75 L 617.40 490.57 L 622.41 493.21 L 627.44 495.65 L 632.48 497.88 L 637.51 499.90 L 642.50 501.67 L 647.45 503.21 L 652.32 504.48 L 657.11 505.48 L 661.80 506.20 L 666.45 506.57 L 671.14 506.58 L 675.88 506.25 L 680.66 505.60 L 685.47 504.65 L 690.31 503.43 L 695.18 501.97 L 700.09 500.28 L 705.01 498.40 L 709.95 496.35 L 714.92 494.15 L 719.89 491.83 L 724.88 489.40 L 729.87 486.91 L 734.87 484.37 L 739.88 481.80 L 744.88 479.23 L 749.87 476.68 L 754.86 474.19 L 759.84 471.77 L 764.81 469.44 L 769.76 467.24 L 774.69 465.19 L 779.60 463.31"/></svg>
+        <div class="lens-outline" aria-hidden="true"></div>
+        <div class="lens-label" aria-hidden="true"><span class="sim-dot"></span><span id="lens-label-text">Simulation</span></div>
+        <div id="frame-label" class="frame-label"><span class="real-dot"></span><span id="frame-label-text">Real footage</span></div>
+        <div id="loading" class="loading" role="status">Loading footage…</div>
+        <div class="stage-hint" aria-hidden="true"><span>＋</span> Move over the table</div>
+      </div>
+
+      <div class="transport">
+        <button id="play" class="play-button" type="button" aria-label="Pause footage">
+          <svg id="pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zm5 0h3v10H9z"/></svg>
+          <svg id="play-icon" viewBox="0 0 16 16" aria-hidden="true" hidden><path d="m4 2 10 6-10 6V2Z"/></svg>
+        </button>
+        <input id="scrubber" type="range" min="0" max="1" step="0.001" value="0" aria-label="Playback position">
+        <span id="time" class="time">0:00.0 / 0:02.4</span>
+        <button id="speed" type="button" aria-label="Playback speed: 1 times">1×</button>
+        <span class="transport-divider" aria-hidden="true"></span>
+        <button id="pin" class="pin-button" type="button" aria-pressed="false">Show simulation</button>
+      </div>
+    </section>
+
+    <div class="caption-row">
+      <p><span class="caption-dot" aria-hidden="true"></span><span id="letter-status">C · Six strokes</span></p>
+      <p id="interaction-help">Hover to reveal the opposite view · Hold Space or switch views below</p>
+    </div>
+    <footer class="note">Original executions and camera-matched, frozen-model replays. <a id="download-sim" href="/media/real-table/c-overhead-sim-blender.mp4" download>Download simulation MP4 ↗</a></footer>
+  </main>
+
+  <!-- Each optimized camera source contains two synchronized 960 × 540 panels:
+       original footage / frozen-model simulation. Both sample the same decoded frame.
+       Full-resolution two-camera sources remain as a manifest fallback.
+       Source selection and provenance: research/letter-render/selection.json.
+       Reproduction and camera registration: research/letter-render/render_letters.py. -->
+  <video id="source" class="source-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+</body>
+</html>

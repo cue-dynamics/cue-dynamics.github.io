@@ -1,0 +1,81 @@
+/* Four camera-matched demonstrations share one decoded video timeline. */
+#real-table { --corl-width: min(calc(2 * clamp(420px, 40vw, 1000px)), calc((100svh - 240px) * 16 / 9)); }
+#real-table > .lab-shell { padding-top: clamp(38px, 4vw, 60px); }
+#real-table .corl-heading { width: var(--corl-width); margin-bottom: 23px; align-items: flex-start; }
+#real-table .corl-tools { display: grid; gap: 9px; justify-items: end; flex-shrink: 0; }
+#real-table .corl-tools .lab-tabs { padding: 0; }
+#real-table .corl-tools .lab-tab { min-height: 44px; padding: 8px 0; }
+#real-table .corl-tools .lab-hover-hint { font-size: 14px; }
+#real-table .corl-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: var(--corl-width);
+  max-width: calc(100% - 2 * var(--content-padding));
+  margin: 0 auto;
+  padding-bottom: clamp(52px, 5.5vw, 88px);
+}
+#real-table .corl-composite { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+#real-table .has-compositor .corl-tile { z-index: 1; }
+#real-table .has-compositor .corl-stage { background: transparent; }
+#real-table .has-compositor .corl-lens { left: 0; top: 0; will-change: transform; }
+#real-table .corl-tile { position: relative; min-width: 0; margin: 0; border: 1px solid var(--lab-line); }
+#real-table .corl-stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+  touch-action: pan-y;
+}
+#real-table .corl-stage:focus-visible { outline: 1px solid var(--lab-accent); outline-offset: 5px; }
+#real-table .corl-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+#real-table .has-frames .corl-poster { visibility: hidden; }
+#real-table .corl-guide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+#real-table .corl-lens {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 230px;
+  height: 230px;
+  border: 1px solid #eee9dc70;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 100ms ease;
+}
+#real-table .has-frames.is-hovering .corl-lens { opacity: 1; }
+#real-table .is-key-revealing .corl-lens { opacity: 0; }
+#real-table .corl-source { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+#real-table .corl-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 767px) {
+  #real-table .corl-grid { gap: 12px; padding-bottom: 46px; }
+}
+@media (max-width: 540px) {
+  #real-table .corl-grid { grid-template-columns: 1fr; gap: 26px; }
+  #real-table .corl-heading { flex-direction: column; align-items: flex-start; gap: 17px; }
+  #real-table .corl-tools { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  #real-table .lab-hover-hint { max-width: 170px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #real-table .corl-lens { transition: none; }
+}

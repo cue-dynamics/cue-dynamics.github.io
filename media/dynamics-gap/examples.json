@@ -1,0 +1,34 @@
+{
+  "Cushion": {
+    "shot": "shot_20261024_194202",
+    "modelVersion": "pred_iter02",
+    "real": {
+      "video": "/media/dynamics-gap/cushion-real-matched-34d591866d.mp4",
+      "poster": "/media/dynamics-gap/cushion-real-matched-9aebd8d65b.jpg"
+    },
+    "model": {
+      "video": "/media/dynamics-gap/cushion-model-alpha.mp4",
+      "poster": "/media/dynamics-gap/cushion-model.png",
+      "encoding": "rgb-alpha-horizontal"
+    },
+    "caption": "The real cushion absorbs more energy than the model expects.",
+    "metric": "121.9 mm",
+    "metricLabel": "Purple-ball endpoint mismatch"
+  },
+  "Collision": {
+    "shot": "shot_20261024_204910",
+    "modelVersion": "pred_iter03",
+    "real": {
+      "video": "/media/dynamics-gap/collision-real-matched-eb38423b52.mp4",
+      "poster": "/media/dynamics-gap/collision-real-matched-5f46135bf4.jpg"
+    },
+    "model": {
+      "video": "/media/dynamics-gap/collision-model-alpha.mp4",
+      "poster": "/media/dynamics-gap/collision-model.png",
+      "encoding": "rgb-alpha-horizontal"
+    },
+    "caption": "The red ball falls into a pocket on the real table but stays on the simulated table.",
+    "metric": "Pocketed / On table",
+    "metricLabel": "Real / Simulation without CUE"
+  }
+}

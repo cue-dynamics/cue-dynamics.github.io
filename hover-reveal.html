@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="A standalone CUE interaction preview: hover over real footage to reveal a synchronized, calibrated simulation.">
+  <title>CUE · Real / simulation hover study</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/hover-reveal/demo.css">
+  <script src="/hover-reveal/demo.js" defer></script>
+</head>
+<body>
+  <main class="demo">
+    <nav class="masthead" aria-label="Preview navigation">
+      <span class="wordmark">CUE<span class="divider">/</span><span class="eyebrow">Interaction preview</span></span>
+      <a href="/" target="_blank" rel="noopener">Project page <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <header class="intro">
+      <h1>A window into the model.</h1>
+      <p>Real footage plays. Move over the table to reveal the calibrated simulation.</p>
+    </header>
+
+    <section class="comparison" aria-label="Interactive real and simulation comparison">
+      <div class="toolbar">
+        <div class="toolbar-group" role="group" aria-label="Camera angle">
+          <span class="toolbar-label">Camera</span>
+          <button type="button" data-camera="angled" aria-pressed="true">Angled</button>
+          <button type="button" data-camera="overhead" aria-pressed="false">Overhead</button>
+        </div>
+        <div class="toolbar-group" role="group" aria-label="Hover reveal style">
+          <span class="toolbar-label">Reveal</span>
+          <button type="button" data-mode="lens" aria-pressed="true">Lens</button>
+          <button type="button" data-mode="frame" aria-pressed="false">Full frame</button>
+        </div>
+      </div>
+
+      <div id="stage" class="stage" data-mode="lens" tabindex="0" role="group" aria-label="Hover to reveal the calibrated simulation" aria-describedby="interaction-help">
+        <canvas id="real-view" class="view" width="1280" height="720" role="img" aria-label="Original robot footage with no tracking overlays"></canvas>
+        <canvas id="sim-view" class="view sim-view" width="1280" height="720" aria-hidden="true"></canvas>
+        <div class="lens-outline" aria-hidden="true"></div>
+        <div class="lens-label" aria-hidden="true"><span class="sim-dot"></span>Simulation</div>
+        <div id="frame-label" class="frame-label"><span class="real-dot"></span><span id="frame-label-text">Real footage</span></div>
+        <div id="loading" class="loading" role="status">Loading footage…</div>
+        <div class="stage-hint" aria-hidden="true"><span>＋</span> Move over the table</div>
+      </div>
+
+      <div class="transport">
+        <button id="play" class="play-button" type="button" aria-label="Pause footage">
+          <svg id="pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zm5 0h3v10H9z"/></svg>
+          <svg id="play-icon" viewBox="0 0 16 16" aria-hidden="true" hidden><path d="m4 2 10 6-10 6V2Z"/></svg>
+        </button>
+        <input id="scrubber" type="range" min="0" max="1" step="0.001" value="0" aria-label="Playback position">
+        <span id="time" class="time">0:00.0 / 0:02.4</span>
+        <button id="speed" type="button" aria-label="Playback speed: 0.5 times">0.5×</button>
+        <span class="transport-divider" aria-hidden="true"></span>
+        <button id="pin" class="pin-button" type="button" aria-pressed="false">Show simulation</button>
+      </div>
+    </section>
+
+    <div class="caption-row">
+      <p><span class="caption-dot" aria-hidden="true"></span>Cushion rebound <span class="caption-divider">/</span> Calibrated replay</p>
+      <p id="interaction-help">Hover to explore · Hold Space or use Show simulation</p>
+    </div>
+    <footer class="note">Original footage and a freshly rendered, camera-aligned simulation. This model was fitted to the recorded shot; both views share the same playback timeline.</footer>
+  </main>
+
+  <!-- One synchronized source contains four clean 1280 × 720 panels:
+       top row: original angled camera / fresh simulation; bottom row: original overhead / fresh simulation.
+       Source states: shot_20261024_194202 / sim/fit_iter03/overlay_states.npz.
+       Reproduction and camera registration: research/hover-render/render_clean.py. -->
+  <video id="source" class="source-video" src="/hover-reveal/clean-pair-blender.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+</body>
+</html>

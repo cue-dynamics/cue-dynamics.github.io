@@ -1,0 +1,123 @@
+body .modal {
+  	display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;  
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 2s;    
+  }
+
+
+  body.modal-open .modal {
+    opacity: 1;
+  	visibility: visible;
+    pointer-events: auto;
+    position: fixed;    
+    transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0s;
+  }
+  
+  body .modal .modal-scroll {
+    overflow-y: scroll;
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);        
+    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) ;    
+    
+  }
+  
+  body.modal-open .modal .modal-scroll {
+  	opacity: 1;
+    transform: translate3d(0, 0px, 0);
+    transition-delay: 100ms;
+  }
+  
+  body .nav {
+  	display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;  
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 2s;  
+  }
+  
+  body.nav-open .nav {
+    opacity: 1;    
+  	visibility: visible;
+    pointer-events: auto;
+    position: fixed;    
+    transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0s;
+  }
+  
+  body .nav .nav-logo-wrapper .nav-logo, 
+  body .nav .nav-button-wrapper .nav-button {
+		transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body.nav-open .nav .nav-logo-wrapper .nav-logo, 
+  body.nav-open .nav .nav-button-wrapper .nav-button {
+    transform: translateX(1px);
+    opacity: 1;
+  }
+        
+  body.modal-open .nav {
+  	opacity: 0;
+  }
+  
+    /* Initial logo position from left (instead of right) on tablet and below */
+  @media screen and (max-width: 767px) {
+    body .nav .nav-logo-wrapper .nav-logo
+      {
+        transform: translateX(-100%);
+      }
+  }
+  
+  
+  /* ASCII CONTROL PANEL */
+  
+  
+  body .ascii-controls {  	
+    pointer-events: none;
+    opacity: 0.5;    
+    max-height: 0;
+    height:auto;
+    overflow: hidden;
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), max-height 0.5s ease-in-out;
+  }
+  
+  body.ascii-settings-open .ascii-controls {  	
+    pointer-events: auto;
+    opacity: 1;
+     max-height: 500px;
+  }
+  
+  .icon-controls {
+  	transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+	body #ascii-ctl-toggle .icon-controls.close {
+  	opacity: 0;
+  }  
+  
+  
+  body.ascii-settings-open #ascii-ctl-toggle .icon-controls.close {
+  	opacity: 1;
+  }  
+  
+  body.ascii-settings-open #ascii-ctl-toggle .icon-controls.open {
+  	opacity: 0;
+  }
+  
+  
+  
+  
+  
+/* ==========================================================================
+   POINTER EVENTS
+   ========================================================================== */
+
+  .header-logo-gi, .header-highlight-content, .header-intro-content {
+    pointer-events: auto;
+  }
+
+  .header-content {
+    pointer-events: none;
+  }

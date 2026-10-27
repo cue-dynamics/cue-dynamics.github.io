@@ -1,0 +1,897 @@
+{
+  "version": 1,
+  "fps": 30,
+  "sources": {
+    "run_log": "labpc_assets/franka_station/autonomous_run/log.md",
+    "timing": "Shot recording identifiers; first-to-tenth timestamp span, not summed robot motion time.",
+    "display_grade": "dist/styles/camera-color.svg",
+    "camera_crop": [
+      136,
+      150,
+      640,
+      360
+    ]
+  },
+  "shots": [
+    {
+      "video": "/media/lessons/shot-01.mp4",
+      "poster": "/media/lessons/shot-01.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "7a806588767fb46c1740d90b65fa72776af6c61b2d4080240dec220085190cf5",
+      "number": 1,
+      "shot": "shot_20261024_184040",
+      "time": "18:40",
+      "elapsed_s": 0.0,
+      "title": "Straight roll",
+      "description": "An isolated shot probes rolling and cushion behavior."
+    },
+    {
+      "video": "/media/lessons/shot-02.mp4",
+      "poster": "/media/lessons/shot-02.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "30c26b410cb8668df0e72f930db9585e044be5e9218ed8978c533a8ebd12a943",
+      "number": 2,
+      "shot": "shot_20261024_191404",
+      "time": "19:14",
+      "elapsed_s": 2004.0,
+      "title": "Perpendicular roll",
+      "description": "A perpendicular roll helps separate friction from table slope."
+    },
+    {
+      "video": "/media/lessons/shot-03.mp4",
+      "poster": "/media/lessons/shot-03.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "981fd0cd5a79558c0d360ce43ee7fdc483da8f1b739bf481e1c3379a56784302",
+      "number": 3,
+      "shot": "shot_20261024_194202",
+      "time": "19:42",
+      "elapsed_s": 3682.0,
+      "title": "Cushion rebound",
+      "description": "An oblique rebound probes how much energy the cushion absorbs."
+    },
+    {
+      "video": "/media/lessons/shot-04.mp4",
+      "poster": "/media/lessons/shot-04.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "329ff1df2623acce8a88945532d77421f3e56164b934a6e3ae49ae6ae888ad0b",
+      "number": 4,
+      "shot": "shot_20261024_202352",
+      "time": "20:23",
+      "elapsed_s": 6192.0,
+      "title": "Two-ball collision",
+      "description": "A clean cut introduces the first ball-to-ball contact data."
+    },
+    {
+      "video": "/media/lessons/shot-05.mp4",
+      "poster": "/media/lessons/shot-05.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "8ebe60a549da171baa9caefe06a2f1a0306dc0fca66b65826915c645614f5714",
+      "number": 5,
+      "shot": "shot_20261024_204910",
+      "time": "20:49",
+      "elapsed_s": 7710.0,
+      "title": "Pocket outcome",
+      "description": "A near-full collision tests restitution and pocket outcomes."
+    },
+    {
+      "video": "/media/lessons/shot-06.mp4",
+      "poster": "/media/lessons/shot-06.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "c4f3249260940189d5a911ac10b7d4c122bccaa1d7ef46a82d7bc65d012e41ed",
+      "number": 6,
+      "shot": "shot_20261024_213345",
+      "time": "21:33",
+      "elapsed_s": 10385.0,
+      "title": "Near-contact collision",
+      "description": "A squeeze exposes a sensitive contact regime. This shot was excluded from fitting."
+    },
+    {
+      "video": "/media/lessons/shot-07.mp4",
+      "poster": "/media/lessons/shot-07.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "4145ff84daa370d1f77163cd401fe5657de41c534ae6267d07c9e2d8f2743519",
+      "number": 7,
+      "shot": "shot_20261024_220349",
+      "time": "22:03",
+      "elapsed_s": 12189.0,
+      "title": "Long roll",
+      "description": "A long roll tests a previously unsampled part of the table."
+    },
+    {
+      "video": "/media/lessons/shot-08.mp4",
+      "poster": "/media/lessons/shot-08.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "82f7e2496444feb6fd94735d6b01dd4cc208e7696bb456ee318dd5b28705c509",
+      "number": 8,
+      "shot": "shot_20261024_223338",
+      "time": "22:33",
+      "elapsed_s": 13978.0,
+      "title": "Rebound and collision",
+      "description": "One shot combines a cushion rebound with a ball collision."
+    },
+    {
+      "video": "/media/lessons/shot-09.mp4",
+      "poster": "/media/lessons/shot-09.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "30fc610e558342cf717e7a688e70e2a2bd3a0ea32b53107e374033a59cb4bca8",
+      "number": 9,
+      "shot": "shot_20261024_230419",
+      "time": "23:04",
+      "elapsed_s": 15819.0,
+      "title": "Corner pocket",
+      "description": "A rail shot tests pocketing as the table becomes harder to explore."
+    },
+    {
+      "video": "/media/lessons/shot-10.mp4",
+      "poster": "/media/lessons/shot-10.jpg",
+      "frames": 177,
+      "duration_s": 5.9,
+      "width": 640,
+      "height": 360,
+      "sha256": "f262dec09ec2efdbe2cf230aa32df3732f3ec26453bdeb9f033b763b6d94c9f4",
+      "number": 10,
+      "shot": "shot_20261024_233105",
+      "time": "23:31",
+      "elapsed_s": 17425.0,
+      "title": "Breaking a cluster",
+      "description": "A squeeze restores room for exploration. This shot was excluded from fitting."
+    }
+  ],
+  "elapsed_s": 17425.0,
+  "tracking": {
+    "video": "/media/lessons/tracking.mp4",
+    "poster": "/media/lessons/tracking.jpg",
+    "frames": 93,
+    "duration_s": 3.1,
+    "width": 960,
+    "height": 540,
+    "sha256": "8fc1a5798d526c735507b5064c3c8033b4d6bc8f52e8eedd0d2f46e3f8fbceb9",
+    "shot": "shot_20261024_220349",
+    "source": "labpc_assets/franka_station/recordings/shot_20261024_220349",
+    "source_start_s": 1.9,
+    "source_end_s": 4.3,
+    "recorded_label": "orange",
+    "identity_note": "The original CSV color label is retained; the caption deliberately uses no ball-color name.",
+    "initial": [
+      760.26,
+      364.81
+    ],
+    "samples": [
+      {
+        "t": 0.0,
+        "x": 758.99,
+        "y": 364.95
+      },
+      {
+        "t": 0.0167,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.0333,
+        "x": 761.67,
+        "y": 365.96
+      },
+      {
+        "t": 0.05,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.0667,
+        "x": 759.12,
+        "y": 366.24
+      },
+      {
+        "t": 0.0833,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.1,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.1167,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.1333,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.15,
+        "x": 758.99,
+        "y": 364.95
+      },
+      {
+        "t": 0.1667,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.1833,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.2,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.2167,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.2333,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.25,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.2667,
+        "x": 761.67,
+        "y": 365.96
+      },
+      {
+        "t": 0.2833,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.3,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.3167,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.3333,
+        "x": 758.99,
+        "y": 364.95
+      },
+      {
+        "t": 0.35,
+        "x": 761.67,
+        "y": 365.96
+      },
+      {
+        "t": 0.3667,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.3833,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.4,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.4167,
+        "x": 758.99,
+        "y": 364.95
+      },
+      {
+        "t": 0.4333,
+        "x": 758.99,
+        "y": 364.95
+      },
+      {
+        "t": 0.45,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.4667,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.4833,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.5,
+        "x": 758.99,
+        "y": 364.95
+      },
+      {
+        "t": 0.5167,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.5333,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.55,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.5667,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.5833,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.6,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.6167,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.6333,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.65,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.6667,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.6833,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.7,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 0.7167,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 0.75,
+        "x": 769.06,
+        "y": 318.36
+      },
+      {
+        "t": 0.7667,
+        "x": 781.38,
+        "y": 314.43
+      },
+      {
+        "t": 0.7833,
+        "x": 781.38,
+        "y": 314.43
+      },
+      {
+        "t": 0.8,
+        "x": 771.61,
+        "y": 318.09
+      },
+      {
+        "t": 0.8167,
+        "x": 774.15,
+        "y": 317.82
+      },
+      {
+        "t": 0.8417,
+        "x": 779.1,
+        "y": 317.28
+      },
+      {
+        "t": 0.8583,
+        "x": 769.06,
+        "y": 318.36
+      },
+      {
+        "t": 0.875,
+        "x": 781.65,
+        "y": 317.01
+      },
+      {
+        "t": 0.8917,
+        "x": 778.83,
+        "y": 314.7
+      },
+      {
+        "t": 0.9083,
+        "x": 778.83,
+        "y": 314.7
+      },
+      {
+        "t": 0.925,
+        "x": 781.65,
+        "y": 317.01
+      },
+      {
+        "t": 0.9417,
+        "x": 769.33,
+        "y": 320.8
+      },
+      {
+        "t": 0.9583,
+        "x": 782.43,
+        "y": 301.71
+      },
+      {
+        "t": 0.975,
+        "x": 779.37,
+        "y": 319.71
+      },
+      {
+        "t": 0.9917,
+        "x": 781.38,
+        "y": 314.43
+      },
+      {
+        "t": 1.0083,
+        "x": 781.38,
+        "y": 314.43
+      },
+      {
+        "t": 1.025,
+        "x": 781.65,
+        "y": 317.01
+      },
+      {
+        "t": 1.0417,
+        "x": 781.65,
+        "y": 317.01
+      },
+      {
+        "t": 1.0583,
+        "x": 779.1,
+        "y": 317.28
+      },
+      {
+        "t": 1.075,
+        "x": 781.92,
+        "y": 319.44
+      },
+      {
+        "t": 1.0917,
+        "x": 781.92,
+        "y": 319.44
+      },
+      {
+        "t": 1.1083,
+        "x": 781.92,
+        "y": 319.44
+      },
+      {
+        "t": 1.125,
+        "x": 769.33,
+        "y": 320.8
+      },
+      {
+        "t": 1.1417,
+        "x": 779.1,
+        "y": 317.28
+      },
+      {
+        "t": 1.1583,
+        "x": 779.1,
+        "y": 317.28
+      },
+      {
+        "t": 1.175,
+        "x": 781.92,
+        "y": 319.44
+      },
+      {
+        "t": 1.1917,
+        "x": 781.65,
+        "y": 317.01
+      },
+      {
+        "t": 1.2083,
+        "x": 771.07,
+        "y": 313.08
+      },
+      {
+        "t": 1.225,
+        "x": 774.15,
+        "y": 317.82
+      },
+      {
+        "t": 1.2417,
+        "x": 779.1,
+        "y": 317.28
+      },
+      {
+        "t": 1.2583,
+        "x": 781.38,
+        "y": 314.43
+      },
+      {
+        "t": 1.275,
+        "x": 784.05,
+        "y": 316.73
+      },
+      {
+        "t": 1.2917,
+        "x": 781.38,
+        "y": 314.43
+      },
+      {
+        "t": 1.3083,
+        "x": 768.79,
+        "y": 315.79
+      },
+      {
+        "t": 1.325,
+        "x": 783.78,
+        "y": 314.16
+      },
+      {
+        "t": 1.3417,
+        "x": 771.61,
+        "y": 318.09
+      },
+      {
+        "t": 1.3583,
+        "x": 786.33,
+        "y": 313.89
+      },
+      {
+        "t": 1.375,
+        "x": 776.56,
+        "y": 317.55
+      },
+      {
+        "t": 1.3917,
+        "x": 771.07,
+        "y": 313.08
+      },
+      {
+        "t": 1.5333,
+        "x": 786.6,
+        "y": 316.46
+      },
+      {
+        "t": 1.55,
+        "x": 786.6,
+        "y": 316.46
+      },
+      {
+        "t": 1.5667,
+        "x": 786.6,
+        "y": 316.46
+      },
+      {
+        "t": 1.5917,
+        "x": 786.86,
+        "y": 318.89
+      },
+      {
+        "t": 1.6083,
+        "x": 786.6,
+        "y": 316.46
+      },
+      {
+        "t": 1.625,
+        "x": 769.59,
+        "y": 323.37
+      },
+      {
+        "t": 1.6417,
+        "x": 786.86,
+        "y": 318.89
+      },
+      {
+        "t": 1.6583,
+        "x": 786.6,
+        "y": 316.46
+      },
+      {
+        "t": 1.675,
+        "x": 771.07,
+        "y": 313.08
+      },
+      {
+        "t": 1.6917,
+        "x": 787.13,
+        "y": 321.47
+      },
+      {
+        "t": 1.7167,
+        "x": 786.86,
+        "y": 318.89
+      },
+      {
+        "t": 1.7333,
+        "x": 778.57,
+        "y": 312.27
+      },
+      {
+        "t": 1.75,
+        "x": 786.6,
+        "y": 316.46
+      },
+      {
+        "t": 1.7667,
+        "x": 786.86,
+        "y": 318.89
+      },
+      {
+        "t": 1.7833,
+        "x": 786.6,
+        "y": 316.46
+      },
+      {
+        "t": 1.8,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 1.8167,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 1.8333,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 1.85,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 1.8667,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 1.8833,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 1.9,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 1.9167,
+        "x": 758.71,
+        "y": 364.38
+      },
+      {
+        "t": 1.9333,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 1.95,
+        "x": 758.57,
+        "y": 363.37
+      },
+      {
+        "t": 1.9667,
+        "x": 758.99,
+        "y": 364.95
+      },
+      {
+        "t": 1.9833,
+        "x": 758.85,
+        "y": 363.52
+      },
+      {
+        "t": 2.0,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 2.0167,
+        "x": 758.85,
+        "y": 363.52
+      },
+      {
+        "t": 2.0333,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 2.05,
+        "x": 758.71,
+        "y": 364.38
+      },
+      {
+        "t": 2.0667,
+        "x": 758.99,
+        "y": 364.95
+      },
+      {
+        "t": 2.0833,
+        "x": 758.71,
+        "y": 364.38
+      },
+      {
+        "t": 2.1,
+        "x": 761.54,
+        "y": 364.67
+      },
+      {
+        "t": 2.1167,
+        "x": 758.57,
+        "y": 363.37
+      },
+      {
+        "t": 2.1333,
+        "x": 761.54,
+        "y": 364.67
+      },
+      {
+        "t": 2.15,
+        "x": 758.71,
+        "y": 364.38
+      },
+      {
+        "t": 2.1667,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 2.1833,
+        "x": 758.57,
+        "y": 363.37
+      },
+      {
+        "t": 2.2,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 2.2167,
+        "x": 758.71,
+        "y": 364.38
+      },
+      {
+        "t": 2.2333,
+        "x": 760.39,
+        "y": 366.1
+      },
+      {
+        "t": 2.25,
+        "x": 758.57,
+        "y": 363.37
+      },
+      {
+        "t": 2.2667,
+        "x": 759.12,
+        "y": 366.24
+      },
+      {
+        "t": 2.2833,
+        "x": 758.85,
+        "y": 363.52
+      },
+      {
+        "t": 2.3,
+        "x": 761.67,
+        "y": 365.96
+      },
+      {
+        "t": 2.3167,
+        "x": 758.71,
+        "y": 364.38
+      },
+      {
+        "t": 2.3333,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 2.35,
+        "x": 758.57,
+        "y": 363.37
+      },
+      {
+        "t": 2.3667,
+        "x": 760.26,
+        "y": 364.81
+      },
+      {
+        "t": 2.3833,
+        "x": 758.71,
+        "y": 364.38
+      },
+      {
+        "t": 2.4,
+        "x": 760.26,
+        "y": 364.81
+      }
+    ]
+  },
+  "break": {
+    "real": {
+      "video": "/media/lessons/break-real.mp4",
+      "poster": "/media/lessons/break-real.jpg",
+      "frames": 89,
+      "duration_s": 2.966666666666667,
+      "width": 960,
+      "height": 600,
+      "sha256": "b4186bfb5dcf2b2696ecaf0abfd7cf39f28a847b4ce0658c7d778a1c58808bd5"
+    },
+    "model": {
+      "video": "/media/lessons/break-model.mp4",
+      "poster": "/media/lessons/break-model.jpg",
+      "frames": 89,
+      "duration_s": 2.966666666666667,
+      "width": 960,
+      "height": 600,
+      "sha256": "f8c6d8a173cb1f78c54378ec874aa74979c5ab39f192d15c500879ca5927a708"
+    },
+    "shot": "shot_20261026_030537",
+    "source": "labpc_assets/franka_station/best_letters/break/break_real_vs_sim_unmodified_combined.mp4",
+    "source_sha256": "9c7c16d8e7841387895de243b3f065ed68721830855ad7dbe9f8b88d6fa8c43b",
+    "simulation": "break_refit_all69",
+    "parameters": "Original refit_all69 parameters; no per-shot launch fit.",
+    "annotation": "Recorded real tracks and saved simulation states; gaps remain disconnected.",
+    "crop": [
+      198,
+      170,
+      528,
+      330
+    ],
+    "real_time_frames": 89
+  }
+}

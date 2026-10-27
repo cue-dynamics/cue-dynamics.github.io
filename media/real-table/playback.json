@@ -1,0 +1,64 @@
+{
+  "grid": {
+    "original_source": "/media/real-table/corl-blender-alpha.mp4",
+    "desktop": "/media/real-table/corl-playback-a4a19fcd9bc6.mp4",
+    "mobile": "/media/real-table/corl-blender-alpha-mobile.mp4",
+    "reference_width": 3840,
+    "alpha_layout": "corl"
+  },
+  "letters": {
+    "C": {
+      "original_source": "/media/real-table/c-pair-blender.mp4",
+      "angled": {
+        "pair": "/media/real-table/c-angled-playback-dc4d5d3e7e1a.mp4",
+        "width": 1920,
+        "height": 540
+      },
+      "overhead": {
+        "pair": "/media/real-table/c-overhead-playback-7da36daadf7c.mp4",
+        "width": 1920,
+        "height": 540
+      }
+    },
+    "O": {
+      "original_source": "/media/real-table/o-pair-blender.mp4",
+      "angled": {
+        "pair": "/media/real-table/o-angled-playback-93c936850d19.mp4",
+        "width": 1920,
+        "height": 540
+      },
+      "overhead": {
+        "pair": "/media/real-table/o-overhead-playback-41a442b27181.mp4",
+        "width": 1920,
+        "height": 540
+      }
+    },
+    "R": {
+      "original_source": "/media/real-table/r-pair-blender.mp4",
+      "angled": {
+        "pair": "/media/real-table/r-angled-playback-e2d3c9d3c314.mp4",
+        "width": 1920,
+        "height": 540
+      },
+      "overhead": {
+        "pair": "/media/real-table/r-overhead-playback-74004c6a52b0.mp4",
+        "width": 1920,
+        "height": 540
+      }
+    },
+    "L": {
+      "original_source": "/media/real-table/l-pair-blender.mp4",
+      "angled": {
+        "pair": "/media/real-table/l-angled-playback-1a8d72c1878f.mp4",
+        "width": 1920,
+        "height": 540
+      },
+      "overhead": {
+        "pair": "/media/real-table/l-overhead-playback-a7aa3a17a3d4.mp4",
+        "width": 1920,
+        "height": 540
+      }
+    }
+  },
+  "encoding": "H264 High with a level appropriate to frame size/rate, yuv420p, original timing, one-second keyframes, faststart; original source files retained."
+}

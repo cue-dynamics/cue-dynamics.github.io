@@ -1,0 +1,451 @@
+{
+  "video": "/media/real-table/corl-blender-alpha.mp4",
+  "width": 3840,
+  "height": 1620,
+  "panel_width": 960,
+  "panel_height": 540,
+  "fps": 60,
+  "frames": 769,
+  "duration": 12.816666666666666,
+  "background": "transparent",
+  "letters": [
+    {
+      "rotation_degrees": 6.1672124553091745,
+      "coverage_scale": 1.1892000431054979,
+      "real_transform": [
+        [
+          0.8867382535499804,
+          0.09581720805691393,
+          -122.00667717247649
+        ],
+        [
+          -0.09581720805691393,
+          0.8867382535499804,
+          12.097241878431962
+        ]
+      ],
+      "rail_angles_after": [
+        -0.07599912918391827,
+        0.07599912918385376
+      ],
+      "camera_projection_agreement_px": 4.661160346586257e-12,
+      "letter": "C",
+      "frames": 755,
+      "timeline": [
+        {
+          "index": 1,
+          "ball": "red",
+          "recording": "shot_20261025_174854",
+          "start": 0.0,
+          "duration": 1.75,
+          "contact": 0.48,
+          "source_first": 1.3020999999998202,
+          "tau": -0.0033
+        },
+        {
+          "index": 2,
+          "ball": "purple",
+          "recording": "shot_20261025_175242",
+          "start": 1.75,
+          "duration": 1.8166666666666667,
+          "contact": 2.2300000000000004,
+          "source_first": 2.511800000001889,
+          "tau": 0.0123
+        },
+        {
+          "index": 3,
+          "ball": "blue",
+          "recording": "shot_20261025_175630",
+          "start": 3.566666666666667,
+          "duration": 1.75,
+          "contact": 4.046666666666667,
+          "source_first": 0.8075999999998746,
+          "tau": 0.0216
+        },
+        {
+          "index": 4,
+          "ball": "orange",
+          "recording": "shot_20261025_180014",
+          "start": 5.316666666666666,
+          "duration": 1.7666666666666666,
+          "contact": 5.796666666666666,
+          "source_first": 0.9986999999998536,
+          "tau": -0.0062
+        },
+        {
+          "index": 5,
+          "ball": "black",
+          "recording": "shot_20261025_180321",
+          "start": 7.083333333333333,
+          "duration": 1.75,
+          "contact": 7.563333333333333,
+          "source_first": 0.4099999999999183,
+          "tau": 0.0185
+        },
+        {
+          "index": 6,
+          "ball": "yellow",
+          "recording": "shot_20261025_180620",
+          "start": 8.833333333333334,
+          "duration": 3.75,
+          "contact": 9.313333333333334,
+          "source_first": 0.6246999999998948,
+          "tau": 0.0332
+        }
+      ],
+      "real": [
+        0,
+        0,
+        960,
+        540
+      ],
+      "simulation": [
+        960,
+        0,
+        960,
+        540
+      ],
+      "real_poster": "/media/real-table/c-aligned-real-matched-84f2b5ece4.jpg",
+      "simulation_poster": "/media/real-table/c-aligned-sim-blender.png",
+      "simulation_alpha": [
+        0,
+        1080,
+        960,
+        540
+      ]
+    },
+    {
+      "rotation_degrees": 6.130582682669409,
+      "coverage_scale": 1.1881385086561884,
+      "real_transform": [
+        [
+          0.8860077315298189,
+          0.09516526298888967,
+          -121.30444285508437
+        ],
+        [
+          -0.09516526298888967,
+          0.8860077315298189,
+          11.94298496215459
+        ]
+      ],
+      "rail_angles_after": [
+        0.07333807358221837,
+        -0.07333807358225217
+      ],
+      "camera_projection_agreement_px": 4.490630090003833e-12,
+      "letter": "O",
+      "frames": 769,
+      "timeline": [
+        {
+          "index": 1,
+          "ball": "purple",
+          "recording": "shot_20261025_060135",
+          "start": 0.0,
+          "duration": 1.75,
+          "contact": 0.48,
+          "source_first": 1.4266999999998065,
+          "tau": 0.0235
+        },
+        {
+          "index": 2,
+          "ball": "red",
+          "recording": "shot_20261025_060455",
+          "start": 1.75,
+          "duration": 1.75,
+          "contact": 2.2299999999999995,
+          "source_first": 0.931099999999861,
+          "tau": -0.0007
+        },
+        {
+          "index": 3,
+          "ball": "orange",
+          "recording": "shot_20261025_060832",
+          "start": 3.5,
+          "duration": 1.7833333333333334,
+          "contact": 3.9800000000000004,
+          "source_first": 1.0324999999998499,
+          "tau": 0.0034
+        },
+        {
+          "index": 4,
+          "ball": "black",
+          "recording": "shot_20261025_061141",
+          "start": 5.283333333333333,
+          "duration": 1.75,
+          "contact": 5.763333333333334,
+          "source_first": 0.6323999999998939,
+          "tau": 0.0167
+        },
+        {
+          "index": 5,
+          "ball": "blue",
+          "recording": "shot_20261025_061526",
+          "start": 7.033333333333333,
+          "duration": 1.75,
+          "contact": 7.513333333333333,
+          "source_first": 0.776699999999878,
+          "tau": 0.0046
+        },
+        {
+          "index": 6,
+          "ball": "yellow",
+          "recording": "shot_20261025_061827",
+          "start": 8.783333333333333,
+          "duration": 4.033333333333333,
+          "contact": 9.263333333333332,
+          "source_first": 3.38890000000374,
+          "tau": 0.0144
+        }
+      ],
+      "real": [
+        1920,
+        0,
+        960,
+        540
+      ],
+      "simulation": [
+        2880,
+        0,
+        960,
+        540
+      ],
+      "real_poster": "/media/real-table/o-aligned-real-matched-01e2282fbe.jpg",
+      "simulation_poster": "/media/real-table/o-aligned-sim-blender.png",
+      "simulation_alpha": [
+        960,
+        1080,
+        960,
+        540
+      ]
+    },
+    {
+      "rotation_degrees": 6.237878791007994,
+      "coverage_scale": 1.1912465914386843,
+      "real_transform": [
+        [
+          0.8881452255767767,
+          0.09707758079603623,
+          -123.36087345571012
+        ],
+        [
+          -0.09707758079603623,
+          0.8881452255767767,
+          12.397370501823591
+        ]
+      ],
+      "rail_angles_after": [
+        0.1207219159500688,
+        -0.12072191595010202
+      ],
+      "camera_projection_agreement_px": 4.035882739117369e-12,
+      "letter": "R",
+      "frames": 750,
+      "timeline": [
+        {
+          "index": 1,
+          "ball": "red",
+          "recording": "shot_20261025_194819",
+          "start": 0.0,
+          "duration": 1.75,
+          "contact": 0.48,
+          "source_first": 1.2740999999998233,
+          "tau": -0.0244
+        },
+        {
+          "index": 2,
+          "ball": "orange",
+          "recording": "shot_20261025_195147",
+          "start": 1.75,
+          "duration": 1.75,
+          "contact": 2.23,
+          "source_first": 1.30279999999982,
+          "tau": -0.011
+        },
+        {
+          "index": 3,
+          "ball": "purple",
+          "recording": "shot_20261025_195516",
+          "start": 3.5,
+          "duration": 1.75,
+          "contact": 3.9800000000000004,
+          "source_first": 1.2048999999998309,
+          "tau": -0.0235
+        },
+        {
+          "index": 4,
+          "ball": "black",
+          "recording": "shot_20261025_195846",
+          "start": 5.25,
+          "duration": 1.75,
+          "contact": 5.7299999999999995,
+          "source_first": 0.7242999999998838,
+          "tau": 0.0304
+        },
+        {
+          "index": 5,
+          "ball": "blue",
+          "recording": "shot_20261025_200236",
+          "start": 7.0,
+          "duration": 1.75,
+          "contact": 7.4799999999999995,
+          "source_first": 0.5584999999999021,
+          "tau": 0.0227
+        },
+        {
+          "index": 6,
+          "ball": "yellow",
+          "recording": "shot_20261025_200601",
+          "start": 8.75,
+          "duration": 3.75,
+          "contact": 9.23,
+          "source_first": 0.4636999999999124,
+          "tau": 0.0259
+        }
+      ],
+      "real": [
+        0,
+        540,
+        960,
+        540
+      ],
+      "simulation": [
+        960,
+        540,
+        960,
+        540
+      ],
+      "real_poster": "/media/real-table/r-aligned-real-matched-04fc799970.jpg",
+      "simulation_poster": "/media/real-table/r-aligned-sim-blender.png",
+      "simulation_alpha": [
+        1920,
+        1080,
+        960,
+        540
+      ]
+    },
+    {
+      "rotation_degrees": 6.228496338931383,
+      "coverage_scale": 1.1909749727290342,
+      "real_transform": [
+        [
+          0.8879585990426977,
+          0.09691003985023572,
+          -123.18111773341138
+        ],
+        [
+          -0.09691003985023572,
+          0.8879585990426977,
+          12.357329848779688
+        ]
+      ],
+      "rail_angles_after": [
+        -0.11501452637773654,
+        0.11501452637777221
+      ],
+      "camera_projection_agreement_px": 3.623767952376511e-12,
+      "letter": "L",
+      "frames": 750,
+      "timeline": [
+        {
+          "index": 1,
+          "ball": "orange",
+          "recording": "shot_20261025_215619",
+          "start": 0.0,
+          "duration": 1.75,
+          "contact": 0.48,
+          "source_first": 1.276199999999823,
+          "tau": -0.0412
+        },
+        {
+          "index": 2,
+          "ball": "red",
+          "recording": "shot_20261025_215944",
+          "start": 1.75,
+          "duration": 1.75,
+          "contact": 2.23,
+          "source_first": 1.012999999999852,
+          "tau": -0.0082
+        },
+        {
+          "index": 3,
+          "ball": "purple",
+          "recording": "shot_20261025_220410",
+          "start": 3.5,
+          "duration": 1.75,
+          "contact": 3.98,
+          "source_first": 1.0029999999998531,
+          "tau": 0.0069
+        },
+        {
+          "index": 4,
+          "ball": "black",
+          "recording": "shot_20261025_220717",
+          "start": 5.25,
+          "duration": 1.75,
+          "contact": 5.7299999999999995,
+          "source_first": 0.431199999999916,
+          "tau": 0.0161
+        },
+        {
+          "index": 5,
+          "ball": "yellow",
+          "recording": "shot_20261025_221011",
+          "start": 7.0,
+          "duration": 1.75,
+          "contact": 7.48,
+          "source_first": 0.48979999999990953,
+          "tau": 0.0381
+        },
+        {
+          "index": 6,
+          "ball": "blue",
+          "recording": "shot_20261025_221312",
+          "start": 8.75,
+          "duration": 3.75,
+          "contact": 9.229999999999999,
+          "source_first": 0.31539999999992874,
+          "tau": 0.0243
+        }
+      ],
+      "real": [
+        1920,
+        540,
+        960,
+        540
+      ],
+      "simulation": [
+        2880,
+        540,
+        960,
+        540
+      ],
+      "real_poster": "/media/real-table/l-aligned-real-matched-0f3946059a.jpg",
+      "simulation_poster": "/media/real-table/l-aligned-sim-blender.png",
+      "simulation_alpha": [
+        2880,
+        1080,
+        960,
+        540
+      ]
+    }
+  ],
+  "framing": "Identical image-plane rotation/crop for real and simulation; no perspective warping.",
+  "rendering": "Blender Cycles OptiX, 24 samples and GPU denoising. Supersampled display meshes; frozen replay states.",
+  "mobile_video": "/media/real-table/corl-blender-alpha-mobile.mp4",
+  "alpha_layout": {
+    "name": "corl",
+    "row": 1080,
+    "mask_size": [
+      960,
+      540
+    ],
+    "order": [
+      "C",
+      "O",
+      "R",
+      "L"
+    ],
+    "planes": "First two rows: real/simulation colors. Third row: simulation alpha masks. One decoded clock."
+  }
+}

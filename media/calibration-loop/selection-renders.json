@@ -1,0 +1,56 @@
+{
+  "renderer": "Blender Cycles / Metal and OptiX",
+  "renderer_scope": "Predicted candidate views only",
+  "output_size": [
+    1920,
+    1296
+  ],
+  "candidate_samples": 64,
+  "execution_size": [
+    1280,
+    720
+  ],
+  "fps": 30,
+  "execution_frames": 109,
+  "candidate_format": "Transparent WebP stills; Blender geometry includes all trajectory curves",
+  "execution_format": "Original angled-camera real footage; muted inline loop",
+  "motion": "Recorded robot execution; no rendered reconstruction or annotation overlays",
+  "scalar_scores": "Original archived decision, unchanged",
+  "assets": {
+    "chosen": {
+      "url": "/media/calibration-loop/selection-chosen.webp",
+      "bytes": 73222,
+      "sha256": "d35d304bccdc4bf3ef43da1ef92e7455b045cb821b4d8330d3ad644bf630857e",
+      "renderer": "Blender Cycles / Metal"
+    },
+    "low": {
+      "url": "/media/calibration-loop/selection-low.webp",
+      "bytes": 68442,
+      "sha256": "6f2caae8c55a054283ac5940d5ea3bc15ddcdca412200646d6d9fd1ca669aabb",
+      "renderer": "Blender Cycles / Metal"
+    },
+    "noisy": {
+      "url": "/media/calibration-loop/selection-noisy.webp",
+      "bytes": 76936,
+      "sha256": "c8018ebf8b02974537ef1fb2f7e1e3f1a77c77c61ed7311939fef9339d329790",
+      "renderer": "Blender Cycles / Metal"
+    },
+    "blocked": {
+      "url": "/media/calibration-loop/selection-blocked.webp",
+      "bytes": 60854,
+      "sha256": "a5d315e247a906979c99535ca1d34f99ccaf252d41e9a36d4ae13dc2ae23e637",
+      "renderer": "Blender Cycles / OptiX"
+    },
+    "execution_video": {
+      "url": "/media/calibration-loop/interact.mp4",
+      "bytes": 4471829,
+      "sha256": "6c65be8342562c8515c3e5b0a6317339cba12352cb8e8b82676dfafe71578a8a"
+    },
+    "execution_poster": {
+      "url": "/media/calibration-loop/interact.jpg",
+      "bytes": 89917,
+      "sha256": "6adf1d1b27cd928dd28f4bbfb7545a137db66fea5c1ffb7d6a0a9c3d082d1900"
+    }
+  },
+  "prediction_style": "Solid light paths shared by model and execution-variation rollouts"
+}

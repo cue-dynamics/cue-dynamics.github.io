@@ -1,0 +1,75 @@
+/* Shared palette and paper identity. Section compositions live in layouts.css. */
+body.paper-project {
+  /* Ball colors supply the accents; the page gray is sampled from the supplied reference. */
+  --ball-blue: #4f95ff;
+  --ball-red: #ff6c64;
+  --ball-purple: #b174ff;
+  --ball-yellow: #ffda62;
+  --ball-orange: #ff9e5e;
+  --ball-burgundy: #c83b50;
+  --paper-accent: #79b39a;
+  --paper-accent-hover: #91cab0;
+  --paper-accent-ink: #14291e;
+  --paper-charcoal: #423b44;
+  --border-color-main: #d5d5d4;
+  --border-color-subtle: #6d6c69;
+  --border-main: 1px var(--border-color-main) solid;
+  --border-subtle: 1px var(--border-color-subtle) solid;
+  background-color: var(--paper-charcoal);
+  font-family: 'Geist Wght', sans-serif;
+}
+
+.paper-project ::selection { background: var(--paper-accent); color: var(--paper-accent-ink); }
+.paper-project input[type='range'] { accent-color: var(--paper-accent); }
+
+/* Footage fills its stage; labels stay separate from playback controls. */
+.paper-project video[data-loop-video] { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; background: var(--lab-panel-deep); opacity: 0; pointer-events: none; }
+.paper-project video[data-loop-video].is-ready { opacity: 1; }
+.paper-project video[data-video-controls] { pointer-events: auto; }
+.has-loop-video > .lab-frame-center, .has-loop-video > .lab-demo-outline, .has-loop-video > .lab-demo-center-label, .has-loop-video > .paper-video-center { visibility: hidden; }
+.has-loop-video > .lab-frame-tag, .has-loop-video > .lab-frame-code, .has-loop-video > .lab-panel-topline, .has-loop-video > .lab-demo-bottom { text-shadow: 0 1px 8px #000; }
+
+/* Publication details sit beneath the title; the film has its own caption. */
+.paper-authors, .paper-affiliations { display: flex; flex-wrap: wrap; gap: 10px 22px; line-height: 1.5; }
+.paper-authors { font-size: 16px; color: #fff; }
+.paper-affiliations { font-size: 14px; color: #bdc7bd; }
+.paper-authors > span, .paper-affiliations > span, .paper-contributions > span { white-space: nowrap; }
+.paper-contributions { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 22px; max-width: none; margin: 0; color: #bdc7bd; font-size: 14px; line-height: 1.5; }
+.paper-byline sup { margin-left: 2px; font-size: .7em; }
+.paper-hero { width: 100%; pointer-events: auto; border: var(--border-main); color: #eeede7; }
+.paper-hero-shell { width: calc(100% - 2 * var(--content-padding)); max-width: 1280px; margin-inline: auto; }
+.paper-hero-masthead { display: flex; justify-content: center; align-items: center; padding-block: 32px 8px; }
+.paper-brand { display: inline-flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0; color: #fff; text-align: center; }
+.paper-brand-logo { display: block; width: clamp(200px, 20vw, 260px); max-width: 100%; height: auto; }
+.paper-brand-caption { max-width: none; color: #bdc7bd; font-size: 16px; line-height: 1.45; }
+.paper-hero-composition { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 3.5vw, 48px); padding-block: 8px 56px; }
+.paper-hero-identity, .paper-hero-media { min-width: 0; }
+.paper-hero-identity { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.paper-hero-identity .paper-authors, .paper-hero-identity .paper-affiliations { justify-content: center; }
+.paper-title { max-width: 1100px; margin: 0 auto; color: #eeede7; font-size: clamp(36px, 3.7vw, 60px); line-height: 1.08; letter-spacing: -.035em; text-align: center; text-wrap: balance; }
+.paper-byline { display: grid; gap: 10px; margin-top: 18px; }
+.paper-venue { margin: 14px 0 0; color: var(--paper-accent); font-size: 14px; line-height: 1.5; }
+.paper-hero a:focus-visible { outline: 2px solid #eeede7; outline-offset: 5px; }
+.paper-hero-media { width: 100%; margin-inline: auto; }
+.paper-film { width: 100%; margin: 0; scroll-margin-top: 80px; }
+.paper-video-placeholder { position: relative; display: grid; place-items: center; width: 100%; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; background: var(--lab-panel); }
+.paper-hero-video { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; scroll-margin-top: 80px; border: 1px solid #ffffff26; background: radial-gradient(ellipse at 50% 35%, #ffffff06, transparent 70%), #302d32; box-shadow: none; }
+.paper-hero-video > video[data-loop-video] { opacity: 1; }
+.paper-video-center { display: grid; place-items: center; padding: 24px; color: #bdc7bd; font-size: 16px; line-height: 1.5; text-align: center; }
+
+@media (min-width: 1800px) {
+  .paper-authors { font-size: 18px; }
+}
+@media (max-width: 991px) {
+  .paper-hero-composition { gap: 28px; padding-block: 8px 40px; }
+  .paper-title { font-size: clamp(34px, 4.8vw, 46px); }
+}
+@media (max-width: 479px) {
+  .paper-hero-masthead { padding-block: 24px 6px; }
+  .paper-brand-caption { font-size: 15px; }
+  .paper-hero-composition { padding-block: 6px 32px; }
+  .paper-title { font-size: clamp(29px, 7.8vw, 36px); }
+  .paper-authors { gap: 8px 18px; }
+  .paper-affiliations { gap: 8px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .paper-hero a { transition: none; } }

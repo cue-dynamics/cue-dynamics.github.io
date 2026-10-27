@@ -1,0 +1,723 @@
+{
+  "fps": 60,
+  "model": "refit_all69",
+  "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+  "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+  "count": 10,
+  "shots": [
+    {
+      "id": "unseen-183113",
+      "number": 1,
+      "shot": "shot_20261025_183113",
+      "target": "purple",
+      "video": "/media/unseen-shots/unseen-183113-pair-6ef55b84aa.mp4",
+      "real_poster": "/media/unseen-shots/unseen-183113-real-fae8f995ad.webp",
+      "model_poster": "/media/unseen-shots/unseen-183113-model-0715f60b47.png",
+      "thumbnail": "/media/unseen-shots/unseen-183113-thumbnail-cbed7fb811.webp",
+      "frames": 163,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 6.0,
+      "endpoint_error_mm": 8.1,
+      "speed_m_s": 0.109,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_183113/sim/corr_refit_all69",
+      "states_sha256": "50cb50911761dd90d750877ab7f726fd8bc1f997a880eb2452738aa313794ec2",
+      "scene_sha256": "fd7c66893c8fa3be1d20eaf6c973191c44a3745c60ac7b9670f45af65b802111",
+      "render": {
+        "job": "unseen-183113",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 163,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "fd7c66893c8fa3be1d20eaf6c973191c44a3745c60ac7b9670f45af65b802111",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_183113/sim/corr_refit_all69/sim_states.npz",
+          "states_sha256": "50cb50911761dd90d750877ab7f726fd8bc1f997a880eb2452738aa313794ec2",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_183113"
+      },
+      "source_number": 1
+    },
+    {
+      "id": "unseen-183424",
+      "number": 2,
+      "shot": "shot_20261025_183424",
+      "target": "yellow",
+      "video": "/media/unseen-shots/unseen-183424-pair-d681e6af00.mp4",
+      "real_poster": "/media/unseen-shots/unseen-183424-real-70e4678e12.webp",
+      "model_poster": "/media/unseen-shots/unseen-183424-model-5b3a420e36.png",
+      "thumbnail": "/media/unseen-shots/unseen-183424-thumbnail-c4a347534c.webp",
+      "frames": 163,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 9.2,
+      "endpoint_error_mm": 10.2,
+      "speed_m_s": 0.159,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_183424/sim/corr_refit_all69",
+      "states_sha256": "bb8cc9bbd3d877608465c5aa07921cc48e801f9c6e5d5bfed26087957be7a92a",
+      "scene_sha256": "07c3d46a099d2b1ab88a4f49028dbefc753ccb471f8888a8bf0148d9f8d9ad9f",
+      "render": {
+        "job": "unseen-183424",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 163,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "07c3d46a099d2b1ab88a4f49028dbefc753ccb471f8888a8bf0148d9f8d9ad9f",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_183424/sim/corr_refit_all69/sim_states.npz",
+          "states_sha256": "bb8cc9bbd3d877608465c5aa07921cc48e801f9c6e5d5bfed26087957be7a92a",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_183424"
+      },
+      "source_number": 2
+    },
+    {
+      "id": "unseen-184145",
+      "number": 3,
+      "shot": "shot_20261025_184145",
+      "target": "blue",
+      "video": "/media/unseen-shots/unseen-184145-pair-cbf3da9d00.mp4",
+      "real_poster": "/media/unseen-shots/unseen-184145-real-44b66fbb7b.webp",
+      "model_poster": "/media/unseen-shots/unseen-184145-model-ba8a22861c.png",
+      "thumbnail": "/media/unseen-shots/unseen-184145-thumbnail-523426d5ba.webp",
+      "frames": 171,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 9.0,
+      "endpoint_error_mm": 7.6,
+      "speed_m_s": 0.172,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_184145/sim/ceval_refit_all69",
+      "states_sha256": "ade87fea2113269bfad441266a060c8e83f3dce65d0acdfec31c3bd2ab089312",
+      "scene_sha256": "84c9d65eb0b454183a5e72222cde8c1f4d6913665ed463166999ee7cac13988d",
+      "render": {
+        "job": "unseen-184145",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 171,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "84c9d65eb0b454183a5e72222cde8c1f4d6913665ed463166999ee7cac13988d",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_184145/sim/ceval_refit_all69/sim_states.npz",
+          "states_sha256": "ade87fea2113269bfad441266a060c8e83f3dce65d0acdfec31c3bd2ab089312",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_184145"
+      },
+      "source_number": 3
+    },
+    {
+      "id": "unseen-192257",
+      "number": 4,
+      "shot": "shot_20261025_192257",
+      "target": "yellow",
+      "video": "/media/unseen-shots/unseen-192257-pair-af98ce148e.mp4",
+      "real_poster": "/media/unseen-shots/unseen-192257-real-10464158de.webp",
+      "model_poster": "/media/unseen-shots/unseen-192257-model-af8289d8ae.png",
+      "thumbnail": "/media/unseen-shots/unseen-192257-thumbnail-da68da5eef.webp",
+      "frames": 177,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 14.8,
+      "endpoint_error_mm": 11.8,
+      "speed_m_s": 0.233,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_192257/sim/corr_refit_all69",
+      "states_sha256": "b7d42ee3b969622cb9794461c770736a3b53834d92757c57ba6ec810c776519f",
+      "scene_sha256": "339bf03dc99b97d8775406e18aa07e8323538d84e64e5eb619d1b8338f5d123c",
+      "render": {
+        "job": "unseen-192257",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 177,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "339bf03dc99b97d8775406e18aa07e8323538d84e64e5eb619d1b8338f5d123c",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_192257/sim/corr_refit_all69/sim_states.npz",
+          "states_sha256": "b7d42ee3b969622cb9794461c770736a3b53834d92757c57ba6ec810c776519f",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_192257"
+      },
+      "source_number": 4
+    },
+    {
+      "id": "unseen-204232",
+      "number": 5,
+      "shot": "shot_20261025_204232",
+      "target": "red",
+      "video": "/media/unseen-shots/unseen-204232-pair-34329eed6c.mp4",
+      "real_poster": "/media/unseen-shots/unseen-204232-real-7ab9bedfd7.webp",
+      "model_poster": "/media/unseen-shots/unseen-204232-model-cdddfdcb86.png",
+      "thumbnail": "/media/unseen-shots/unseen-204232-thumbnail-c12e24b746.webp",
+      "frames": 157,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 14.8,
+      "endpoint_error_mm": 19.0,
+      "speed_m_s": 0.136,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_204232/sim/corr_refit_all69",
+      "states_sha256": "d40c0f53be5e52723b043979750c5983d986e7c090e80a48a055b6f29bc997f9",
+      "scene_sha256": "c3652724935e5e76d5abcf04f502cfa7383e146b9ee7a12b9da4931d0fe414fb",
+      "render": {
+        "job": "unseen-204232",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 157,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "c3652724935e5e76d5abcf04f502cfa7383e146b9ee7a12b9da4931d0fe414fb",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_204232/sim/corr_refit_all69/sim_states.npz",
+          "states_sha256": "d40c0f53be5e52723b043979750c5983d986e7c090e80a48a055b6f29bc997f9",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_204232"
+      },
+      "source_number": 5
+    },
+    {
+      "id": "unseen-204523",
+      "number": 6,
+      "shot": "shot_20261025_204523",
+      "target": "purple",
+      "video": "/media/unseen-shots/unseen-204523-pair-1091b2352e.mp4",
+      "real_poster": "/media/unseen-shots/unseen-204523-real-7d21795bd6.webp",
+      "model_poster": "/media/unseen-shots/unseen-204523-model-178ef92327.png",
+      "thumbnail": "/media/unseen-shots/unseen-204523-thumbnail-0ce89b8e57.webp",
+      "frames": 163,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 7.7,
+      "endpoint_error_mm": 9.3,
+      "speed_m_s": 0.137,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_204523/sim/corr_refit_all69",
+      "states_sha256": "6a896e6238806c8c8c079c29f6286b2a1c2d8e19aba3b71fc9f15900c67faafb",
+      "scene_sha256": "cccbf3c017ac1a4a795d25105bde190ab304a27e8c8082b322d57232c7bd5357",
+      "render": {
+        "job": "unseen-204523",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 163,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "cccbf3c017ac1a4a795d25105bde190ab304a27e8c8082b322d57232c7bd5357",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_204523/sim/corr_refit_all69/sim_states.npz",
+          "states_sha256": "6a896e6238806c8c8c079c29f6286b2a1c2d8e19aba3b71fc9f15900c67faafb",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_204523"
+      },
+      "source_number": 6
+    },
+    {
+      "id": "unseen-204847",
+      "number": 7,
+      "shot": "shot_20261025_204847",
+      "target": "black",
+      "video": "/media/unseen-shots/unseen-204847-pair-f9fab1b2f1.mp4",
+      "real_poster": "/media/unseen-shots/unseen-204847-real-0cb6ac6598.webp",
+      "model_poster": "/media/unseen-shots/unseen-204847-model-0ebf15616b.png",
+      "thumbnail": "/media/unseen-shots/unseen-204847-thumbnail-d98e9212f6.webp",
+      "frames": 176,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 12.5,
+      "endpoint_error_mm": 14.2,
+      "speed_m_s": 0.223,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_204847/sim/corr_refit_all69",
+      "states_sha256": "0d65ce67f273dbe1c96b42d86518406c5bcb913a4ea4665dacbb2a38f9b13e3d",
+      "scene_sha256": "ecfdd6dea344f8f53d0304b2edc6512e2f06a20e2a762e0f84495d0997f4e68a",
+      "render": {
+        "job": "unseen-204847",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 176,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "ecfdd6dea344f8f53d0304b2edc6512e2f06a20e2a762e0f84495d0997f4e68a",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_204847/sim/corr_refit_all69/sim_states.npz",
+          "states_sha256": "0d65ce67f273dbe1c96b42d86518406c5bcb913a4ea4665dacbb2a38f9b13e3d",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_204847"
+      },
+      "source_number": 7
+    },
+    {
+      "id": "unseen-205220",
+      "number": 8,
+      "shot": "shot_20261025_205220",
+      "target": "yellow",
+      "video": "/media/unseen-shots/unseen-205220-pair-b4499972eb.mp4",
+      "real_poster": "/media/unseen-shots/unseen-205220-real-3f340036ad.webp",
+      "model_poster": "/media/unseen-shots/unseen-205220-model-fe739fa6c6.png",
+      "thumbnail": "/media/unseen-shots/unseen-205220-thumbnail-fb3437efb3.webp",
+      "frames": 170,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 7.3,
+      "endpoint_error_mm": 7.2,
+      "speed_m_s": 0.202,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_205220/sim/corr_refit_all69",
+      "states_sha256": "54b2e8569490878f069ad8700e837b54e71c7c7e771afe42b83db88d96b901d8",
+      "scene_sha256": "ddefbd6fce521a35828d73d3b7d2c532b97d9c9aafcf8992030fe73f15aece88",
+      "render": {
+        "job": "unseen-205220",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 170,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "ddefbd6fce521a35828d73d3b7d2c532b97d9c9aafcf8992030fe73f15aece88",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "labpc_assets/franka_station/autonomous_run/shots/shot_20261025_205220/sim/corr_refit_all69/sim_states.npz",
+          "states_sha256": "54b2e8569490878f069ad8700e837b54e71c7c7e771afe42b83db88d96b901d8",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_205220"
+      },
+      "source_number": 8
+    },
+    {
+      "id": "unseen-213932",
+      "number": 9,
+      "shot": "shot_20261025_213932",
+      "target": "yellow",
+      "video": "/media/unseen-shots/unseen-213932-pair-bd7b019f0c.mp4",
+      "real_poster": "/media/unseen-shots/unseen-213932-real-9ed55adbc2.webp",
+      "model_poster": "/media/unseen-shots/unseen-213932-model-af6b946316.png",
+      "thumbnail": "/media/unseen-shots/unseen-213932-thumbnail-b80220c951.webp",
+      "frames": 177,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 12.2,
+      "endpoint_error_mm": 14.7,
+      "speed_m_s": 0.223,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "research/unseen-shots/predictions/shot_20261025_213932",
+      "states_sha256": "e027b902ab3484bfc122c6bfa06be2d827dea505df17041a3e057247fcfb9a5f",
+      "scene_sha256": "843940c1da86c101ef665b00104cf8a975777fa7575c5d7f3d8eb40b27fec008",
+      "render": {
+        "job": "unseen-213932",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 177,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "843940c1da86c101ef665b00104cf8a975777fa7575c5d7f3d8eb40b27fec008",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "research/unseen-shots/predictions/shot_20261025_213932/sim_states.npz",
+          "states_sha256": "e027b902ab3484bfc122c6bfa06be2d827dea505df17041a3e057247fcfb9a5f",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_213932"
+      },
+      "source_number": 11
+    },
+    {
+      "id": "unseen-214236",
+      "number": 10,
+      "shot": "shot_20261025_214236",
+      "target": "blue",
+      "video": "/media/unseen-shots/unseen-214236-pair-710913881c.mp4",
+      "real_poster": "/media/unseen-shots/unseen-214236-real-5dccaa31bc.webp",
+      "model_poster": "/media/unseen-shots/unseen-214236-model-36def7a224.png",
+      "thumbnail": "/media/unseen-shots/unseen-214236-thumbnail-37e90aad62.webp",
+      "frames": 179,
+      "fps": 60,
+      "width": 2880,
+      "height": 672,
+      "real_region": [
+        0,
+        0,
+        960,
+        672
+      ],
+      "model_region": [
+        960,
+        0,
+        960,
+        672
+      ],
+      "alpha_region": [
+        1920,
+        0,
+        960,
+        672
+      ],
+      "path_error_mm": 17.1,
+      "endpoint_error_mm": 21.2,
+      "speed_m_s": 0.278,
+      "in_fit_training_set": false,
+      "recorded_after_fit": true,
+      "source_states": "research/unseen-shots/predictions/shot_20261025_214236",
+      "states_sha256": "f305f98cf3c06b44bb54aa9956a45a6722a884afa70b3cfb6b1c8e1050ea7538",
+      "scene_sha256": "0bdd8b07b4d1a348e77438749f613c479461a301886215f6a8c9af61a536bafb",
+      "render": {
+        "job": "unseen-214236",
+        "renderer": "Blender Cycles OptiX",
+        "samples": 24,
+        "denoiser": "OpenImageDenoise GPU",
+        "frames": 179,
+        "fps": 60,
+        "delivery": "alpha",
+        "output_size": [
+          3840,
+          1344
+        ],
+        "scene_sha256": "0bdd8b07b4d1a348e77438749f613c479461a301886215f6a8c9af61a536bafb",
+        "geometry": "Approved square corner plates with circular cutouts; middle rectangles cover the wood strip only",
+        "physics_stepped": false,
+        "trajectories_modified": false,
+        "camera_registration_modified": false,
+        "source": {
+          "states": "research/unseen-shots/predictions/shot_20261025_214236/sim_states.npz",
+          "states_sha256": "f305f98cf3c06b44bb54aa9956a45a6722a884afa70b3cfb6b1c8e1050ea7538",
+          "fit": "labpc_assets/franka_station/autonomous_run/overnight/best/refit_all69.json",
+          "fit_sha256": "68bb4b1f185da7d5bb6350a18c84858f88a8d03e091528f2de33b87295fa520d",
+          "in_fit_training_set": false,
+          "physics_stepped": false,
+          "retimed": false,
+          "max_ball_coordinate_error_m": 0.0,
+          "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f"
+        },
+        "shot": "shot_20261025_214236"
+      },
+      "source_number": 12
+    }
+  ],
+  "camera_grade_sha256": "ff4a4691784f03609589157b4ac473df8f38dcc8d0a7232545bb5717eb0ac17f",
+  "approved_static_geometry_sha256": "542522da8bc4a6f240101572d3b5e8a2b4a973b25e4e1a415009952517fb0e5f",
+  "interpretation": "Illustrative shots excluded from the frozen 69-shot fit. The simulator follows recorded cue motion. Errors are averages over the balls that moved. These are not the paper 25-condition benchmark.",
+  "rendering": "Approved Blender geometry, Cycles OptiX, 24 samples, transparent RGBA, encoded by encode_job.py at 60 fps. Original saved ball/cue poses; no physics stepping or retiming. A 0.65-second final hold is shared by both views."
+}

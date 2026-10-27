@@ -1,0 +1,12 @@
+/* Apply only to photographed overhead pixels, never the RealSense view or simulator. */
+[data-overhead-color],
+video[src*="-overhead-real."],
+img[src*="-overhead-poster."],
+.paper-project [data-gap-real] > video,
+.paper-project .lab-reconstruction > img,
+.paper-project [data-loop-panel="2"] > video,
+.paper-project .corl-grid:not(.is-simulation) .corl-base,
+.paper-project .corl-grid:not(.is-simulation) .corl-poster,
+.paper-project .corl-grid.is-simulation .corl-reveal {
+  filter: url('/styles/camera-color.svg#overhead-match');
+}

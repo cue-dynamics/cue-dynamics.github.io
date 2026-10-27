@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Fixed display grade for the already color-profiled overhead footage.
+         Reduce blue in the shadows, then restore the felt's green/cyan balance.
+         These are sRGB display values, not a replacement camera calibration. -->
+    <filter id="overhead-match" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feComponentTransfer>
+        <feFuncB type="table" tableValues="0 .078431 .164706 .313725 .494118 .647059 .768627 .886275 1"/>
+      </feComponentTransfer>
+      <feColorMatrix type="matrix" values="
+        1.10 -.18  .06 0  .010
+        -.06 1.19 -.02 0 -.002
+        -.04  .22  .96 0 -.015
+        0     0    0  1  0"/>
+      <feComponentTransfer>
+        <feFuncR type="gamma" amplitude="1" exponent=".96" offset="0"/>
+        <feFuncG type="gamma" amplitude="1" exponent=".96" offset="0"/>
+        <feFuncB type="gamma" amplitude="1" exponent=".96" offset="0"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>

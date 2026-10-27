@@ -1,0 +1,765 @@
+{
+  "letters": [
+    {
+      "letter": "C",
+      "run": "c8",
+      "panel_size": [
+        1280,
+        720
+      ],
+      "fps": 60,
+      "frames": 755,
+      "duration": 12.583333333333334,
+      "pair": "/media/real-table/c-pair-blender.mp4",
+      "panels": "Top: angled real/sim; bottom: upright overhead real/sim",
+      "calibration": [
+        {
+          "camera": "angled",
+          "total_landmarks": 36,
+          "inliers": 31,
+          "rms_px": 1.1481749390471583,
+          "prior_rms_px": 9.355900478764399,
+          "R": [
+            [
+              0.35826108535075907,
+              0.9318674655378479,
+              -0.05720158560183469
+            ],
+            [
+              0.6480737119774816,
+              -0.2923227817088986,
+              -0.7032409652016155
+            ],
+            [
+              -0.6720487025261073,
+              0.21487302754426751,
+              -0.7086466845099441
+            ]
+          ],
+          "t": [
+            -0.2071485723301217,
+            -0.37623751095465613,
+            1.3451782737917564
+          ],
+          "basis": "Stationary balls at 0.15 seconds after stroke start, pooled across all six shots; no moving trajectory fitted."
+        },
+        {
+          "camera": "overhead",
+          "total_landmarks": 36,
+          "inliers": 34,
+          "rms_px": 0.7400073060294386,
+          "prior_rms_px": 1.0982111243848298,
+          "R": [
+            [
+              0.11600301102433108,
+              -0.99316781768505,
+              0.01268807897220185
+            ],
+            [
+              -0.9923741013634104,
+              -0.11535537979622745,
+              0.04343707282071626
+            ],
+            [
+              -0.041676664651254476,
+              -0.017630152205352995,
+              -0.9989755919724781
+            ]
+          ],
+          "t": [
+            -0.13741826023665443,
+            0.6091224644224692,
+            1.1458149453924826
+          ],
+          "basis": "Stationary balls at 0.15 seconds after stroke start, pooled across all six shots; no moving trajectory fitted."
+        }
+      ],
+      "display_matrices": [
+        [
+          [
+            1.39441867487275,
+            0.0,
+            -266.56293595567126
+          ],
+          [
+            0.0,
+            1.39441867487275,
+            -187.8961195339275
+          ]
+        ],
+        [
+          [
+            -2.214325943859107,
+            0.0,
+            1997.6043105801639
+          ],
+          [
+            0.0,
+            -2.214325943859107,
+            1138.3236223110143
+          ]
+        ]
+      ],
+      "timeline": [
+        {
+          "index": 1,
+          "ball": "red",
+          "recording": "shot_20261025_174854",
+          "start": 0.0,
+          "duration": 1.75,
+          "contact": 0.48,
+          "source_first": 1.3020999999998202,
+          "tau": -0.0033
+        },
+        {
+          "index": 2,
+          "ball": "purple",
+          "recording": "shot_20261025_175242",
+          "start": 1.75,
+          "duration": 1.8166666666666667,
+          "contact": 2.2300000000000004,
+          "source_first": 2.511800000001889,
+          "tau": 0.0123
+        },
+        {
+          "index": 3,
+          "ball": "blue",
+          "recording": "shot_20261025_175630",
+          "start": 3.566666666666667,
+          "duration": 1.75,
+          "contact": 4.046666666666667,
+          "source_first": 0.8075999999998746,
+          "tau": 0.0216
+        },
+        {
+          "index": 4,
+          "ball": "orange",
+          "recording": "shot_20261025_180014",
+          "start": 5.316666666666666,
+          "duration": 1.7666666666666666,
+          "contact": 5.796666666666666,
+          "source_first": 0.9986999999998536,
+          "tau": -0.0062
+        },
+        {
+          "index": 5,
+          "ball": "black",
+          "recording": "shot_20261025_180321",
+          "start": 7.083333333333333,
+          "duration": 1.75,
+          "contact": 7.563333333333333,
+          "source_first": 0.4099999999999183,
+          "tau": 0.0185
+        },
+        {
+          "index": 6,
+          "ball": "yellow",
+          "recording": "shot_20261025_180620",
+          "start": 8.833333333333334,
+          "duration": 3.75,
+          "contact": 9.313333333333334,
+          "source_first": 0.6246999999998948,
+          "tau": 0.0332
+        }
+      ],
+      "source_tracking_overlays": false,
+      "physics_refitted": false,
+      "endpoints_warped": false,
+      "cue_fade": {
+        "start": "Simulated contact",
+        "duration": 0.3,
+        "easing": "smoothstep"
+      },
+      "final_hold": 2.0,
+      "final_errors_mm": {
+        "mean": 13.33995784480259,
+        "max": 21.125576915199265
+      },
+      "execution_note": "Recorded executed commands retained.",
+      "views": {
+        "angled": {
+          "real": "/media/real-table/c-angled-real.mp4",
+          "simulation": "/media/real-table/c-angled-sim-blender.mp4",
+          "poster": "/media/real-table/c-angled-poster.jpg"
+        },
+        "overhead": {
+          "real": "/media/real-table/c-overhead-real-matched-e8a5385355.mp4",
+          "simulation": "/media/real-table/c-overhead-sim-blender.mp4",
+          "poster": "/media/real-table/c-overhead-poster-matched-e03613f258.jpg"
+        }
+      }
+    },
+    {
+      "letter": "O",
+      "run": "o2",
+      "panel_size": [
+        1280,
+        720
+      ],
+      "fps": 60,
+      "frames": 769,
+      "duration": 12.816666666666666,
+      "pair": "/media/real-table/o-pair-blender.mp4",
+      "panels": "Top: angled real/sim; bottom: upright overhead real/sim",
+      "calibration": [
+        {
+          "camera": "angled",
+          "total_landmarks": 36,
+          "inliers": 30,
+          "rms_px": 1.0503506681914996,
+          "prior_rms_px": 8.018910802482687,
+          "R": [
+            [
+              0.3591411632201673,
+              0.9319056990141146,
+              -0.05068918056035382
+            ],
+            [
+              0.6510718695958484,
+              -0.2890858936254219,
+              -0.7018082122116825
+            ],
+            [
+              -0.6686725996344043,
+              0.2190459181354584,
+              -0.7105602298513208
+            ]
+          ],
+          "t": [
+            -0.2067057280025716,
+            -0.3787828792780665,
+            1.343805552550534
+          ],
+          "basis": "Stationary balls at 0.15 seconds after stroke start, pooled across all six shots; no moving trajectory fitted."
+        },
+        {
+          "camera": "overhead",
+          "total_landmarks": 36,
+          "inliers": 35,
+          "rms_px": 0.8477145666902361,
+          "prior_rms_px": 0.9789279663485063,
+          "R": [
+            [
+              0.11484814459492487,
+              -0.993382906102046,
+              -0.0005527633822994107
+            ],
+            [
+              -0.9933812760215304,
+              -0.11484897511005665,
+              0.0018312198136318967
+            ],
+            [
+              -0.0018825867681127565,
+              0.0003387925961054778,
+              -0.9999981705416452
+            ]
+          ],
+          "t": [
+            -0.13589314267851746,
+            0.6130557633111452,
+            1.1198820029220644
+          ],
+          "basis": "Stationary balls at 0.15 seconds after stroke start, pooled across all six shots; no moving trajectory fitted."
+        }
+      ],
+      "display_matrices": [
+        [
+          [
+            1.3985273982150408,
+            0.0,
+            -270.77123018623274
+          ],
+          [
+            0.0,
+            1.3985273982150408,
+            -188.51198366438234
+          ]
+        ],
+        [
+          [
+            -2.2123875446034953,
+            0.0,
+            1995.0058707249607
+          ],
+          [
+            0.0,
+            -2.2123875446034953,
+            1140.1113020253672
+          ]
+        ]
+      ],
+      "timeline": [
+        {
+          "index": 1,
+          "ball": "purple",
+          "recording": "shot_20261025_060135",
+          "start": 0.0,
+          "duration": 1.75,
+          "contact": 0.48,
+          "source_first": 1.4266999999998065,
+          "tau": 0.0235
+        },
+        {
+          "index": 2,
+          "ball": "red",
+          "recording": "shot_20261025_060455",
+          "start": 1.75,
+          "duration": 1.75,
+          "contact": 2.2299999999999995,
+          "source_first": 0.931099999999861,
+          "tau": -0.0007
+        },
+        {
+          "index": 3,
+          "ball": "orange",
+          "recording": "shot_20261025_060832",
+          "start": 3.5,
+          "duration": 1.7833333333333334,
+          "contact": 3.9800000000000004,
+          "source_first": 1.0324999999998499,
+          "tau": 0.0034
+        },
+        {
+          "index": 4,
+          "ball": "black",
+          "recording": "shot_20261025_061141",
+          "start": 5.283333333333333,
+          "duration": 1.75,
+          "contact": 5.763333333333334,
+          "source_first": 0.6323999999998939,
+          "tau": 0.0167
+        },
+        {
+          "index": 5,
+          "ball": "blue",
+          "recording": "shot_20261025_061526",
+          "start": 7.033333333333333,
+          "duration": 1.75,
+          "contact": 7.513333333333333,
+          "source_first": 0.776699999999878,
+          "tau": 0.0046
+        },
+        {
+          "index": 6,
+          "ball": "yellow",
+          "recording": "shot_20261025_061827",
+          "start": 8.783333333333333,
+          "duration": 4.033333333333333,
+          "contact": 9.263333333333332,
+          "source_first": 3.38890000000374,
+          "tau": 0.0144
+        }
+      ],
+      "source_tracking_overlays": false,
+      "physics_refitted": false,
+      "endpoints_warped": false,
+      "cue_fade": {
+        "start": "Simulated contact",
+        "duration": 0.3,
+        "easing": "smoothstep"
+      },
+      "final_hold": 2.0,
+      "final_errors_mm": {
+        "mean": 18.128611242050784,
+        "max": 24.639805194035127
+      },
+      "execution_note": "Recorded executed commands retained.",
+      "views": {
+        "angled": {
+          "real": "/media/real-table/o-angled-real.mp4",
+          "simulation": "/media/real-table/o-angled-sim-blender.mp4",
+          "poster": "/media/real-table/o-angled-poster.jpg"
+        },
+        "overhead": {
+          "real": "/media/real-table/o-overhead-real-matched-0cc620cd41.mp4",
+          "simulation": "/media/real-table/o-overhead-sim-blender.mp4",
+          "poster": "/media/real-table/o-overhead-poster-matched-dfaeeadf04.jpg"
+        }
+      }
+    },
+    {
+      "letter": "R",
+      "run": "r3",
+      "panel_size": [
+        1280,
+        720
+      ],
+      "fps": 60,
+      "frames": 750,
+      "duration": 12.5,
+      "pair": "/media/real-table/r-pair-blender.mp4",
+      "panels": "Top: angled real/sim; bottom: upright overhead real/sim",
+      "calibration": [
+        {
+          "camera": "angled",
+          "total_landmarks": 36,
+          "inliers": 32,
+          "rms_px": 0.8985678961094952,
+          "prior_rms_px": 9.347747246797754,
+          "R": [
+            [
+              0.35602571200521327,
+              0.9330101276163688,
+              -0.05232393483357484
+            ],
+            [
+              0.6498843855213007,
+              -0.28744558706458245,
+              -0.7035803578360462
+            ],
+            [
+              -0.6714878836187459,
+              0.21648818961408672,
+              -0.7086867332685387
+            ]
+          ],
+          "t": [
+            -0.2063163802917576,
+            -0.37786366576857655,
+            1.3449480390124244
+          ],
+          "basis": "Stationary balls at 0.15 seconds after stroke start, pooled across all six shots; no moving trajectory fitted."
+        },
+        {
+          "camera": "overhead",
+          "total_landmarks": 36,
+          "inliers": 30,
+          "rms_px": 0.6641469732072204,
+          "prior_rms_px": 2.1375089943876935,
+          "R": [
+            [
+              0.11675130698934266,
+              -0.9931441108545105,
+              -0.005823005348076039
+            ],
+            [
+              -0.9931598990029828,
+              -0.11673972734401683,
+              -0.0022915217714745413
+            ],
+            [
+              0.0015960352955776886,
+              0.006050713565203215,
+              -0.9999804205766667
+            ]
+          ],
+          "t": [
+            -0.13641945126203509,
+            0.6130233483355613,
+            1.1192343969731722
+          ],
+          "basis": "Stationary balls at 0.15 seconds after stroke start, pooled across all six shots; no moving trajectory fitted."
+        }
+      ],
+      "display_matrices": [
+        [
+          [
+            1.4012793022283752,
+            0.0,
+            -270.488029639233
+          ],
+          [
+            0.0,
+            1.4012793022283752,
+            -189.5638234486221
+          ]
+        ],
+        [
+          [
+            -2.2100618980267854,
+            0.0,
+            1994.3846363314929
+          ],
+          [
+            0.0,
+            -2.2100618980267854,
+            1139.5451370316132
+          ]
+        ]
+      ],
+      "timeline": [
+        {
+          "index": 1,
+          "ball": "red",
+          "recording": "shot_20261025_194819",
+          "start": 0.0,
+          "duration": 1.75,
+          "contact": 0.48,
+          "source_first": 1.2740999999998233,
+          "tau": -0.0244
+        },
+        {
+          "index": 2,
+          "ball": "orange",
+          "recording": "shot_20261025_195147",
+          "start": 1.75,
+          "duration": 1.75,
+          "contact": 2.23,
+          "source_first": 1.30279999999982,
+          "tau": -0.011
+        },
+        {
+          "index": 3,
+          "ball": "purple",
+          "recording": "shot_20261025_195516",
+          "start": 3.5,
+          "duration": 1.75,
+          "contact": 3.9800000000000004,
+          "source_first": 1.2048999999998309,
+          "tau": -0.0235
+        },
+        {
+          "index": 4,
+          "ball": "black",
+          "recording": "shot_20261025_195846",
+          "start": 5.25,
+          "duration": 1.75,
+          "contact": 5.7299999999999995,
+          "source_first": 0.7242999999998838,
+          "tau": 0.0304
+        },
+        {
+          "index": 5,
+          "ball": "blue",
+          "recording": "shot_20261025_200236",
+          "start": 7.0,
+          "duration": 1.75,
+          "contact": 7.4799999999999995,
+          "source_first": 0.5584999999999021,
+          "tau": 0.0227
+        },
+        {
+          "index": 6,
+          "ball": "yellow",
+          "recording": "shot_20261025_200601",
+          "start": 8.75,
+          "duration": 3.75,
+          "contact": 9.23,
+          "source_first": 0.4636999999999124,
+          "tau": 0.0259
+        }
+      ],
+      "source_tracking_overlays": false,
+      "physics_refitted": false,
+      "endpoints_warped": false,
+      "cue_fade": {
+        "start": "Simulated contact",
+        "duration": 0.3,
+        "easing": "smoothstep"
+      },
+      "final_hold": 2.0,
+      "final_errors_mm": {
+        "mean": 6.789853524499665,
+        "max": 13.761177275218838
+      },
+      "execution_note": "Recorded executed commands retained.",
+      "views": {
+        "angled": {
+          "real": "/media/real-table/r-angled-real.mp4",
+          "simulation": "/media/real-table/r-angled-sim-blender.mp4",
+          "poster": "/media/real-table/r-angled-poster.jpg"
+        },
+        "overhead": {
+          "real": "/media/real-table/r-overhead-real-matched-3c3f64eaf8.mp4",
+          "simulation": "/media/real-table/r-overhead-sim-blender.mp4",
+          "poster": "/media/real-table/r-overhead-poster-matched-66f43aedc2.jpg"
+        }
+      }
+    },
+    {
+      "letter": "L",
+      "run": "l5",
+      "panel_size": [
+        1280,
+        720
+      ],
+      "fps": 60,
+      "frames": 750,
+      "duration": 12.5,
+      "pair": "/media/real-table/l-pair-blender.mp4",
+      "panels": "Top: angled real/sim; bottom: upright overhead real/sim",
+      "calibration": [
+        {
+          "camera": "angled",
+          "total_landmarks": 36,
+          "inliers": 33,
+          "rms_px": 0.8716976064351959,
+          "prior_rms_px": 8.531106496157616,
+          "R": [
+            [
+              0.3546822277804993,
+              0.9330503910795718,
+              -0.06014553186164512
+            ],
+            [
+              0.639416523919436,
+              -0.28899008622763744,
+              -0.7124824482055175
+            ],
+            [
+              -0.6821634893743929,
+              0.21424681507177834,
+              -0.6991074852954672
+            ]
+          ],
+          "t": [
+            -0.2038311728077679,
+            -0.37032215689704867,
+            1.3506392909273477
+          ],
+          "basis": "Stationary balls at 0.15 seconds after stroke start, pooled across all six shots; no moving trajectory fitted."
+        },
+        {
+          "camera": "overhead",
+          "total_landmarks": 36,
+          "inliers": 33,
+          "rms_px": 0.9417122835175973,
+          "prior_rms_px": 1.5834710365085036,
+          "R": [
+            [
+              0.11767037551277992,
+              -0.9929538335130911,
+              0.014013109517069227
+            ],
+            [
+              -0.9905559543497352,
+              -0.1163628260134687,
+              0.07251616388395098
+            ],
+            [
+              -0.0703745978955903,
+              -0.022413773306058704,
+              -0.9972687896135217
+            ]
+          ],
+          "t": [
+            -0.13823070711315796,
+            0.6059088384626601,
+            1.160846758305989
+          ],
+          "basis": "Stationary balls at 0.15 seconds after stroke start, pooled across all six shots; no moving trajectory fitted."
+        }
+      ],
+      "display_matrices": [
+        [
+          [
+            1.4047910536056927,
+            0.0,
+            -275.3296107448547
+          ],
+          [
+            0.0,
+            1.4047910536056927,
+            -192.255411108904
+          ]
+        ],
+        [
+          [
+            -2.207892048955756,
+            0.0,
+            1995.513281528649
+          ],
+          [
+            0.0,
+            -2.207892048955756,
+            1135.2203399219356
+          ]
+        ]
+      ],
+      "timeline": [
+        {
+          "index": 1,
+          "ball": "orange",
+          "recording": "shot_20261025_215619",
+          "start": 0.0,
+          "duration": 1.75,
+          "contact": 0.48,
+          "source_first": 1.276199999999823,
+          "tau": -0.0412
+        },
+        {
+          "index": 2,
+          "ball": "red",
+          "recording": "shot_20261025_215944",
+          "start": 1.75,
+          "duration": 1.75,
+          "contact": 2.23,
+          "source_first": 1.012999999999852,
+          "tau": -0.0082
+        },
+        {
+          "index": 3,
+          "ball": "purple",
+          "recording": "shot_20261025_220410",
+          "start": 3.5,
+          "duration": 1.75,
+          "contact": 3.98,
+          "source_first": 1.0029999999998531,
+          "tau": 0.0069
+        },
+        {
+          "index": 4,
+          "ball": "black",
+          "recording": "shot_20261025_220717",
+          "start": 5.25,
+          "duration": 1.75,
+          "contact": 5.7299999999999995,
+          "source_first": 0.431199999999916,
+          "tau": 0.0161
+        },
+        {
+          "index": 5,
+          "ball": "yellow",
+          "recording": "shot_20261025_221011",
+          "start": 7.0,
+          "duration": 1.75,
+          "contact": 7.48,
+          "source_first": 0.48979999999990953,
+          "tau": 0.0381
+        },
+        {
+          "index": 6,
+          "ball": "blue",
+          "recording": "shot_20261025_221312",
+          "start": 8.75,
+          "duration": 3.75,
+          "contact": 9.229999999999999,
+          "source_first": 0.31539999999992874,
+          "tau": 0.0243
+        }
+      ],
+      "source_tracking_overlays": false,
+      "physics_refitted": false,
+      "endpoints_warped": false,
+      "cue_fade": {
+        "start": "Simulated contact",
+        "duration": 0.3,
+        "easing": "smoothstep"
+      },
+      "final_hold": 2.0,
+      "final_errors_mm": {
+        "mean": 12.24854456236666,
+        "max": 30.549959083442314
+      },
+      "execution_note": "Recorded session speed corrections retained.",
+      "views": {
+        "angled": {
+          "real": "/media/real-table/l-angled-real.mp4",
+          "simulation": "/media/real-table/l-angled-sim-blender.mp4",
+          "poster": "/media/real-table/l-angled-poster.jpg"
+        },
+        "overhead": {
+          "real": "/media/real-table/l-overhead-real-matched-6aa21fe3a5.mp4",
+          "simulation": "/media/real-table/l-overhead-sim-blender.mp4",
+          "poster": "/media/real-table/l-overhead-poster-matched-5c59d5256e.jpg"
+        }
+      }
+    }
+  ],
+  "background": "#2e2d29",
+  "model_note": "Per-shot prediction from measured starting layout and executed command; no physics refitting or endpoint warping.",
+  "selection": "Complete takes kept intact; no mixing shots between attempts.",
+  "preview": "/letters-preview.html",
+  "rendering": "Blender Cycles OptiX with the approved display geometry, saved ball states, original camera registration and 60 fps timing."
+}
