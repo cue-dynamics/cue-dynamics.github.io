@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Native anchor scrolling honors the margin that clears the sticky navigation.
+  all('a[href="#project-video"]').forEach((link) => {
+    link.addEventListener('click', (event) => event.stopPropagation());
+  });
+
   const links = all('[data-section-link]');
   const sections = all('.lab-section');
   const index = document.querySelector('.lab-index');

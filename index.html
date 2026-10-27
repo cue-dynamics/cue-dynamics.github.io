@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/styles/real-table.css"/>
 <link rel="stylesheet" href="/styles/lessons.css"/>
 <link href="/styles/unseen-shots.css" rel="stylesheet">
-</head><body class="paper-project"><div class="styles w-embed"><link rel="stylesheet" href="/styles/custom-02.css"/><link rel="stylesheet" href="/styles/paper.css"/><link rel="stylesheet" href="/styles/layouts.css"/><link rel="stylesheet" href="/styles/study-method.css"/></div><div id="top" class="top"></div><div class="main pointer-events-disabled"><nav class="lab-index" aria-label="Study sections"><a class="lab-index-brand" href="#top" aria-label="CUE home"><img src="/media/branding/cue-logo.png" width="2496" height="1248" alt="CUE" decoding="async"></a><div class="lab-index-links"><a href="#real-table" data-section-link="real-table">Real-world control</a><a href="#dynamics-gap" data-section-link="dynamics-gap">Simulation gap</a><a href="#project-video" data-section-link="project-video">Project video</a><a href="#calibration-loop" data-section-link="calibration-loop">Calibration</a><a href="#prediction-results" data-section-link="prediction-results">Prediction accuracy</a><a href="#limitations" data-section-link="limitations">Lessons learned</a></div></nav>
+</head><body class="paper-project"><div class="styles w-embed"><link rel="stylesheet" href="/styles/custom-02.css"/><link rel="stylesheet" href="/styles/paper.css"/><link rel="stylesheet" href="/styles/layouts.css"/><link rel="stylesheet" href="/styles/study-method.css"/></div><div id="top" class="top"></div><div class="main pointer-events-disabled"><nav class="lab-index" aria-label="Study sections"><a class="lab-index-brand" href="#top" aria-label="CUE home"><img src="/media/branding/cue-logo.png" width="2496" height="1248" alt="CUE" decoding="async"></a><div class="lab-index-links"><a href="#real-table" data-section-link="real-table">Real-world control</a><a href="#dynamics-gap" data-section-link="dynamics-gap">Simulation gap</a><a href="#calibration-loop" data-section-link="calibration-loop">Calibration</a><a href="#prediction-results" data-section-link="prediction-results">Prediction accuracy</a><a href="#limitations" data-section-link="limitations">Lessons learned</a><a href="#project-video" data-section-link="project-video">Project video</a></div></nav>
 <header class="paper-hero" aria-labelledby="paper-title">
   <div class="paper-hero-shell">
     <div class="paper-hero-masthead">
@@ -21,15 +21,11 @@
           <div class="paper-affiliations"><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="1"><span>1</span></span></sup> Stanford University</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="2"><span>2</span></span></sup> ETH Zurich</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="3"><span>3</span></span></sup> NVIDIA Research</span><span><sup class="paper-affiliation-marker"><span class="paper-pool-ball" data-ball="4"><span>4</span></span></sup> Microagi</span></div>
           <p class="paper-contributions"><span>* Project Co-Lead</span><span>† Equal Contribution</span></p>
         </div>
+        <a class="paper-video-link" href="#project-video"><svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4 2.5v11L13 8Z"/></svg><span>Watch full project video</span></a>
       </div>
       <div id="logo_general_intuition" class="paper-hero-media">
-<section id="real-table" class="lab-section lab-section-immersive paper-hero-letters" aria-labelledby="real-title">
+<section id="real-table" class="lab-section lab-section-immersive paper-hero-letters" aria-label="Real-world control">
 <div class="lab-shell">
-  <header class="lab-section-heading corl-heading">
-    <div class="lab-heading-copy"><h2 id="real-title" class="lab-title font-header-clean">A robot that teaches its own simulator</h2>
-      <p class="lab-section-intro">CUE learns the table’s physics through its own experiments, then uses the calibrated simulator to plan real shots. Here, that Real2Sim2Real loop arranges balls into letters.</p>
-</div>
-  </header>
   <div class="lab-tool-row corl-tools">
       <div class="lab-tabs" role="group" aria-label="CORL demonstration view">
         <button type="button" class="lab-tab is-active" data-corl-view="real" aria-pressed="true">Real</button>
@@ -79,7 +75,7 @@
 <section id="dynamics-gap" class="lab-section lab-section-immersive" aria-labelledby="gap-title"><div class="lab-shell"><header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="gap-title" class="lab-title font-header-clean">Real2Sim2Real is <span class="gap-not">NOT</span> solved!</h2>
 <p class="lab-section-intro">Visual reconstruction alone does not reliably identify the dynamics.</p>
 </div></header>
-<div class="lab-tool-row lab-gap-toolbar"><div class="lab-tabs" role="group" aria-label="Comparison example"><button type="button" class="lab-tab is-active" data-gap-example="Cushion" aria-pressed="true">Cushion rebound</button><button type="button" class="lab-tab" data-gap-example="Collision" aria-pressed="false">Collision</button></div><p class="lab-gap-caption" data-gap-caption>The real cushion absorbs more energy than the model expects.</p></div>
+<div class="lab-tool-row lab-gap-toolbar"><div class="lab-tabs" role="group" aria-label="Comparison example"><button type="button" class="lab-tab is-active" data-gap-example="Cushion" aria-pressed="true">Cushion rebound</button><button type="button" class="lab-tab" data-gap-example="Collision" aria-pressed="false">Collision</button></div></div>
 <div class="lab-comparison" data-video-sync data-gap-comparison><div class="lab-frame" data-gap-real><video data-loop-video autoplay muted loop playsinline preload="auto" src="/media/dynamics-gap/cushion-real-matched-34d591866d.mp4" poster="/media/dynamics-gap/cushion-real-matched-9aebd8d65b.jpg" aria-label="Real: cushion rebound example"></video>
  <span class="lab-frame-tag"><span>Real</span></span>
  <div class="lab-frame-center"><span class="lab-placeholder-meta">Loading footage</span></div>
@@ -91,25 +87,15 @@
  </div></div>
 <span class="lab-gap-status" data-gap-status role="status" aria-live="polite"></span>
 </div></section>
-<section id="project-video" class="lab-section paper-video-section" aria-labelledby="project-video-title">
-  <div class="lab-shell paper-video-shell">
-    <header class="lab-section-heading"><h2 id="project-video-title" class="lab-title font-header-clean">Project video</h2></header>
-        <figure class="paper-film" aria-label="CUE project video">
-          <div class="paper-video-placeholder paper-hero-video">
-            <video data-loop-video data-video-controls controls muted loop playsinline preload="none" src="/media/project-video/cue-v30-1080p-43fec0c81b1f.mp4" poster="/media/project-video/cue-v30-poster-b7e09787c1e7.jpg" width="1920" height="1080" aria-label="CUE project overview"></video>
-          </div>
-        </figure>
-  </div>
-</section>
 <section id="calibration-loop" class="lab-section lab-method-section" aria-labelledby="loop-title">
 <div class="lab-shell">
-  <header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="loop-title" class="lab-title font-header-clean">What the agent learns from the shot</h2>
-<p class="lab-section-intro">CUE reconstructs the table, chooses an informative experiment, and uses the recorded motion to update the simulator’s physics.</p></div></header>
+  <header class="lab-section-heading"><div class="lab-heading-copy"><h2 id="loop-title" class="lab-title font-header-clean">The CUE loop</h2>
+</div></header>
   <div class="lab-loop-flow-shell">
     <div class="lab-loop-flow-viewport">
   <div class="lab-loop-flow">
     <svg class="lab-flow-track" viewBox="0 0 1000 150" preserveAspectRatio="none" fill="none" aria-hidden="true">
-      <defs><marker id="calibration-loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="currentColor" stroke-width="1.4"/></marker></defs>
+      <defs><marker id="calibration-loop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
       <path data-loop-connection="0" d="M124 30H276" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
       <path data-loop-connection="1" d="M324 30H476" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
       <path data-loop-connection="2" d="M524 30H676" vector-effect="non-scaling-stroke" marker-end="url(#calibration-loop-arrow)"/>
@@ -140,7 +126,6 @@
     </div>
   </div>
     </div>
-    <div class="lab-flow-return-label"><span aria-hidden="true">Next experiment</span><span aria-hidden="true">·</span><button type="button" data-loop-play aria-label="Pause automatic walkthrough" aria-pressed="false">Pause</button></div>
   </div>
   <div class="lab-loop-layout">
     <div class="lab-loop-workspace">
@@ -238,7 +223,6 @@
 <div class="lab-shell">
   <header class="lab-section-heading"><div class="lab-heading-copy">
     <h2 id="results-title" class="lab-title font-header-clean">Predicting new shots</h2>
-    <p class="lab-section-intro">Ten shots excluded from fitting, replayed with the same frozen model.</p>
   </div></header>
   <div class="unseen-layout">
     <div class="unseen-toolbar">
@@ -342,7 +326,7 @@
               <p><strong>35<span>h</span>10<span>m</span></strong><span>first-to-last collection span</span></p>
             </div>
           <figure id="lesson-shot-detail" class="lesson-shot-preview">
-            <video class="lesson-video" data-lesson-video data-shot-video src="/media/lessons/shot-01.mp4" poster="/media/lessons/shot-01.jpg" muted loop playsinline preload="none" width="640" height="360" aria-label="Selected physical experiment"></video>
+            <video class="lesson-video" data-lesson-video data-shot-video src="/media/lessons/shot-01.mp4" poster="/media/lessons/shot-01.jpg" muted playsinline preload="none" width="640" height="360" aria-label="Selected physical experiment"></video>
             <figcaption>
               <div class="lesson-shot-heading"><h4 data-shot-title>Straight roll</h4><time data-shot-time datetime="2026-10-24T18:40:40">18:40</time></div>
               <p data-shot-description>An isolated shot probes rolling and cushion behavior.</p>
@@ -364,7 +348,18 @@
     </div>
     <p class="lesson-panel-status" data-lessons-status role="status" aria-live="polite"></p>
   </div>
-</section><footer id="footer" class="lab-footer" aria-labelledby="footer-paper-title">
+</section>
+<section id="project-video" class="lab-section paper-video-section" aria-labelledby="project-video-title">
+  <div class="lab-shell paper-video-shell">
+    <header class="lab-section-heading"><h2 id="project-video-title" class="lab-title font-header-clean">Project video</h2></header>
+        <figure class="paper-film" aria-label="CUE project video">
+          <div class="paper-video-placeholder paper-hero-video">
+            <video data-loop-video data-video-controls controls muted loop playsinline preload="none" src="/media/project-video/cue-v30-1080p-43fec0c81b1f.mp4" poster="/media/project-video/cue-v30-poster-b7e09787c1e7.jpg" width="1920" height="1080" aria-label="CUE project overview"></video>
+          </div>
+        </figure>
+  </div>
+</section>
+<footer id="footer" class="lab-footer" aria-labelledby="footer-paper-title">
   <div class="lab-shell">
     <div class="lab-footer-main">
       <div class="lab-footer-identity">

@@ -103,6 +103,9 @@ body.paper-project {
 }
 .paper-title { max-width: 1100px; margin: 0 auto; color: #eeede7; font-size: clamp(36px, 3.7vw, 60px); line-height: 1.08; letter-spacing: -.035em; text-align: center; text-wrap: balance; }
 .paper-byline { display: grid; gap: 10px; margin-top: 18px; }
+.paper-video-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; margin-top: 24px; padding: 12px 22px; border: 1px solid var(--paper-accent); background: var(--paper-accent); color: var(--paper-accent-ink); font-size: 15px; font-weight: 500; line-height: 1.5; text-decoration: none; transition: background .2s, border-color .2s; }
+.paper-video-link:hover { background: var(--paper-accent-hover); border-color: var(--paper-accent-hover); }
+.paper-video-link svg { flex: 0 0 16px; }
 .paper-venue { margin: 14px 0 0; color: var(--paper-accent); font-size: 14px; line-height: 1.5; }
 .paper-hero a:focus-visible { outline: 2px solid #eeede7; outline-offset: 5px; }
 .paper-hero-media { width: 100%; margin-inline: auto; }

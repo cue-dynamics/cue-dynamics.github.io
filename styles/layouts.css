@@ -132,7 +132,6 @@
 .lab-comparison .lab-frame-code { bottom: 16px; left: 16px; }
 .lab-gap-toolbar { justify-content: flex-start; gap: 28px; }
 .lab-gap-toolbar .lab-tabs { flex: 0 0 auto; flex-wrap: nowrap; }
-.lab-gap-caption { flex: 1; min-width: 0; max-width: 68ch; margin: 0; color: var(--lab-muted); font-size: 16px; line-height: 1.65; text-wrap: pretty; }
 .lab-gap-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .lab-frame { position: relative; aspect-ratio: 16 / 9; min-width: 0; overflow: hidden; background: radial-gradient(ellipse at 50% 45%, #ffffff03, transparent 70%), var(--lab-panel-deep); }
 .lab-frame-simulation { background-image: linear-gradient(125deg, color-mix(in srgb, var(--lab-accent) 4%, transparent), transparent 65%); }

@@ -142,8 +142,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!response.ok) throw new Error('Lessons data unavailable');
     manifest = await response.json();
     const shotButtons = [];
+    let selectedShot = 0;
     const selectShot = (index, focus = false) => {
       const shot = manifest.shots[index];
+      selectedShot = index;
       shotButtons.forEach((button, i) => {
         button.setAttribute('aria-pressed', String(i === index));
         button.tabIndex = i === index ? 0 : -1;
@@ -184,6 +186,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
       shotButtons.push(button);
       timeline.append(button);
+    });
+    preview.addEventListener('ended', () => {
+      if (selected === 'time' && shouldPlay()) {
+        selectShot((selectedShot + 1) % manifest.shots.length);
+      }
     });
     drawTracking();
     overlay.removeAttribute('hidden');

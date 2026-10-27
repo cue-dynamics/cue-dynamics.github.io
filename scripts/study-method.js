@@ -32,27 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   const stages = [
     { summary: 'Recreate the real table and measured ball positions in simulation.', agent: 'Build the digital scene from the camera view and measured ball positions.' },
-    { summary: 'Choose an informative shot: CUE compares 282 candidate shots across 10 models, looking for differences that a real experiment can distinguish reliably.', agent: 'Compare predictions from candidate models.' },
-    { summary: 'Execute the selected shot and compare it with the earlier model.', agent: 'Strike the yellow ball at 0.35 m/s and track its motion.' },
-    { summary: 'White follows recorded motion; red follows the earlier model. Dashed paths show the counterpart.', agent: 'Compare the recorded motion with the initial model. Endpoint error: 99.3 mm.', error: '99.3 mm', label: 'Earlier-model endpoint error' },
-    { summary: 'White follows recorded motion; red follows the fitted model. Dashed paths show the counterpart.', agent: 'Fit the physics to the recorded motion. Endpoint error: 2.3 mm on this shot.', error: '2.3 mm', label: 'Updated-model endpoint error' },
+    { summary: '', agent: 'Compare predictions from candidate models.' },
+    { summary: '', agent: 'Strike the yellow ball at 0.35 m/s and track its motion.' },
+    { summary: '', agent: 'Compare the recorded motion with the initial model. Endpoint error: 99.3 mm.' },
+    { summary: '', agent: 'Fit the physics to the recorded motion. Endpoint error: 2.3 mm on this shot.' },
   ];
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const progress = buttons.map((button) => button.querySelector('[data-loop-progress]'));
-  const playback = loop.querySelector('[data-loop-play]');
   const holds = new Set();
   let current = -1;
   let clock = null;
-  let manualPaused = reducedMotion.matches;
   const syncClock = () => {
-    const running = !manualPaused && !holds.size && visible.get(loop) && !document.hidden;
+    const running = !reducedMotion.matches && !holds.size && visible.get(loop) && !document.hidden;
     if (clock) {
       if (running && clock.playState !== 'running') clock.play();
       else if (!running && clock.playState !== 'paused') clock.pause();
     }
-    playback.textContent = manualPaused ? 'Resume' : 'Pause';
-    playback.setAttribute('aria-label', manualPaused ? 'Resume automatic walkthrough' : 'Pause automatic walkthrough');
-    playback.setAttribute('aria-pressed', String(manualPaused));
   };
   const hold = (key, paused) => {
     if (paused) holds.add(key);
@@ -71,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     clock = animation;
     animation.onfinish = () => {
-      if (clock === animation && !manualPaused && !holds.size && visible.get(loop) && !document.hidden) show((current + 1) % stages.length);
+      if (clock === animation && !reducedMotion.matches && !holds.size && visible.get(loop) && !document.hidden) show((current + 1) % stages.length);
     };
     syncClock();
   };
@@ -118,10 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (userAction) status.textContent = buttons[index].getAttribute('aria-label') + ' selected.';
   };
-  playback.addEventListener('click', () => {
-    manualPaused = !manualPaused;
-    syncClock();
-  });
   buttons.forEach((button, index) => button.addEventListener('click', () => show(index, true)));
   candidates.forEach((button) => {
     const index = Number(button.dataset.candidate);
@@ -224,10 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   navigation.addEventListener('pointerdown', () => hold('navigation-focus', false));
   loop.addEventListener('study:visibility', syncClock);
-  reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches) manualPaused = true;
-    syncClock();
-  });
+  reducedMotion.addEventListener('change', syncClock);
   const flow = loop.querySelector('.lab-loop-flow');
   const track = flow.querySelector('.lab-flow-track');
   const drawFlow = () => {

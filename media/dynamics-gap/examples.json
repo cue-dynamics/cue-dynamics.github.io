@@ -11,7 +11,6 @@
       "poster": "/media/dynamics-gap/cushion-model.png",
       "encoding": "rgb-alpha-horizontal"
     },
-    "caption": "The real cushion absorbs more energy than the model expects.",
     "metric": "121.9 mm",
     "metricLabel": "Purple-ball endpoint mismatch"
   },
@@ -27,7 +26,6 @@
       "poster": "/media/dynamics-gap/collision-model.png",
       "encoding": "rgb-alpha-horizontal"
     },
-    "caption": "The red ball falls into a pocket on the real table but stays on the simulated table.",
     "metric": "Pocketed / On table",
     "metricLabel": "Real / Simulation without CUE"
   }

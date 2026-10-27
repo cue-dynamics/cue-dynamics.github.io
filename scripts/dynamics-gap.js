@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const buttons = [...document.querySelectorAll('[data-gap-example]')];
   const real = group.querySelector('[data-gap-real] video');
   const model = group.querySelector('[data-gap-sim] video');
-  const caption = document.querySelector('[data-gap-caption]');
   const status = document.querySelector('[data-gap-status]');
   let selection = 0;
   let current = buttons.find((button) => button.getAttribute('aria-pressed') === 'true')?.dataset.gapExample;
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
       video.setAttribute('aria-label', `${label}: ${name.toLowerCase()} example`);
       video.load();
     });
-    caption.textContent = example.caption;
     status.textContent = `${name} comparison selected.`;
   }));
 });
