@@ -110,3 +110,6 @@
 
 /* Display the live map without interactive links or keyboard focus. */
 .visitor-pool-frame{pointer-events:none}
+
+/* Provider returns a stale total; retain live locations without a misleading count. */
+.visitor-pool-frame .mapmyvisitors-visitors{display:none!important}
