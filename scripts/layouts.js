@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         await navigator.clipboard.writeText(citation.textContent.trim());
         copyCitation.textContent = 'Copied';
-        copyStatus.textContent = 'BibTeX placeholder copied';
+        copyStatus.textContent = 'BibTeX citation copied';
         clearTimeout(resetCopyLabel);
         resetCopyLabel = setTimeout(() => { copyCitation.innerHTML = originalLabel; }, 2000);
       } catch {
